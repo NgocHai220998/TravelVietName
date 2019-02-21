@@ -126,13 +126,16 @@ $colorListMenu : rgb(57, 209, 230);
         &__content{
             width: 100%;
             box-sizing: border-box;
-            padding : 180px 30px 120px 30px;
+            padding : 140px 30px 120px 30px;
             color: white;
             text-align: center;
             max-width: 960px;
             margin: 0 auto;
             &__title{
                 text-align: center;
+                h1{
+                    font-size: 25px;
+                }
             }
     
     
@@ -165,6 +168,12 @@ $colorListMenu : rgb(57, 209, 230);
                     color: gray;
                     font-size: 22px;
                     cursor: pointer;
+                    &:hover{
+                        color: black;
+                    }
+                    &:active{
+                        color: gray;
+                    }
                 }
             }
         }
@@ -179,6 +188,35 @@ $colorListMenu : rgb(57, 209, 230);
 
 
 // MEdia CSS
+
+@media (min-width : 600px ) and (max-width:899px){
+
+    .container{
+        &__about{
+            padding-bottom: 140%;
+            &__content{
+                padding : 230px 30px 80px 30px;
+                &__title{
+                    h1{
+                        font-size: 42px;
+                    }
+                }
+                &__text{
+                    text-align: center;
+                    margin-top: 15px;
+                    p{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
 
 @media (min-width : 900px){
 
@@ -274,10 +312,59 @@ $colorListMenu : rgb(57, 209, 230);
                 }
             }
         }
+
+        &__about{
+            background-image: url('/assets/images/me/background.jpg');
+            padding-bottom: 890px;
+            margin-bottom: 50px;
+            &__content{
+                max-width: 960px;
+                padding : 130px 30px 80px 30px;
+                &__title{
+                    margin-bottom: 5px;
+                    max-width: 760px;
+                    margin: 0 auto;
+                    h1{
+                        font-size: 60px;
+                    }
+                }
+
+                &__text{
+                    margin-bottom: 15px;
+                    max-width: 650px;
+                    margin: 0 auto;
+                    p{
+                        font-size: 28px;
+                        line-height: 1.5;
+                    }
+                }
+
+
+                &__search{
+                    text-align: center;
+                    position: relative;
+                    input{
+
+                        height: 55px;
+                        font-size: 21px;
+                        padding : 5px 10px 5px 60px;
+                    }
+                    i.fas.fa-search {
+                        left: 16px;
+                        top: 32px;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
     }
 
 
 }
+
+
+
+
 
 
 // END MEDIA CSS
