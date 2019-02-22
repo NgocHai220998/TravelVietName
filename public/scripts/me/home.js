@@ -47,6 +47,33 @@ document.addEventListener("DOMContentLoaded",function(){
                 whyUsSlide[0].style.display = "block";
                 whyUSNode[0].classList.add('backgroundActive');
             })();
+
+            let backgroundImage = document.querySelector('.container .container__backgroundImage');
+            let showImage = document.querySelector('.container .container__showImage');
+            //console.log(backgroundImage.style.display);
+            backgroundImage.onclick = function(){
+                if(window.innerWidth > 600){
+                    backgroundImage.style.display = "none";
+                    showImage.style.display = "none";
+                }
+            }
+
+            for(let i = 0 ; i < imageSlide.length ; ++i){
+
+                imageSlide[i].onclick = function(){
+                    if(window.innerWidth > 600){
+                        showImage.setAttribute('src',this.getAttribute('link'));
+                        backgroundImage.style.display = "block";
+                        showImage.style.display = "block";
+                    }
+                    
+                }
+            }
+            
+
+
+
+
         }
         //END_CONTEN_WHY_US
     }
