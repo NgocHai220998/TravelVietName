@@ -1,88 +1,92 @@
-
-body,html{
+body,
+html {
     margin: 0;
-    padding : 0;
+    padding: 0;
     width: 100%;
     height: 100%;
 }
 
-*{
+* {
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
 }
 
-ul li{
+ul li {
     list-style: none;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 0;
 }
 
-
-section,article,header,aside,footer{
+section,
+article,
+header,
+aside,
+footer {
     display: block;
 }
 
-$colorHeader : rgb(47, 178, 211);
-$colorListMenu : rgb(57, 209, 230);
-$colorText : #565656;
-$fontSizeTitle : 28px;
+$colorHeader: rgb(47, 178, 211);
+$colorListMenu: rgb(57, 209, 230);
+$colorText: #565656;
+$fontSizeTitle: 28px;
 // CSS MAIN
-
-.container{
+.container {
     width: 100%;
     height: 100%;
- 
     position: relative;
-
-    &__backgroundImage{
-        position: fixed;
-        max-width: 100%;
-        max-height: 100%;
+    &__show {
         width: 100%;
         height: 100%;
-        background-color: black;
-        z-index: 2;
-        opacity: .4;
-        cursor: pointer;
+        position: absolute;
+        &__backgroundImage {
+            position: fixed;
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 2;
+            opacity: .4;
+            cursor: pointer;
+        }
+        &__showImage {
+            background-size: cover;
+            background-position: contain;
+            width: 90%;
+            max-width: 960px;
+            height: auto;
+            margin: 0 auto;
+            z-index: 3;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
+        }
     }
-
-    &__showImage{
-        background-size: cover;
-        background-position: contain;
-        width: 90%;
-        max-width: 960px;
-        height: auto;
-        margin:0 auto;
-        z-index: 3;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
-    }
-
-    &__header{
-        background-color:   $colorHeader;
+    &__header {
+        background-color: $colorHeader;
         width: 100%;
         height: 65px;
         display: flex;
-        padding : 10px;
+        padding: 10px;
         line-height: 55px;
         position: fixed;
         z-index: 100;
-        &__logo{
+        &__logo {
             cursor: pointer;
         }
-        &__center{
+        &__center {
             display: none;
         }
-        &__icon{
+        &__icon {
             width: 100%;
             position: relative;
-            aside{
+            aside {
                 z-index: 3;
                 display: none;
                 width: 100%;
@@ -91,30 +95,28 @@ $fontSizeTitle : 28px;
                 top: 50px;
                 right: 15px;
                 box-shadow: 1px 1px 1px 0px rgb(151, 141, 141);
-                a{
+                a {
                     display: block;
                     width: 100%;
-
                     background-color: $colorListMenu;
                     text-decoration: none;
-                    padding :15px 20px;
-                    color: white;   
-                    line-height: 20px;  
+                    padding: 15px 20px;
+                    color: white;
+                    line-height: 20px;
                     font-weight: 600;
-                    transition : 0.2s;
-                    &:hover{
+                    transition: 0.2s;
+                    &:hover {
                         text-decoration: underline;
                         color: $colorListMenu;
                         background-color: white;
                     }
-                    &:active{
+                    &:active {
                         color: white;
                         background-color: $colorListMenu;
                     }
                 }
-
-                &::before{
-                    content:"";
+                &::before {
+                    content: "";
                     border: 10px solid #ffffff00;
                     border-bottom: 10px solid $colorListMenu;
                     width: 0;
@@ -124,33 +126,27 @@ $fontSizeTitle : 28px;
                     top: -22px;
                     right: 0px;
                 }
-
-
-        
             }
-            a{
+            a {
                 display: none;
             }
-            i{
+            i {
                 position: absolute;
                 right: 15px;
                 top: 10px;
                 color: white;
                 font-size: 1.5rem;
                 cursor: pointer;
-                &:hover{
+                &:hover {
                     color: gray;
                 }
-                &:active{
+                &:active {
                     color: white;
                 }
             }
-
-            
         }
     }
-
-    &__about{
+    &__about {
         background-image: url('/assets/images/me/background-mobile.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -158,81 +154,74 @@ $fontSizeTitle : 28px;
         width: 100%;
         height: 0;
         padding-bottom: 180%;
-        &__content{
+        &__content {
             width: 100%;
             box-sizing: border-box;
-            padding : 140px 30px 120px 30px;
+            padding: 140px 30px 120px 30px;
             color: white;
             text-align: center;
             max-width: 960px;
             margin: 0 auto;
-            &__title{
+            &__title {
                 text-align: center;
-                h1{
+                h1 {
                     font-size: 25px;
                 }
             }
-    
-    
-            &__text{
+            &__text {
                 text-align: center;
                 margin-top: 15px;
-               
             }
-    
-    
-            &__search{
-                width:100%;
+            &__search {
+                width: 100%;
                 text-align: center;
                 position: relative;
-                &__list{
+                &__list {
                     opacity: 0;
                     visibility: hidden;
                     width: 100%;
                     box-shadow: 1px 1px 1px 1px gray;
                     position: absolute;
                     top: 61px;
-                    aside{
+                    aside {
                         width: 100%;
-                        a{
+                        a {
                             display: block;
                             text-decoration: none;
                             color: white;
                             font-weight: 500;
                             height: 60px;
                             line-height: 50px;
-                            
                             padding: 5px 5px 5px 5px;
                             background-color: $colorListMenu;
                             font-size: 1.3rem;
-                            i{
+                            i {
                                 font-size: inherit;
                             }
-                            &:hover{
+                            &:hover {
                                 text-decoration: underline;
                                 color: $colorListMenu;
                                 background-color: white;
                             }
-                            &:active{
+                            &:active {
                                 color: white;
                                 background-color: $colorListMenu;
                             }
-
                         }
                     }
                 }
-                input{
-                    margin-top:20px;
+                input {
+                    margin-top: 20px;
                     border: 2px solid white;
                     width: 100%;
                     height: 40px;
-                    padding : 5px 10px 5px 40px;
+                    padding: 5px 10px 5px 40px;
                     box-sizing: border-box;
                     border-radius: 5px;
-                    outline: none; 
+                    outline: none;
                     font-size: 18px;
                     z-index: 1;
-                    &:focus{
+                    &:focus {
                         box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                     }
                 }
@@ -243,19 +232,17 @@ $fontSizeTitle : 28px;
                     color: gray;
                     font-size: 22px;
                     cursor: pointer;
-                    &:hover{
+                    &:hover {
                         color: black;
                     }
-                    &:active{
+                    &:active {
                         color: gray;
                     }
                 }
             }
         }
-    }
-
-     //* WHY__US*/
-     &__why{
+    } //* WHY__US*/
+    &__why {
         //perspective: 700px;
         padding: 0px 10px;
         width: 100%;
@@ -265,60 +252,56 @@ $fontSizeTitle : 28px;
             animation-name: fade;
             animation-duration: 1.5s;
         }
-        &__title{
-            h1{
+        &__title {
+            h1 {
                 font-size: $fontSizeTitle;
             }
         }
-
-        &__container{
-            &__content{
+        &__container {
+            &__content {
                 width: 100%;
                 text-align: center;
                 display: none; // suwar
-                
-                &__image{
-                    width:100%;
+                &__image {
+                    width: 100%;
                     height: 0px;
                     background-size: cover;
                     background-position: contain;
                     padding-bottom: 65%;
                     cursor: pointer;
-                    &:hover{
+                    &:hover {
                         box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
                     }
-                    &:active{
+                    &:active {
                         box-shadow: none;
                     }
                 }
-                &__title{
+                &__title {
                     text-align: center;
                     color: gray;
                     padding: 5px 10px;
-                    h3{
+                    h3 {
                         font-size: 20px;
                         margin: 0px;
                     }
                 }
-                &__content{
+                &__content {
                     text-align: center;
-                    color:$colorText;
+                    color: $colorText;
                     padding: 0px 10px 10px 10px;
-                    h5{
+                    h5 {
                         margin: 0;
                         font-weight: 200;
                     }
                 }
             }
         }
-        
-        
         &__bot ul {
             text-align: center;
         }
-        &__bot ul li{
+        &__bot ul li {
             text-indent: -9999px;
-            border:2px solid gray;
+            border: 2px solid gray;
             width: 20px;
             height: 20px;
             margin: 5px;
@@ -328,82 +311,74 @@ $fontSizeTitle : 28px;
             outline: none;
             transition: background-color 0.6s ease;
         }
-        &__bot ul li:hover{
+        &__bot ul li:hover {
             background-color: #474343;
             border: 2px solid green;
         }
-    }
-    // END_WHY___US
-
-
-    &__body{
+    } // END_WHY___US
+    &__body {
         width: 100%;
-        padding : 10px 10px 10px 10px;
-        &__content{
+        padding: 10px 10px 10px 10px;
+        &__content {
             width: 100%;
-            &__topReated{
+            &__topReated {
                 border-bottom: 1px solid $colorHeader;
                 padding: 0px 10px;
                 width: 100%;
                 text-align: center;
-                &__top{
-                    h1{
+                &__top {
+                    h1 {
                         font-size: $fontSizeTitle;
                         margin: 0;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                             color: $colorListMenu;
                             background-color: white;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    h5{
+                    h5 {
                         margin: 10px 0 0 0;
                     }
                 }
-
-
-                &__container{
-
-                
-                    &__content{
+                &__container {
+                    &__content {
                         width: 100%;
-                        padding : 40px 0px 0px 0px;
-                        &__item{
+                        padding: 40px 0px 0px 0px;
+                        &__item {
                             width: 100%;
-                            &__image{
-                                width:100%;
+                            &__image {
+                                width: 100%;
                                 height: 0px;
                                 background-size: cover;
                                 background-position: contain;
                                 padding-bottom: 65%;
                                 cursor: pointer;
-                                &:hover{
+                                &:hover {
                                     box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
                                 }
-                                &:active{
+                                &:active {
                                     box-shadow: none;
                                 }
                             }
-                            &__info{
-
+                            &__info {
                                 margin: 3px 0px 8px 0px;
                                 height: 19px;
                                 display: block;
                                 line-height: 19px;
-                                &__left{
+                                &__left {
                                     float: left;
                                     cursor: pointer;
                                     color: #524949;
-                                    &:hover{
+                                    &:hover {
                                         text-decoration: underline;
                                         color: $colorListMenu;
                                         background-color: white;
                                     }
-                                    &:active{
+                                    &:active {
                                         color: gray;
                                     }
                                 }
@@ -411,48 +386,43 @@ $fontSizeTitle : 28px;
                                     float: right;
                                     cursor: pointer;
                                     color: #524949;
-                                    &:hover{
+                                    &:hover {
                                         text-decoration: underline;
                                         color: $colorListMenu;
                                         background-color: white;
                                     }
-                                    &:active{
+                                    &:active {
                                         color: gray;
                                     }
-                                    
                                 }
                             }
-
-                            &__description{
-                                color:#3a3636;
+                            &__description {
+                                color: #3a3636;
                                 font-weight: 600;
                                 font-size: 20px;
                             }
-
-                            &__star{
+                            &__star {
                                 text-align: left;
                                 margin-top: 10px;
-                                .fa-star{
-                                    color:#4183c4;
+                                .fa-star {
+                                    color: #4183c4;
                                 }
-                                span{
+                                span {
                                     color: #524949;
                                 }
                             }
-                            
                         }
                     }
                 }
-
-                &__more{
+                &__more {
                     text-align: center;
                     margin-top: 15px;
                     widows: 100%;
                     height: auto;
                     margin-bottom: 30px;
-                    &__btn{
+                    &__btn {
                         display: inline-block;
-                        width:150px;
+                        width: 150px;
                         height: 40px;
                         line-height: 30px;
                         text-align: center;
@@ -462,63 +432,62 @@ $fontSizeTitle : 28px;
                         border-radius: 9999px;
                         background-color: $colorListMenu;
                         text-decoration: none;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                             color: $colorListMenu;
                             background-color: white;
                         }
-                        &:active{
+                        &:active {
                             color: white;
                             background-color: $colorListMenu;
                         }
                     }
                 }
             }
-            &__bigCities{
+            &__bigCities {
                 padding: 0px 10px;
                 width: 100%;
                 text-align: center;
                 border-bottom: 1px solid $colorHeader;
-                &__top{
-                    h1{
+                &__top {
+                    h1 {
                         font-size: $fontSizeTitle;
                         margin: 10px 0 0 0;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                             color: $colorListMenu;
                             background-color: white;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    h5{
+                    h5 {
                         margin: 10px 0 10px 0;
                     }
                 }
-                &__container{
-                    &__content{
+                &__container {
+                    &__content {
                         width: 100%;
-                        padding : 40px 0px 0px 0px;
-                        &__item{
+                        padding: 40px 0px 0px 0px;
+                        &__item {
                             width: 100%;
-                            &__image{
-                                width:100%;
+                            &__image {
+                                width: 100%;
                                 height: 0px;
                                 background-size: cover;
                                 background-position: contain;
                                 padding-bottom: 65%;
                                 cursor: pointer;
-                                &:hover{
+                                &:hover {
                                     box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
                                 }
-                                &:active{
+                                &:active {
                                     box-shadow: none;
                                 }
                             }
-                            &__info{
-        
+                            &__info {
                                 margin: 3px 0px 8px 0px;
                                 height: 20px;
                                 display: block;
@@ -527,38 +496,32 @@ $fontSizeTitle : 28px;
                                 font-weight: 700;
                                 color: gray;
                                 cursor: pointer;
-                                &:hover{
+                                &:hover {
                                     text-decoration: underline;
                                     color: $colorListMenu;
                                     background-color: white;
                                 }
-                                &:active{
+                                &:active {
                                     color: gray;
                                 }
-                                
                             }
-        
-                            &__description{
-                                color:#3a3636;
+                            &__description {
+                                color: #3a3636;
                                 font-weight: 600;
                                 font-size: 20px;
                             }
-        
-                        
-                            
                         }
                     }
                 }
-            
-                &__more{
+                &__more {
                     text-align: center;
                     margin-top: 15px;
                     widows: 100%;
                     height: auto;
                     margin-bottom: 30px;
-                    &__btn{
+                    &__btn {
                         display: inline-block;
-                        width:150px;
+                        width: 150px;
                         height: 40px;
                         line-height: 30px;
                         text-align: center;
@@ -568,12 +531,12 @@ $fontSizeTitle : 28px;
                         border-radius: 9999px;
                         background-color: $colorListMenu;
                         text-decoration: none;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                             color: $colorListMenu;
                             background-color: white;
                         }
-                        &:active{
+                        &:active {
                             color: white;
                             background-color: $colorListMenu;
                         }
@@ -582,12 +545,11 @@ $fontSizeTitle : 28px;
             }
         }
     }
-
-    &__footer{
+    &__footer {
         width: 100%;
         height: 500px;
         position: relative;
-        &__backgroundImage{
+        &__backgroundImage {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -596,90 +558,80 @@ $fontSizeTitle : 28px;
             background-size: cover;
             z-index: 1;
         }
-
-        &__content{
+        &__content {
             position: absolute;
             width: 100%;
             height: 100%;
             z-index: 3;
             max-width: 700px;
-            &__left{
-                padding : 20px;
-                p{
+            &__left {
+                padding: 20px;
+                p {
                     margin: 90px 0 10px 0;
                     color: white;
                     font-size: 20px;
                 }
-                image{
+                image {
                     margin: 50px 0 20px 20px;
                 }
             }
-            &__right{
-                padding : 20px;
-                h1{
+            &__right {
+                padding: 20px;
+                h1 {
                     color: white;
                     font-size: $fontSizeTitle;
                 }
-                a{
+                a {
                     display: block;
                     color: white;
                     font-size: 20px;
                     text-decoration: none;
                     margin-top: 5px;
-                    &:hover{
+                    &:hover {
                         color: $colorHeader;
                         text-decoration: underline;
                     }
-                    &:active{
+                    &:active {
                         color: gray;
                     }
                 }
             }
         }
-
-        &__background{
+        &__background {
             width: 100%;
             height: 100%;
             background-color: $colorHeader;
             z-index: 2;
-            opacity: .4;    
+            opacity: .4;
             position: absolute;
         }
     }
-
-
 }
 
 // END CSS main
-
-
 // MEdia CSS
-
-
-@media (min-width : 760px ){
-    .container{
-        &__body{
-            &__content{
+@media (min-width: 760px) {
+    .container {
+        &__body {
+            &__content {
                 max-width: 1190px;
                 margin: 0 auto;
-                &__topReated{
+                &__topReated {
                     margin: 0 auto;
-                    padding : 0;
-                    
+                    padding: 0;
                     &__top {
                         margin-bottom: 15px;
-                    }   
-                    &__container{
+                    }
+                    &__container {
                         display: flex;
-                        flex-wrap: wrap;
-                        //justify-content: center;
+                        flex-wrap: wrap; //justify-content: center;
                         margin: 0 auto;
-                        &__content{
+                        &__content {
                             padding: 0px 19px;
                             width: 33.3333333333333333333%;
                             margin-bottom: 35px;
-                            &__item{
-                                &__description{
+                            &__item {
+                                &__description {
                                     color: #484848;
                                     font-weight: 400;
                                     line-height: 120%;
@@ -687,24 +639,20 @@ $fontSizeTitle : 28px;
                             }
                         }
                     }
-                }
-                // End TOpRate
-
-                &__bigCities{
+                } // End TOpRate
+                &__bigCities {
                     margin: 0 auto;
-                    padding : 0;
-                    
-                    &__container{
+                    padding: 0;
+                    &__container {
                         display: flex;
-                        flex-wrap: wrap;
-                        //justify-content: center;
+                        flex-wrap: wrap; //justify-content: center;
                         margin: 0 auto;
-                        &__content{
+                        &__content {
                             padding: 0px 19px;
                             width: 25%;
                             margin-bottom: 35px;
-                            &__item{
-                                &__description{
+                            &__item {
+                                &__description {
                                     color: #484848;
                                     font-weight: 400;
                                     line-height: 120%;
@@ -712,107 +660,95 @@ $fontSizeTitle : 28px;
                             }
                         }
                     }
-                }
-
-                // endBIgCities
-                
+                } // endBIgCities
             }
         }
     }
 }
 
-@media (min-width : 600px ) and (max-width:899px){
-
-    .container{
-        &__about{
+@media (min-width: 600px) and (max-width:899px) {
+    .container {
+        &__about {
             padding-bottom: 140%;
-            &__content{
-                padding : 230px 30px 80px 30px;
-                &__title{
-                    h1{
+            &__content {
+                padding: 230px 30px 80px 30px;
+                &__title {
+                    h1 {
                         font-size: 42px;
                     }
                 }
-                &__text{
+                &__text {
                     text-align: center;
                     margin-top: 15px;
-                    p{
+                    p {
                         font-size: 20px;
                     }
                 }
             }
         }
-        &__why{
+        &__why {
             width: 100%;
             max-width: 1190px;
             margin: 0 auto;
-            padding : 0;
-            &__container{
+            padding: 0;
+            &__container {
                 display: flex;
-                &__content{
-                    display: block!important;
+                &__content {
+                    display: block !important;
                     padding: 0px 19px;
                 }
             }
-            &__bot{
+            &__bot {
                 display: none;
             }
-            
         }
     }
-
-
 }
 
-
-
-
-@media (min-width : 900px){
-
-    .container{
-        &__header{
-            &__icon{
+@media (min-width: 900px) {
+    .container {
+        &__header {
+            &__icon {
                 display: none;
             }
-
-            &__center{
+            &__center {
                 width: 100%;
                 display: flex;
-                div{
+                div {
                     margin-top: 6px;
                     position: absolute;
                     right: 20px;
-                    top:0;
+                    top: 0;
                     line-height: 260%;
-                    a{
+                    a {
                         text-align: center;
-                        width:120px;    
+                        width: 120px;
                         text-decoration: none;
                         display: inline-block;
                         color: white;
                         font-weight: 600;
                         border: 5px solid white;
                         border-radius: 9999px;
-                        &:hover{
+                        &:hover {
                             background-color: white;
                             color: $colorHeader;
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             background-color: $colorHeader;
                             color: white;
                         }
                     }
                 }
-                article{
+                article {
                     margin: 0 auto;
                     padding-right: 100px;
                     line-height: 260%;
-                    aside{
+                    aside {
                         height: 30px;
-                        .b{
+                        .b {
                             text-align: center;
-                            width:150px;    
+                            width: 150px;
                             text-decoration: none;
                             display: inline-block;
                             color: white;
@@ -820,19 +756,19 @@ $fontSizeTitle : 28px;
                             border: 2px solid white;
                             border-radius: 9999px;
                             margin-left: 10px;
-                            &:hover{
+                            &:hover {
                                 background-color: white;
                                 color: $colorHeader;
                                 text-decoration: underline;
                             }
-                            &:active{
+                            &:active {
                                 background-color: $colorHeader;
                                 color: white;
                             }
                         }
-                        .a{
+                        .a {
                             text-align: center;
-                            width:180px;    
+                            width: 180px;
                             text-decoration: none;
                             display: inline-block;
                             color: gray;
@@ -842,64 +778,56 @@ $fontSizeTitle : 28px;
                             margin-left: 10px;
                             padding: 0 15px;
                             background-color: aqua;
-                            &:hover{
+                            &:hover {
                                 background-color: white;
                                 color: $colorHeader;
                                 border: 2px solid white;
                                 text-decoration: underline;
                             }
-                            &:active{
+                            &:active {
                                 background-color: $colorHeader;
                                 color: white;
                                 border: 2px solid white;
                             }
                         }
                     }
-
-    
-                    
                 }
             }
         }
-
-        &__about{
+        &__about {
             background-image: url('/assets/images/me/background.jpg');
             padding-bottom: 890px;
             margin-bottom: 50px;
-            &__content{
+            &__content {
                 max-width: 960px;
-                padding : 130px 30px 80px 30px;
-                &__title{
+                padding: 130px 30px 80px 30px;
+                &__title {
                     margin-bottom: 5px;
                     max-width: 760px;
                     margin: 0 auto;
-                    h1{
+                    h1 {
                         font-size: 60px;
                     }
                 }
-
-                &__text{
+                &__text {
                     margin-bottom: 15px;
                     max-width: 650px;
                     margin: 0 auto;
-                    p{
+                    p {
                         font-size: 28px;
                         line-height: 1.5;
                     }
                 }
-
-
-                &__search{
+                &__search {
                     text-align: center;
                     position: relative;
-                    &__list{
+                    &__list {
                         top: 78px;
                     }
-                    input{
-
+                    input {
                         height: 55px;
                         font-size: 21px;
-                        padding : 5px 10px 5px 60px;
+                        padding: 5px 10px 5px 60px;
                     }
                     i.fas.fa-search {
                         left: 16px;
@@ -909,124 +837,93 @@ $fontSizeTitle : 28px;
                 }
             }
         }
-        &__why{
+        &__why {
             width: 100%;
             max-width: 1190px;
             margin: 0 auto;
-            padding : 0;
-            &__container{
+            padding: 0;
+            &__container {
                 display: flex;
-                &__content{
-                    display: block!important;
+                &__content {
+                    display: block !important;
                     padding: 0px 19px;
                 }
             }
-            &__bot{
+            &__bot {
                 display: none;
             }
-            
         }
-
-        &__footer{
+        &__footer {
             height: 350px;
-            &__content{ 
+            &__content {
                 margin: 0 auto;
                 padding-top: 50px;
-                &__left{
+                &__left {
                     float: left;
-                    p{
+                    p {
                         margin-top: 23px;
                     }
                 }
-                &__right{
+                &__right {
                     float: right;
                 }
             }
         }
     }
-
-
 }
 
-
-
-
-
-
 // END MEDIA CSS
-
-
-
-
-
-
 // ANIMATION CSS
-
-@keyframes showListMenu{
+@keyframes showListMenu {
     0% {
         opacity: 0;
         transform: scale(0);
         transform-origin: 0% 50%;
     }
-    100%{
+    100% {
         opacity: 1;
         visibility: visible;
         transform: scale(1);
-
     }
 }
 
-
-
-
 @keyframes fade {
     from {
-
         opacity: .5;
         transform: scale(.9);
-    } 
+    }
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-
-@keyframes topDownHeader{
+@keyframes topDownHeader {
     from {
-
         opacity: .0;
         transform: translateY(-100%);
-    } 
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-
 // END ANIMATION CSS
-
-
-
 //COMMON CSS
-.showMenu{
+.showMenu {
     animation-name: showListMenu;
     animation-duration: .5s;
-    display: block!important;
+    display: block !important;
 }
-.backgroundActive{
+
+.backgroundActive {
     background-color: gray;
 }
 
-.topDownHeader{
+.topDownHeader {
     animation-name: topDownHeader;
     animation-duration: 1.5s;
 }
-
-
-
-
-
 
 //END COMMON CSS

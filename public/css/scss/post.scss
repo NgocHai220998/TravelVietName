@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body,
@@ -20,15 +21,20 @@ header {
     display: block;
 }
 
+//box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 $colorHeader: rgb(47, 178, 211);
 $colorListMenu: rgb(57, 209, 230);
-$colorText: #565656;
+$colorText: rgba(34,34,34,.8);
 $fontSizeTitle: 28px;
 /*Css Main*/
+
+
 
 .container {
     width: 100%;
     height: auto;
+    position: relative;
 
 
     // TOP
@@ -144,6 +150,7 @@ $fontSizeTitle: 28px;
     // CONTENT
 
     &__center{
+        // Slide
         &__slide {
             width: 100%;
             height: auto;
@@ -162,6 +169,304 @@ $fontSizeTitle: 28px;
                 }
             }
         }
+        // END SLIDE
+
+        // HOST
+        &__host{
+            padding : 30px 10px 10px 10px;
+            text-align: center;
+            header{
+                h1{
+                    color: rgba(34,34,34,.8);
+                    font-size: $fontSizeTitle;
+                    width: 80%;
+                    max-width: 700px;
+                    margin: 0 auto 10px auto;
+                }
+                p{
+                    line-height: 165%;
+                    font-size: 18px;
+                    width: 80%;
+                    max-width: 600px;
+                    margin: 0 auto 10px auto;
+    
+                    
+
+                    span{
+                        color: $colorHeader;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+
+                }
+            }
+            &__avatar{
+                img{
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+                    &:active{
+                        box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+                }
+            }
+            &__info{    
+                
+                p{
+                    line-height: 165%;
+                    font-size: 18px;
+                    margin-top: 10px;
+                    span{
+                        color: $colorHeader;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+                }
+            }
+            &__footer{
+                display: flex;
+                margin: 20px 0px;
+                border-top: 1px solid $colorHeader;
+                border-bottom: 1px solid $colorHeader;
+                padding: 20px 10px;
+                &__follow{
+                    line-height: 36px;
+                    width: 100%;
+
+                    i{
+                        color: $colorHeader;
+                        font-size: 40px;
+                    }
+                    span{
+                        display: none;
+                        color: $colorText;
+                        font-weight: 700px;
+                        font-size: 28px;
+                        cursor: pointer;
+                        &:hover{
+                            color: $colorHeader;
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+                    p{
+                        font-size: $fontSizeTitle;
+                        color: $colorHeader;
+                        //display: block;
+                        margin : 0 auto;
+                        border: 1px solid $colorHeader;
+                        width: 38px;
+                        border-radius: 999px;
+                    }
+                }
+                &__like{
+                    line-height: 36px;
+                    width: 100%;
+                    i{
+                        color: $colorHeader;
+                        font-size: 40px;
+                    }
+                    span{
+                        display: none;
+                        color: $colorText;
+                        font-weight: 700px;
+                        font-size: 28px;
+                        cursor: pointer;
+                        &:hover{
+                            color: $colorHeader;
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+                    p{
+                        font-size: $fontSizeTitle;
+                        color: $colorHeader;
+                        //display: block;
+                        margin : 0 auto;
+                        border: 1px solid $colorHeader;
+                        width: 38px;
+                        border-radius: 999px;
+                    }
+                }
+                &__review{
+                    line-height: 36px;
+                    width: 100%;
+                    i{
+                        color: $colorHeader;
+                        font-size: 40px;
+                    }
+                    span{
+                        display: none;
+                        color: $colorText;
+                        font-weight: 700px;
+                        font-size: 28px;
+                        cursor: pointer;
+                        &:hover{
+                            color: $colorHeader;
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+                    p{
+                        font-size: $fontSizeTitle;
+                        color: $colorHeader;
+                        //display: block;
+                        margin : 0 auto;
+                        border: 1px solid $colorHeader;
+                        width: 38px;
+                        border-radius: 999px;
+                    }
+                }
+                &__star{
+                    line-height: 36px;
+                    width: 100%;
+                    i{
+                        color: $colorHeader;
+                        font-size: 40px;
+                    }
+                    span{
+                        display: none;
+                        color: $colorText;
+                        font-weight: 700px;
+                        font-size: 28px;
+                        cursor: pointer;
+                        &:hover{
+                            color: $colorHeader;
+                            text-decoration: underline;
+                        }
+                        &:active{
+                            color: gray;
+                        }
+                    }
+                    p{
+                        font-size: $fontSizeTitle;
+                        color: $colorHeader;
+                        //display: block;
+                        margin : 0 auto;
+                        border: 1px solid $colorHeader;
+                        width: 38px;
+                        border-radius: 999px;
+                    }
+                }
+
+            }
+        }
+        // ED HOST
+
+        &__content{
+            width: 100%;
+            max-width: 1090px;
+            margin: 0 auto;
+            &__header{
+                padding : 10px 10px;
+                
+                .book{
+                    width: 100%;
+                    margin: 0 auto;
+                    max-width: 370px;
+                    height: 250px;
+                    border: 1px solid $colorHeader;
+                    padding : 15px 10px 10px 20px;
+                    border-left: 5px solid $colorHeader;
+                    box-shadow: 0 2px 4px 0 $colorListMenu, 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+                    &__header{
+                        padding : 20px 0px;
+                        p{
+                            font-size: $fontSizeTitle;
+                            font-weight: 700;
+                            span{
+                                font-weight: 500;
+                                opacity: .6;
+                            }
+                        }
+                        i{
+                            color: $colorHeader;
+                        }
+                    }
+                    &__btn{
+                        text-align: center;
+                        padding: 10px;
+                        border : 3px solid $colorHeader;
+                        border-radius: 9999px;
+                        max-width: 250px;
+                        margin-bottom: 20px;
+                        cursor: pointer;
+                        a{
+                            text-decoration: none;
+                            color: $colorHeader;
+                            font-weight: 600;
+                            padding-left: 7px;
+                            
+                        }
+                        i{
+                            color: $colorHeader;
+                            font-weight: bold;
+                        }
+                        &:hover{
+                            box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        }
+                        &:active{
+                            box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        }
+                    }
+                    &__footer{
+                        display: flex;
+                        flex-wrap: wrap;
+                        div{
+                            padding : 2px 10px;
+                            margin: 0px 0px 8px 5px;
+                            border-radius: 4px;
+                            border : 1px solid gray;
+                            background-color: gray;
+                            opacity: .7;
+                            i,span{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+
+                .about__yourHost{
+                    width: 100%;
+                    padding : 20px 10px;
+                    border-bottom: 1px solid $colorHeader;
+                    header{
+                        h1{
+                            color: $colorText;
+                            font-size: $fontSizeTitle;
+                        }
+                    }
+                    section{
+                        p{
+                            line-height: 165%;
+                            font-size: 18px;
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+
     }
 
     // END CONTENT
@@ -235,9 +540,90 @@ $fontSizeTitle: 28px;
     }
 
     // END FoOTER
+
+
+
+
+    // Show
+
+
+    &__show {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+        &__background {
+            position: fixed;
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 101;
+            opacity: .4;
+            cursor: pointer;
+            top : 0;
+        }
+        &__content {
+            
+            background-color: green;
+            width: 100%;
+            max-width: 1120px;
+            height: auto;
+            min-height: 500px;
+            //max-height: 680px;
+            margin: 0 auto;
+            z-index: 102;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
+            overflow: auto;
+        }
+    }
+
+
+    // END SHOW
+
 }
 
-@media (min-width :930px) {
+
+@media (min-width : 760px){
+    .container{
+        &__center{
+            &__host{
+                &__footer{
+                    max-width: 1000px;
+                    margin: 20px auto 10px auto;
+                    &__follow{
+                        span{
+                            display: block;
+                        }
+                    }
+                    &__like{
+                        span{
+                            display: block;
+                        }
+                    }
+                    &__review{
+                        span{
+                            display: block;
+                        }
+                    }
+                    &__star{
+                        span{
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width : 930px) {
     .container {
 
         // Top
@@ -321,19 +707,16 @@ $fontSizeTitle: 28px;
         }
 
 
-
-        // Conten
-        &__content {
-            //margin: 20px auto;
-            &__flex {
-                display: flex;
-                max-width: 1100px;
-                margin: 20px auto;
-                &__left {
-                    width: 100%;
-                }
-                &__right {
-                    width: 300px;
+        &__center{
+            &__content{
+                &__header{
+                    display: flex;
+                    .book{
+                        order: 2;
+                    }
+                    .about__yourHost{
+                        margin-right: 30px;
+                    }
                 }
             }
         }

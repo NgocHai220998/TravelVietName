@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded",function(){
                 whyUSNode[0].classList.add('backgroundActive');
             })();
 
-            let backgroundImage = document.querySelector('.container .container__backgroundImage');
-            let showImage = document.querySelector('.container .container__showImage');
+            let backgroundImage = document.querySelector('.container .container__show .container__show__backgroundImage');
+            let showImage = document.querySelector('.container .container__show .container__show__showImage');
             //console.log(backgroundImage.style.display);
             backgroundImage.onclick = function(){
                 if(window.innerWidth > 0){
