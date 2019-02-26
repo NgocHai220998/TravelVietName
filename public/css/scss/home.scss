@@ -101,6 +101,7 @@ $fontSizeTitle : 28px;
                     color: white;   
                     line-height: 20px;  
                     font-weight: 600;
+                    transition : 0.2s;
                     &:hover{
                         text-decoration: underline;
                         color: $colorListMenu;
@@ -252,7 +253,6 @@ $fontSizeTitle : 28px;
             }
         }
     }
-
 
      //* WHY__US*/
      &__why{
