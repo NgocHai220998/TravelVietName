@@ -78,7 +78,22 @@ $fontSizeTitle: 28px;
         position: fixed;
         z-index: 100;
         &__logo {
-            cursor: pointer;
+            width: 180px;
+            height: 20px;
+            ul li{
+                list-style: none;
+                letter-spacing: 5px;
+                font-weight: 700;
+                color: #484848;
+                font-size: 20px;
+                animation: logo 2s ease infinite;
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                display: flex;
+                
+            }
         }
         &__center {
             display: none;
@@ -927,3 +942,66 @@ $fontSizeTitle: 28px;
 }
 
 //END COMMON CSS
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes logo{
+    0%{
+        opacity: 10;
+        color: white;
+        text-shadow: none;
+    }
+    20%{
+        opacity: 10;
+        color: white;
+        text-shadow: none;
+    }
+    100%{
+        opacity: 0;
+        color: #fff900;
+        text-shadow: 10px 10px 17px #fff900, 0 0 150px #ff6c00;
+    }
+}
+
+.container__header__logo ul li:nth-child(1){
+    animation-delay: .2s;
+}
+.container__header__logo ul li:nth-child(2){
+    animation-delay: .4s;
+}
+.container__header__logo ul li:nth-child(3){
+    animation-delay: .6s;
+}
+.container__header__logo ul li:nth-child(4){
+    animation-delay: .8s;
+}
+.container__header__logo ul li:nth-child(5){
+    animation-delay: 1s;
+}
+.container__header__logo ul li:nth-child(6){
+    animation-delay: 1.2s;
+}
+.container__header__logo ul li:nth-child(7){
+    animation-delay: 1.4s;
+}
+
+.container__header__logo ul li:nth-child(8){
+    animation-delay: 1.6s;
+}
+
+.container__header__logo ul li:nth-child(9){
+    animation-delay: 1.8s;
+}
+
+.container__header__logo ul li:nth-child(10){
+    animation-delay: 2s;
+}

@@ -15,11 +15,11 @@ app.use(morgan('dev'));
 
 
 
-app.get('/chitiet',(req,res) => {
+app.get('/',(req,res) => {
     res.render('home.ejs');
 });
 
-app.get('/', (req,res) => {
+app.get('/chitiet', (req,res) => {
     res.render('post.ejs');
 });
 
