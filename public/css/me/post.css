@@ -28,14 +28,14 @@ main, section, aside, footer, article, header { display: block; }
 .container__center__slide__content__image { width: 100%; height: 320px; background-position: center; background-repeat: no-repeat; background-size: cover; opacity: 0; visibility: hidden; }
 .container__center__host { padding: 30px 10px 10px 10px; text-align: center; }
 .container__center__host header h1 { color: rgba(34, 34, 34, 0.8); font-size: 28px; width: 80%; max-width: 700px; margin: 0 auto 10px auto; }
-.container__center__host header p { line-height: 165%; font-size: 18px; width: 80%; max-width: 600px; margin: 0 auto 10px auto; }
+.container__center__host header p { line-height: 160%; font-size: 18px; width: 80%; max-width: 600px; margin: 0 auto 10px auto; }
 .container__center__host header p span { color: #2fb2d3; cursor: pointer; }
 .container__center__host header p span:hover { text-decoration: underline; }
 .container__center__host header p span:active { color: gray; }
 .container__center__host__avatar img { cursor: pointer; }
 .container__center__host__avatar img:hover { box-shadow: 0 4px 8px 0 #39d1e6, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 .container__center__host__avatar img:active { box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-.container__center__host__info p { line-height: 165%; font-size: 18px; margin-top: 10px; }
+.container__center__host__info p { line-height: 160%; font-size: 18px; margin-top: 10px; }
 .container__center__host__info p span { color: #2fb2d3; cursor: pointer; }
 .container__center__host__info p span:hover { text-decoration: underline; }
 .container__center__host__info p span:active { color: gray; }
@@ -81,7 +81,34 @@ main, section, aside, footer, article, header { display: block; }
 .container__center__content__header .book__footer div i, .container__center__content__header .book__footer div span { font-size: 13px; }
 .container__center__content__header .about__yourHost { width: 100%; padding: 20px 10px; border-bottom: 1px solid #2fb2d3; }
 .container__center__content__header .about__yourHost header h1 { color: rgba(34, 34, 34, 0.8); font-size: 28px; }
-.container__center__content__header .about__yourHost section p { line-height: 165%; font-size: 18px; }
+.container__center__content__header .about__yourHost section p { line-height: 160%; font-size: 18px; }
+.container__center__content__center { padding: 10px 10px; width: 100%; }
+.container__center__content__center__about__text { width: 100%; margin: 0 auto; margin-bottom: 15px; border-bottom: 1px solid #2fb2d3; padding: 10px 10px 10px 10px; }
+.container__center__content__center__about__text header h1 { font-size: 28px; color: rgba(34, 34, 34, 0.8); }
+.container__center__content__center__about__text section p { font-size: 18px; line-height: 160%; }
+.container__center__content__center__about .image__post { width: 100%; padding-bottom: 20px; border-bottom: 1px solid #2fb2d3; }
+.container__center__content__center__about .image__post h1 { font-size: 28px; color: rgba(34, 34, 34, 0.8); padding-left: 10px; margin-bottom: 10px; }
+.container__center__content__center__about .image__post__top { position: relative; }
+.container__center__content__center__about .image__post__top__more { position: absolute; top: 20px; right: 20px; }
+.container__center__content__center__about .image__post__top__more a { text-decoration: none; color: #2fb2d3; padding: 10px; font-size: 20px; font-weight: 600; border: 2px solid #2fb2d3; }
+.container__center__content__center__about .image__post__top__more a:hover { border: 2px solid black; }
+.container__center__content__center__about .image__post__top__more a:active { border: 2px solid white; }
+.container__center__content__center__about .image__post__bot { display: flex; }
+.container__center__content__center__about .image__post img { cursor: pointer; }
+.container__center__content__center__about .image__post img:hover { box-shadow: 0 4px 8px 0 #39d1e6, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.container__center__content__center__about .image__post img:active { box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.container__center__content__center__about .address__post { padding: 10px; }
+.container__center__content__center__about .address__post h1 { font-size: 28px; color: rgba(34, 34, 34, 0.8); margin: 10px 0px; }
+.container__center__content__center__about .address__post p { font-size: 18px; }
+.container__center__content__center__about .address__post i { font-size: 18px; display: block; }
+.container__center__content__center__about .address__post img { margin-top: 10px; }
+.container__center__content__center__reviews { padding: 10px; }
+.container__center__content__center__reviews header { margin-bottom: 15px; }
+.container__center__content__center__reviews header h1 { color: rgba(34, 34, 34, 0.8); font-size: 28px; }
+.container__center__content__center__reviews__review { width: 100%; border-bottom: 1px solid #39d1e6; padding: 15px 0px; }
+.container__center__content__center__reviews__review .header span { font-size: 20px; color: black; font-weight: 700; }
+.container__center__content__center__reviews__review .header i { color: #2fb2d3; }
+.container__center__content__center__reviews__review .content p { line-height: 160%; font-size: 18px; }
 .container__footer { width: 100%; height: 500px; position: relative; }
 .container__footer__backgroundImage { position: absolute; width: 100%; height: 100%; background-position: contain; background-repeat: no-repeat; background-size: cover; z-index: 1; }
 .container__footer__content { position: absolute; width: 100%; height: 100%; z-index: 3; max-width: 700px; }
@@ -102,7 +129,10 @@ main, section, aside, footer, article, header { display: block; }
   .container__center__host__footer__follow span { display: block; }
   .container__center__host__footer__like span { display: block; }
   .container__center__host__footer__review span { display: block; }
-  .container__center__host__footer__star span { display: block; } }
+  .container__center__host__footer__star span { display: block; }
+  .container__center__content__center { display: flex; }
+  .container__center__content__center__reviews { max-width: 855px; }
+  .container__center__content__center__reviews__review { padding-left: 15px; } }
 @media (min-width: 930px) { .container__top__search { max-width: 30%; }
   .container__top__icon { display: none; }
   .container__top__menu { display: block; position: absolute; right: 0; margin-right: 20px; height: 50px; line-height: 50px; z-index: 100; }

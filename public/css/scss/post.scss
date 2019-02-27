@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body,
@@ -22,22 +21,16 @@ header {
 }
 
 //box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 $colorHeader: rgb(47, 178, 211);
 $colorListMenu: rgb(57, 209, 230);
-$colorText: rgba(34,34,34,.8);
+$colorText: rgba(34, 34, 34, .8);
 $fontSizeTitle: 28px;
 /*Css Main*/
-
-
 
 .container {
     width: 100%;
     height: auto;
-    position: relative;
-
-
-    // TOP
+    position: relative; // TOP
     &__top {
         display: flex;
         padding: 15px;
@@ -59,7 +52,7 @@ $fontSizeTitle: 28px;
                 padding-left: 50px;
                 font-size: 18px;
                 outline: none;
-                &:focus{
+                &:focus {
                     box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 }
             }
@@ -77,7 +70,6 @@ $fontSizeTitle: 28px;
                     color: $colorListMenu;
                 }
             }
-            
         }
         &__logo {
             line-height: 70px;
@@ -93,26 +85,24 @@ $fontSizeTitle: 28px;
                 a {
                     display: block;
                     width: 100%;
-
                     background-color: $colorListMenu;
                     text-decoration: none;
-                    padding :15px 20px;
-                    color: white;   
-                    line-height: 20px;  
+                    padding: 15px 20px;
+                    color: white;
+                    line-height: 20px;
                     font-weight: 600;
                     transition: 0.2s;
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                         color: $colorListMenu;
                         background-color: white;
-                        border : 1px solid $colorListMenu;
+                        border: 1px solid $colorListMenu;
                     }
-                    &:active{
+                    &:active {
                         color: white;
                         background-color: $colorListMenu;
                     }
                 }
-
             }
             &__item::after {
                 position: absolute;
@@ -137,19 +127,13 @@ $fontSizeTitle: 28px;
                     cursor: pointer;
                 }
             }
-            
         }
         &__menu {
             display: none;
         }
-    }
-    // END TOP
-
-
-
+    } // END TOP
     // CONTENT
-
-    &__center{
+    &__center {
         // Slide
         &__slide {
             width: 100%;
@@ -168,318 +152,410 @@ $fontSizeTitle: 28px;
                     visibility: hidden; //position: absolute;
                 }
             }
-        }
-        // END SLIDE
-
+        } // END SLIDE
         // HOST
-        &__host{
-            padding : 30px 10px 10px 10px;
+        &__host {
+            padding: 30px 10px 10px 10px;
             text-align: center;
-            header{
-                h1{
-                    color: rgba(34,34,34,.8);
+            header {
+                h1 {
+                    color: rgba(34, 34, 34, .8);
                     font-size: $fontSizeTitle;
                     width: 80%;
                     max-width: 700px;
                     margin: 0 auto 10px auto;
                 }
-                p{
-                    line-height: 165%;
+                p {
+                    line-height: 160%;
                     font-size: 18px;
                     width: 80%;
                     max-width: 600px;
                     margin: 0 auto 10px auto;
-    
-                    
-
-                    span{
+                    span {
                         color: $colorHeader;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-
                 }
             }
-            &__avatar{
-                img{
+            &__avatar {
+                img {
                     cursor: pointer;
-                    &:hover{
+                    &:hover {
                         box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                     }
-                    &:active{
+                    &:active {
                         box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                     }
                 }
             }
-            &__info{    
-                
-                p{
-                    line-height: 165%;
+            &__info {
+                p {
+                    line-height: 160%;
                     font-size: 18px;
                     margin-top: 10px;
-                    span{
+                    span {
                         color: $colorHeader;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
                 }
             }
-            &__footer{
+            &__footer {
                 display: flex;
                 margin: 20px 0px;
                 border-top: 1px solid $colorHeader;
                 border-bottom: 1px solid $colorHeader;
                 padding: 20px 10px;
-                &__follow{
+                &__follow {
                     line-height: 36px;
                     width: 100%;
-
-                    i{
+                    i {
                         color: $colorHeader;
                         font-size: 40px;
                     }
-                    span{
+                    span {
                         display: none;
                         color: $colorText;
                         font-weight: 700px;
                         font-size: 28px;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             color: $colorHeader;
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    p{
+                    p {
                         font-size: $fontSizeTitle;
-                        color: $colorHeader;
-                        //display: block;
-                        margin : 0 auto;
+                        color: $colorHeader; //display: block;
+                        margin: 0 auto;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
                     }
                 }
-                &__like{
+                &__like {
                     line-height: 36px;
                     width: 100%;
-                    i{
+                    i {
                         color: $colorHeader;
                         font-size: 40px;
                     }
-                    span{
+                    span {
                         display: none;
                         color: $colorText;
                         font-weight: 700px;
                         font-size: 28px;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             color: $colorHeader;
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    p{
+                    p {
                         font-size: $fontSizeTitle;
-                        color: $colorHeader;
-                        //display: block;
-                        margin : 0 auto;
+                        color: $colorHeader; //display: block;
+                        margin: 0 auto;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
                     }
                 }
-                &__review{
+                &__review {
                     line-height: 36px;
                     width: 100%;
-                    i{
+                    i {
                         color: $colorHeader;
                         font-size: 40px;
                     }
-                    span{
+                    span {
                         display: none;
                         color: $colorText;
                         font-weight: 700px;
                         font-size: 28px;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             color: $colorHeader;
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    p{
+                    p {
                         font-size: $fontSizeTitle;
-                        color: $colorHeader;
-                        //display: block;
-                        margin : 0 auto;
+                        color: $colorHeader; //display: block;
+                        margin: 0 auto;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
                     }
                 }
-                &__star{
+                &__star {
                     line-height: 36px;
                     width: 100%;
-                    i{
+                    i {
                         color: $colorHeader;
                         font-size: 40px;
                     }
-                    span{
+                    span {
                         display: none;
                         color: $colorText;
                         font-weight: 700px;
                         font-size: 28px;
                         cursor: pointer;
-                        &:hover{
+                        &:hover {
                             color: $colorHeader;
                             text-decoration: underline;
                         }
-                        &:active{
+                        &:active {
                             color: gray;
                         }
                     }
-                    p{
+                    p {
                         font-size: $fontSizeTitle;
-                        color: $colorHeader;
-                        //display: block;
-                        margin : 0 auto;
+                        color: $colorHeader; //display: block;
+                        margin: 0 auto;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
                     }
                 }
-
             }
-        }
-        // ED HOST
-
-        &__content{
+        } // ED HOST
+        &__content {
             width: 100%;
             max-width: 1090px;
             margin: 0 auto;
-            &__header{
-                padding : 10px 10px;
-                
-                .book{
+            &__header {
+                padding: 10px 10px;
+                .book {
                     width: 100%;
                     margin: 0 auto;
                     max-width: 370px;
                     height: 250px;
                     border: 1px solid $colorHeader;
-                    padding : 15px 10px 10px 20px;
+                    padding: 15px 10px 10px 20px;
                     border-left: 5px solid $colorHeader;
                     box-shadow: 0 2px 4px 0 $colorListMenu, 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-                    &__header{
-                        padding : 20px 0px;
-                        p{
+                    &__header {
+                        padding: 20px 0px;
+                        p {
                             font-size: $fontSizeTitle;
                             font-weight: 700;
-                            span{
+                            span {
                                 font-weight: 500;
                                 opacity: .6;
                             }
                         }
-                        i{
+                        i {
                             color: $colorHeader;
                         }
                     }
-                    &__btn{
+                    &__btn {
                         text-align: center;
                         padding: 10px;
-                        border : 3px solid $colorHeader;
+                        border: 3px solid $colorHeader;
                         border-radius: 9999px;
                         max-width: 250px;
                         margin-bottom: 20px;
                         cursor: pointer;
-                        a{
+                        a {
                             text-decoration: none;
                             color: $colorHeader;
                             font-weight: 600;
                             padding-left: 7px;
-                            
                         }
-                        i{
+                        i {
                             color: $colorHeader;
                             font-weight: bold;
                         }
-                        &:hover{
+                        &:hover {
                             box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         }
-                        &:active{
+                        &:active {
                             box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         }
                     }
-                    &__footer{
+                    &__footer {
                         display: flex;
                         flex-wrap: wrap;
-                        div{
-                            padding : 2px 10px;
+                        div {
+                            padding: 2px 10px;
                             margin: 0px 0px 8px 5px;
                             border-radius: 4px;
-                            border : 1px solid gray;
+                            border: 1px solid gray;
                             background-color: gray;
                             opacity: .7;
-                            i,span{
+                            i,
+                            span {
                                 font-size: 13px;
                             }
                         }
                     }
                 }
-
-                .about__yourHost{
+                .about__yourHost {
                     width: 100%;
-                    padding : 20px 10px;
+                    padding: 20px 10px;
                     border-bottom: 1px solid $colorHeader;
+                    header {
+                        h1 {
+                            color: $colorText;
+                            font-size: $fontSizeTitle;
+                        }
+                    }
+                    section {
+                        p {
+                            line-height: 160%;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            &__center {
+                padding: 10px 10px;
+                width: 100%;
+                &__about {
+                    &__text {
+                        width: 100%;
+                        margin: 0 auto;
+                        margin-bottom: 15px;
+                        border-bottom: 1px solid $colorHeader;
+                        padding: 10px 10px 10px 10px;
+                        header {
+                            h1 {
+                                font-size: $fontSizeTitle;
+                                color: $colorText;
+                            }
+                        }
+                        section {
+                            p {
+                                font-size: 18px;
+                                line-height: 160%;
+                            }
+                        }
+                    }
+                    .image__post {
+                        width: 100%;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid $colorHeader;
+                        h1 {
+                            font-size: $fontSizeTitle;
+                            color: $colorText;
+                            padding-left: 10px;
+                            margin-bottom: 10px;
+                        }
+                        &__top {
+                            position: relative;
+                            &__more {
+                                position: absolute;
+                                top: 20px;
+                                right: 20px;
+                                a {
+                                    text-decoration: none;
+                                    color: $colorHeader;
+                                    padding: 10px;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    border: 2px solid $colorHeader;
+                                    &:hover {
+                                        border: 2px solid black;
+                                    }
+                                    &:active {
+                                        border: 2px solid white;
+                                    }
+                                }
+                            }
+                        }
+                        &__bot {
+                            display: flex;
+                        }
+                        img {
+                            cursor: pointer;
+                            &:hover {
+                                box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                            }
+                            &:active{
+                                box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                            }
+                        }
+                    }
+                    .address__post{
+                        padding : 10px;
+                        h1{
+                            font-size: $fontSizeTitle;
+                            color: $colorText;
+                            margin : 10px 0px;
+                        }
+                        p{
+                            font-size: 18px;
+                        }
+                        i{
+                            font-size: 18px;
+                            display: block;
+                        }
+                        img{
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+                &__reviews{
+                    padding : 10px;
                     header{
+                        margin-bottom: 15px;
                         h1{
                             color: $colorText;
                             font-size: $fontSizeTitle;
                         }
                     }
-                    section{
-                        p{
-                            line-height: 165%;
-                            font-size: 18px;
-                            
+                    &__review{
+                        width: 100%;
+                        border-bottom: 1px solid rgb(57, 209, 230);
+                        padding: 15px 0px;
+                        .header{
+                            span{
+                                font-size: 20px;
+                                color: black;
+                                font-weight: 700;
+                            }
+                            i{
+                                color: $colorHeader;
+                            }
+                        }
+                        .content{
+                            p{
+                                line-height: 160%;
+                                font-size: 18px;
+                            }
                         }
                     }
                 }
-
             }
         }
-
-
-
-    }
-
-    // END CONTENT
-
-
-
-
+    } // END CONTENT
     // Footer
-    &__footer{
+    &__footer {
         width: 100%;
         height: 500px;
         position: relative;
-        &__backgroundImage{
+        &__backgroundImage {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -488,65 +564,55 @@ $fontSizeTitle: 28px;
             background-size: cover;
             z-index: 1;
         }
-
-        &__content{
+        &__content {
             position: absolute;
             width: 100%;
             height: 100%;
             z-index: 3;
             max-width: 700px;
-            &__left{
-                padding : 20px;
-                p{
+            &__left {
+                padding: 20px;
+                p {
                     margin: 90px 0 10px 0;
                     color: white;
                     font-size: 20px;
                 }
-                image{
+                image {
                     margin: 50px 0 20px 20px;
                 }
             }
-            &__right{
-                padding : 20px;
-                h1{
+            &__right {
+                padding: 20px;
+                h1 {
                     color: white;
                     font-size: $fontSizeTitle;
                 }
-                a{
+                a {
                     display: block;
                     color: white;
                     font-size: 20px;
                     text-decoration: none;
                     margin-top: 5px;
-                    &:hover{
+                    &:hover {
                         color: $colorHeader;
                         text-decoration: underline;
                     }
-                    &:active{
+                    &:active {
                         color: gray;
                     }
                 }
             }
         }
-
-        &__background{
+        &__background {
             width: 100%;
             height: 100%;
             background-color: $colorHeader;
             z-index: 2;
-            opacity: .4;    
+            opacity: .4;
             position: absolute;
         }
-    }
-
-    // END FoOTER
-
-
-
-
+    } // END FoOTER
     // Show
-
-
     &__show {
         width: 100%;
         height: 100%;
@@ -562,16 +628,14 @@ $fontSizeTitle: 28px;
             z-index: 101;
             opacity: .4;
             cursor: pointer;
-            top : 0;
+            top: 0;
         }
         &__content {
-            
             background-color: green;
             width: 100%;
             max-width: 1120px;
             height: auto;
-            min-height: 500px;
-            //max-height: 680px;
+            min-height: 500px; //max-height: 680px;
             margin: 0 auto;
             z-index: 102;
             position: fixed;
@@ -581,51 +645,55 @@ $fontSizeTitle: 28px;
             box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
             overflow: auto;
         }
-    }
-
-
-    // END SHOW
-
+    } // END SHOW
 }
 
-
-@media (min-width : 760px){
-    .container{
-        &__center{
-            &__host{
-                &__footer{
+@media (min-width: 760px) {
+    .container {
+        &__center {
+            &__host {
+                &__footer {
                     max-width: 1000px;
                     margin: 20px auto 10px auto;
-                    &__follow{
-                        span{
+                    &__follow {
+                        span {
                             display: block;
                         }
                     }
-                    &__like{
-                        span{
+                    &__like {
+                        span {
                             display: block;
                         }
                     }
-                    &__review{
-                        span{
+                    &__review {
+                        span {
                             display: block;
                         }
                     }
-                    &__star{
-                        span{
+                    &__star {
+                        span {
                             display: block;
                         }
                     }
                 }
             }
-
+            &__content{
+                &__center{
+                    display: flex;
+                    &__reviews{
+                        max-width: 855px;
+                        &__review{
+                            padding-left: 15px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-@media (min-width : 930px) {
+@media (min-width: 930px) {
     .container {
-
         // Top
         &__top {
             &__search {
@@ -657,7 +725,6 @@ $fontSizeTitle: 28px;
                         border-bottom: none;
                     }
                 }
-                
                 &__login {
                     text-align: center;
                     width: 150px;
@@ -675,7 +742,6 @@ $fontSizeTitle: 28px;
                     }
                     &:active {
                         background-color: white;
-                        
                         color: $colorHeader;
                     }
                 }
@@ -705,37 +771,31 @@ $fontSizeTitle: 28px;
                 }
             }
         }
-
-
-        &__center{
-            &__content{
-                &__header{
+        &__center {
+            &__content {
+                &__header {
                     display: flex;
-                    .book{
+                    .book {
                         order: 2;
                     }
-                    .about__yourHost{
+                    .about__yourHost {
                         margin-right: 30px;
                     }
                 }
             }
-        }
-
-
-
-        // FOOTER
-        &__footer{
+        } // FOOTER
+        &__footer {
             height: 350px;
-            &__content{ 
+            &__content {
                 margin: 0 auto;
                 padding-top: 50px;
-                &__left{
+                &__left {
                     float: left;
-                    p{
+                    p {
                         margin-top: 23px;
                     }
                 }
-                &__right{
+                &__right {
                     float: right;
                 }
             }
