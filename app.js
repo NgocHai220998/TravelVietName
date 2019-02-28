@@ -23,6 +23,14 @@ app.get('/chitiet', (req,res) => {
     res.render('post.ejs');
 });
 
+app.get('/cities',(req,res) => {
+    res.render('cities.ejs');
+});
+app.get('/host',(req,res) => {
+    res.render('host.ejs');
+});
+
+
 
 
 app.listen(PORT, function(){

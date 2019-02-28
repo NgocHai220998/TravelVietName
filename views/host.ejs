@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/me/host.css">
+    <title>Người hướng dẫn</title>
+</head>
+
+<body>
+
+    <article class="report">
+        <div class="backReport">
+            <i class="fas fa-window-close"></i>
+        </div>
+        <section class="report__content">
+            <header>
+                <ul>
+                    <li>R</li>
+                    <li>E</li>
+                    <li>P</li>
+                    <li>O</li>
+                    <li>R</li>
+                    <li>T</li>
+                </ul>
+            </header>
+            <section>
+                <div class="report__content__rating">
+                    <input type="radio" name="star" id="star1"><label countStar="5" for="star1">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star2"><label countStar="4" for="star2">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star3"><label countStar="3" for="star3">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star4"><label countStar="2" for="star4">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star5"><label countStar="1" for="star5">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                </div>
+
+                <div id="text" class="report__content__comment">  
+                    <textarea placeholder="Review in here" name="comment" id="comment" cols="35" rows="7"></textarea>
+                    <span>
+                        
+                    </span>
+                </div>
+            </section>
+            <footer>
+                <div class="report__content__like">
+                    <div class="report__content__like__button" id="likeReport">
+                        <i like='false' class="fab fa-gratipay"><span></span></i>
+                    </div>
+                </div>
+                <div class="report__content__success">
+                    <a disabled="disabled" id="successReport" href="javascript:void(0);" class="report__content__success__button"><span></span>DONE</a>
+                </div>
+            </footer>
+        </section>
+    </article>
+    <main class="container">
+
+        <!-- CONTAINER_TOP -->
+        <article class="container__top">
+            <div class="container__top__logo">
+                <img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo">
+            </div>
+
+            <div class="container__top__search">
+                <input type="text" placeholder="City in here..." class="container__top__search__input">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="container__top__icon">
+                <i class="fas fa-align-justify"></i>
+                <div class="container__top__icon__item">
+                    <a href="javascript:void(0);">Host an Experience</a>
+                    <a href="javascript:void(0);">Login</a>
+                    <a href="javascript:void(0);">Sign up</a>
+                    <a href="javascript:void(0);">Contact</a>
+                </div>
+            </div>
+
+            <div class="container__top__menu">
+                <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
+                <a class="container__top__menu__login" href="javascript:void(0);">Login</a>
+                <a class="container__top__menu__signup" href="javascript:void(0);">Sign up</a>
+                <a style="display: none" class="container__top__menu__logout" href="javascript:void(0);">Logout</a>
+                <a style="display: none" class="container__top__menu__help" href="javascript:void(0);">Help</a>
+            </div>
+        </article>
+        <!-- END_CONTAINER_TOP -->
+
+
+
+
+        <section class="container__centerHost">
+            <article class="container__centerHost__header__host">
+                <header>
+                    <h1>Discover Vietnamese culture of silver engraving and make your own jewelry in the heart of
+                        Saigon
+                    </h1>
+                    <p>Get to know about the history of silver-work in Vietnam, experience a fun time while making
+                        your
+                        own silver jewellery <span>+ More</span></p>
+                </header>
+
+                <section>
+                    <div class="container__centerHost__header__host__avatar">
+                        <img style="border-radius: 9999px;" width="100" height="100" src="/assets/images/me/top2.jpeg"
+                            alt="Avatar host">
+                    </div>
+                    <div class="container__centerHost__header__host__info">
+                        <p>Hosted by <span>Nguyễn Ngọc Hải</span> in Ha Noi City</p>
+                    </div>
+                </section>
+
+                <footer class="container__centerHost__header__host__footer">
+                    <div class="container__centerHost__header__host__footer__follow">
+                            <i class="fas fa-file-signature"></i>
+                        <span>Contact</span>
+                        <p>1</p>
+                    </div>
+                    <div class="container__centerHost__header__host__footer__review">
+                        <i class="fas fa-comments"></i>
+                        <span>Review</span>
+                        <p>2</p>
+                    </div>
+                    <div class="container__centerHost__header__host__footer__like">
+                        <i class="fab fa-gratipay"></i>
+                        <span>Like</span>
+                        <p>3</p>
+                    </div>
+                    <div class="container__centerHost__header__host__footer__star">
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>Star</span>
+                        <p>4</p>
+                    </div>
+                </footer>
+            </article>
+        </section>
+
+
+
+        <!-- FOOTER -->
+        <footer class="container__footer">
+            <div style="background-image: url('assets/images/me/imageFooter.jpg');"
+                class="container__footer__backgroundImage">
+
+            </div>
+
+            <div class="container__footer__content">
+                <div class="container__footer__content__left">
+                    <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
+                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer">
+                </div>
+
+                <div class="container__footer__content__right">
+                    <h1>Navigation</h1>
+                    <a href="javascript:void(0);">Trang chủ</a>
+                    <a href="javascript:void(0);">Giới thiệu</a>
+                    <a href="javascript:void(0);">Liên hệ</a>
+                    <a href="javascript:void(0);">Chính sách bảo mật</a>
+
+                </div>
+            </div>
+            <div class="container__footer__background">
+
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+    </main>
+</body>
+
+<script src="/assets/scripts/me/host.js"></script>
+
+</html>
