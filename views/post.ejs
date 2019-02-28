@@ -15,24 +15,104 @@
 
 <body>
 
+    <article class="report">
+        <section class="report__content">
+            <header>
+                <ul>
+                    <li>R</li>
+                    <li>E</li>
+                    <li>P</li>
+                    <li>O</li>
+                    <li>R</li>
+                    <li>T</li>
+                </ul>
+            </header>
+            <section>
+                <div class="report__content__rating">
+                    <input type="radio" name="star" id="star1"><label for="star1">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star2"><label for="star2">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star3"><label for="star3">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star4"><label for="star4">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                    <input type="radio" name="star" id="star5"><label for="star5">
+                            <i class="fas fa-star before"></i>
+                            <i class="fas fa-star affter"></i>
+                    </label>
+                </div>
+
+                <div id="text" class="report__content__comment">  
+                    <textarea placeholder="Review in here" name="comment" id="comment" cols="35" rows="12"></textarea>
+                    <span>
+                        
+                    </span>
+                </div>
+
+            </section>
+            <footer>
+
+            </footer>
+        </section>
+    </article>
+
     <main class="container">
 
 
 
 
+    
+
         <!-- SHOW IMAGE -->
         <article class="container__show">
             <section class="container__show__background">
-
             </section>
             <div class="container__show__content">
-
+                <div class="container__show__content__image">
+                    <img index='0' class="_img" width="100%" src="/assets/images/me/top2.jpeg" alt="img hihi">
+                    <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-right"></i>
+                </div>
+                <div class="list-image">
+                    <img index='0' class="_img" width="100%" src="/assets/images/me/top2.jpeg" alt="img hihi">
+                    <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
+                    <img index='2' class="_img" width="100%" src="/assets/images/me/sapa.jpeg" alt="img hihi">
+                    <img index='3' class="_img" width="100%" src="/assets/images/me/dalat.jpeg" alt="img hihi">
+                    <img index='4' class="_img" width="100%" src="/assets/images/me/hoian.jpeg" alt="img hihi">
+                    <img index='5' class="_img" width="100%" src="/assets/images/me/hue.jpeg" alt="img hihi">
+                    <img index='6' class="_img" width="100%" src="/assets/images/me/whyus4.jpeg" alt="img hihi">
+                    <img index='7' class="_img" width="100%" src="/assets/images/me/whyus1.png" alt="img hihi">
+                </div>
             </div>
         </article>
 
 
 
         <!-- END SHOW IMAGE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- CONTAINER_TOP -->
@@ -331,14 +411,14 @@
                         <article class="image__post">
                             <h1>Pictures</h1>
                             <div class="image__post__top">
-                                <img width="100%" src="/assets/images/me/top1.jpeg" alt="di choi">
+                                <img index='0' class="image__post__img" width="100%" src="/assets/images/me/top2.jpeg" alt="di choi">
                                 <div class="image__post__top__more">
-                                    <a href="javascript:void(0);">More +4</a>
+                                    <a id="btn-more-img" href="javascript:void(0);">More +4</a>
                                 </div>
                             </div>
                             <div class="image__post__bot">
-                                <img width="50%" height="50%" src="/assets/images/me/top1.jpeg" alt="ahihi ">
-                                <img width="50%" height="50%" src="/assets/images/me/top1.jpeg" alt="do ngoc ne">
+                                <img index='1' class="image__post__img" width="50%" height="50%" src="/assets/images/me/top1.jpeg" alt="ahihi ">
+                                <img index='2' class="image__post__img" width="50%" height="50%" src="/assets/images/me/sapa.jpeg" alt="do ngoc ne">
                             </div>
 
                         </article>

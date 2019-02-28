@@ -8,7 +8,7 @@
 body,
 html {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 main,
@@ -27,10 +27,174 @@ $colorText: rgba(34, 34, 34, .8);
 $fontSizeTitle: 28px;
 /*Css Main*/
 
+.report{
+    width: 100%;
+    height: 100%;
+    background-color: #1f2023eb;
+    position: relative;
+    &__content{
+        position: absolute;
+        top : 50%;
+        left: 50%;
+        width: 100%;
+        max-width: 400px;
+        height: 560px;
+        transform: translate(-50%,-50%);
+        // background-color: green;
+        text-align: center;
+        header{
+            ul{
+                padding: 0;
+                margin: 0 auto;
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                li{
+                    padding: 0;
+                    margin: 0;
+                    letter-spacing: 20px;
+                    font-size: 42px;
+                    font-weight: 800;
+                    animation: report 3s linear infinite;
+                    color: yellow;
+                    background-color: $colorHeader;
+                }
+                li:nth-child(1){
+                    animation-delay: 0.2s;
+                }
+                li:nth-child(2){
+                    animation-delay: 0.4s;
+                }
+                li:nth-child(3){
+                    animation-delay: 0.6s;
+                }
+                li:nth-child(4){
+                    animation-delay: 0.8s;
+                }
+                li:nth-child(5){
+                    animation-delay: 1s;
+                }
+                li:nth-child(6){
+                    animation-delay: 1.2s;
+                }
+            }
+
+        }
+        section{
+            .report__content__rating{
+                margin-top: 30px;
+                margin-bottom: 30px;
+                transform: rotateY(180deg);
+                justify-content: center;
+                display: flex;
+                input {
+                    display: none;
+                }
+                label{
+                    display: block;
+                    width: 50px;
+                    cursor: pointer;
+                    background: #1f202300;
+                    position: relative;
+                }
+                label i.before {
+                    position: relative;
+                    display: block;
+                    font-size: 45px;
+                }
+                label i.affter {
+                    position: absolute;
+                    display: block;
+                    font-size: 45px;
+                    color : $colorHeader;
+                    top: 0;
+                    opacity: 0;
+                    transition: 0.5;
+                    text-shadow: 0 2px 5px gray;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                label:hover i.affter,input:checked ~ label i.affter{
+                    opacity: 1;
+                }
+                
+                
+                
+            }
+
+            .report__content__comment{
+                position: relative;
+                #comment{
+                    background-color: #ffffff00;
+                    padding : 15px;
+                    box-sizing: border-box;
+                    outline: none;
+                    border: none;
+                    font-size: 18px;
+                    overflow: hidden;
+                    color: $colorListMenu;
+                }
+                span::before,span::after,&#text::after,&#text::before{
+                    content : '';
+                    width: 0px;
+                    height: 0px;
+                    background-color: green;
+                    position: absolute;
+                }
+                span::before{
+                    top : 0;
+                    left: 0;
+                }
+                span::after{
+                    top : 0;
+                    right: 0;
+                }
+                &#text::after{
+                    bottom : 0;
+                    right: 0;
+                }
+                &#text::before{
+                    bottom : 0;
+                    left: 0;
+                }
+
+
+                &.text--comment span::before{
+                    top : 0;
+                    left: 0;
+                    animation: boxWidth 1.5s ease forwards;
+                }
+                &.text--comment span::after{
+                    top : 0;
+                    right: 0;
+                    animation: boxHeight 1.5s ease forwards;
+                }
+                &.text--comment#text::after{
+                    bottom : 0;
+                    right: 0;
+                    animation: boxWidth 1.5s ease forwards;
+                }
+                &.text--comment#text::before{
+                    bottom : 0;
+                    left: 0;
+                    animation: boxHeight 1.5s ease forwards;
+                }
+
+            }
+            
+        }
+    }
+}
+
 .container {
     width: 100%;
     height: auto;
     position: relative; // TOP
+
+    display: block;
+
+
     &__top {
         display: flex;
         padding: 15px;
@@ -635,21 +799,59 @@ $fontSizeTitle: 28px;
             width: 100%;
             max-width: 1120px;
             height: auto;
-            min-height: 500px; //max-height: 680px;
+            //min-height: auto; //max-height: 680px;
             margin: 0 auto;
             z-index: 102;
             position: fixed;
             left: 50%;
-            top: 50%;
+            top: 25%;
             transform: translateX(-50%) translateY(-50%);
             box-shadow: 0 2px 4px 0 $colorHeader, 0 3px 10px 0 $colorHeader;
-            overflow: auto;
+            //overflow: auto;
+            &__image{
+                position: relative;
+                img{
+                    position: absolute;
+                    max-height: auto;
+                }
+                i{
+                    position: absolute;
+                    font-size: 70px;
+                    color: white;
+                    cursor: pointer;
+                    &:hover{
+                        color:$colorHeader;
+                        text-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+                    &:active{
+                        color: gray;
+                    }
+                }
+                .fas.fa-angle-left{
+                    right: 45px;
+                    top : 5px;
+                }
+                .fas.fa-angle-right{
+                    right: 0;
+                    top: 5px;
+                }
+                
+            }
+
+            .list-image{
+                display: none;
+            }
         }
     } // END SHOW
 }
 
 @media (min-width: 760px) {
     .container {
+        &__show{
+            &__content{
+                top: 15%;
+            }
+        }
         &__center {
             &__host {
                 &__footer {
@@ -694,6 +896,11 @@ $fontSizeTitle: 28px;
 
 @media (min-width: 930px) {
     .container {
+        &__show{
+            &__content{
+                top:5%;
+            }
+        }
         // Top
         &__top {
             &__search {
@@ -830,6 +1037,35 @@ $fontSizeTitle: 28px;
     }
 }
 
+@keyframes report{
+    0%{
+        opacity: 0;
+        transform: translateX(-20px);
+        transform: translateY(-10px);
+        
+        color: yellow;
+        letter-spacing: 20px;
+    }
+    10%{
+        opacity: 1;
+        
+    }
+    50%{
+        letter-spacing: -10px;
+        opacity: 1;
+        transform: scale(.6);
+        
+    }
+    100%{
+        transform: translateX(20px);
+        letter-spacing: 20px;
+        transform: scale(1.6);
+        transform: translateY(10px);
+        color: red;
+        opacity: 0;
+    }
+}
+
 @keyframes showImageTop {
     from {
         opacity: 0;
@@ -842,6 +1078,33 @@ $fontSizeTitle: 28px;
         visibility: visible;
     }
 }
+
+
+@keyframes boxWidth{
+    0%{
+        width: 0px;
+        height: 5px;
+        background-color: yellow;
+    }
+    100%{
+        width: 100%;
+        height: 5px;
+        background-color: $colorHeader;
+    }
+}
+@keyframes boxHeight{
+    0%{
+        height: 0px;
+        width: 5px;
+        background-color: yellow;
+    }
+    100%{
+        height: 100%;
+        width: 5px;
+        background-color: $colorHeader;
+    }
+}
+
 
 /*
     End Animation
