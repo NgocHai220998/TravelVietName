@@ -9,13 +9,16 @@
     <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/me/post.css">
+    <!-- <link rel="stylesheet" href="/assets/css/me/post.css"> -->
     <title>Bài viết chi tiết</title>
 </head>
 
 <body>
 
     <article class="report">
+        <div class="backReport">
+            <i class="fas fa-window-close"></i>
+        </div>
         <section class="report__content">
             <header>
                 <ul>
@@ -29,38 +32,44 @@
             </header>
             <section>
                 <div class="report__content__rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
+                    <input type="radio" name="star" id="star1"><label countStar="5" for="star1">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
+                    <input type="radio" name="star" id="star2"><label countStar="4" for="star2">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
+                    <input type="radio" name="star" id="star3"><label countStar="3" for="star3">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
+                    <input type="radio" name="star" id="star4"><label countStar="2" for="star4">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
+                    <input type="radio" name="star" id="star5"><label countStar="1" for="star5">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
                 </div>
 
                 <div id="text" class="report__content__comment">  
-                    <textarea placeholder="Review in here" name="comment" id="comment" cols="35" rows="12"></textarea>
+                    <textarea placeholder="Review in here" name="comment" id="comment" cols="35" rows="7"></textarea>
                     <span>
                         
                     </span>
                 </div>
-
             </section>
             <footer>
-
+                <div class="report__content__like">
+                    <div class="report__content__like__button" id="likeReport">
+                        <i like='false' class="fab fa-gratipay"><span></span></i>
+                    </div>
+                </div>
+                <div class="report__content__success">
+                    <a disabled="disabled" id="successReport" href="javascript:void(0);" class="report__content__success__button"><span></span>DONE</a>
+                </div>
             </footer>
         </section>
     </article>
@@ -699,6 +708,7 @@
 
 
     <!-- FILE JAVASCRIPT -->
+    <link rel="stylesheet" href="/assets/css/me/post.css">
     <script src="/assets/scripts/me/post.js"></script>
 
 </body>

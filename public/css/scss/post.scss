@@ -32,6 +32,7 @@ $fontSizeTitle: 28px;
     height: 100%;
     background-color: #1f2023eb;
     position: relative;
+    display: none;
     &__content{
         position: absolute;
         top : 50%;
@@ -183,6 +184,149 @@ $fontSizeTitle: 28px;
 
             }
             
+        }
+
+        footer{
+            margin-top: 30px;
+            .report__content__success{
+                margin: 0 auto;
+                .report__content__success__button{
+                    margin: 0 auto;
+                    position: relative;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 22px;
+                    letter-spacing: 3px;
+                    width: 200px;
+                    height: 60px;
+                    font-weight: 600;
+                    display: block;
+                    border : 1px solid $colorHeader;
+                    line-height: 60px;
+                    transition : 1s;
+                    cursor: default;
+                    &.isRun {
+                        color: $colorListMenu;
+                    }
+                    &::before,&::after,span::before,span::after{
+                        content : '';
+                        width: 50%;
+                        //width : 30px;
+                        position: absolute;
+                        height: 5px;
+                        background-color: red;
+                        opacity: .5;
+                        
+                    }
+                    &::before{
+                        top : 0;
+                        left: 0;
+                        transform: rotate(15deg);
+                        transform-origin: top left;
+                        
+                        
+                   
+                    }
+                    &::after{
+                        bottom : 0;
+                        left: 0;
+                        transform: rotate(-15deg);
+                        transform-origin: top left;
+                        
+                    }
+                    span::before{
+                        top : 0;
+                        right: 0;
+                        transform-origin: top right;
+                        transform: rotate(-15deg);
+                        
+                        
+                    }
+                    span::after{
+                        bottom : 0;
+                        right: 0;
+                        transform-origin: bottom right;
+                        transform: rotate(15deg);
+                    }
+
+                    &.isRun::before{
+                        animation: boxWidthClick 2s ease forwards;
+                    }
+                    &.isRun::after{
+                        animation: boxHeightClick 2s ease forwards;
+                    }
+                    &.isRun span::before{
+                        animation: boxHeightClick 2s ease forwards;
+                    }
+                    &.isRun span::after{
+                        animation: boxWidthClick 2s ease forwards;
+                    }
+                    &.isRun:hover{
+                        cursor: pointer;
+                        background-color: white;
+                        color: $colorHeader;
+                        text-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+                } 
+            }
+            .report__content__like{
+                margin-bottom: 27px;
+                &__button{
+                    .fab.fa-gratipay{
+                        &.isLike{
+                            color: rgb(245, 17, 93);
+                        }
+                        color: $colorHeader;
+                        font-size: 30px;
+                        position: relative;
+                        cursor: pointer;
+                        transition: 1s;
+                        &::after,span::before,span::after{
+                            transition: 1s;
+                            position: absolute;
+                            cursor: pointer;
+                            content : '';
+                            width: 205%;
+                            height: 199%;
+                            transform-origin: center center;
+                            background-color: #ffffff00;
+                            border: 5px solid $colorHeader;
+                            border-radius: 999px;
+                            top : -21px;
+                            left: -20px;
+                        }
+                        &.isLike::after{
+                            border: 5px solid rgb(245, 17, 93);
+                        }span::before{
+                            animation: likeSuccess 2s ease infinite;
+                            animation-delay: 0.5s;
+                        }span::after{
+                            animation: likeSuccess 2s ease infinite;
+                            animation-delay: 1s;
+                        }
+
+                        span.isLike::before,span.isLike::after{
+                            border: 5px solid rgb(245, 17, 93);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .backReport{
+        position: relative;
+        margin: 5px;
+        i{
+            color: $colorHeader;
+            font-size: 50px;
+            cursor: pointer;
+            transition: .4s;
+            &:hover{
+                color: palevioletred;
+            }
+            &:active{
+                color: $colorHeader;
+            }
         }
     }
 }
@@ -381,12 +525,24 @@ $fontSizeTitle: 28px;
                 border-top: 1px solid $colorHeader;
                 border-bottom: 1px solid $colorHeader;
                 padding: 20px 10px;
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                }
                 &__follow {
                     line-height: 36px;
                     width: 100%;
                     i {
                         color: $colorHeader;
                         font-size: 40px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                     span {
                         display: none;
@@ -409,6 +565,14 @@ $fontSizeTitle: 28px;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                 }
                 &__like {
@@ -417,6 +581,13 @@ $fontSizeTitle: 28px;
                     i {
                         color: $colorHeader;
                         font-size: 40px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                     span {
                         display: none;
@@ -439,6 +610,14 @@ $fontSizeTitle: 28px;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                 }
                 &__review {
@@ -447,6 +626,13 @@ $fontSizeTitle: 28px;
                     i {
                         color: $colorHeader;
                         font-size: 40px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                     span {
                         display: none;
@@ -469,6 +655,14 @@ $fontSizeTitle: 28px;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                 }
                 &__star {
@@ -477,6 +671,14 @@ $fontSizeTitle: 28px;
                     i {
                         color: $colorHeader;
                         font-size: 40px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                     span {
                         display: none;
@@ -499,6 +701,14 @@ $fontSizeTitle: 28px;
                         border: 1px solid $colorHeader;
                         width: 38px;
                         border-radius: 999px;
+                        &:hover {
+                            color: green;
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                        &:active {
+                            color: $colorHeader;
+                        }
                     }
                 }
             }
@@ -1024,6 +1234,12 @@ $fontSizeTitle: 28px;
     animation: showImageTop .9s forwards;
 }
 
+.displayReport {
+    display: block!important;
+    animation: showReport 1s forwards;
+
+}
+
 @keyframes showMenu {
     from {
         opacity: 0;
@@ -1115,7 +1331,74 @@ $fontSizeTitle: 28px;
     }
 }
 
+@keyframes boxWidthClick{
+    0%{
+        width: 50%;
+        
+    }
+    50%{
+        width: 0%;
+        height: 5px;
+        transform: rotate(0);
+        background-color: yellow;
+        opacity: .6;
+    }
+    100%{
+        width: 100%;
+        height: 5px;
+        transform: rotate(0);
+        background-color: $colorHeader;
+        opacity: 1;
+    }
+}
+@keyframes boxHeightClick{
+    0%{
+        width: 50%
+    }
+    50%{
+        width: 5px;
+        height: 0px;
+        transform: rotate(0);
+        background-color: yellow;
+        opacity: .6;
+    }
+    100%{
+        height: 100%;
+        width: 5px;
+        transform: rotate(0);
+        background-color: $colorHeader;
+        opacity: 1;
+    }
+}
 
+
+@keyframes likeSuccess{
+    0%{
+        transform: scale(1);
+        border-width: 5px;
+        top : -21px;
+        left: -20px;
+    }
+    100%{
+        transform: scale(.4);
+        border-width: 2px;
+        top : -17px;
+        left: -18px;
+    }
+}
+
+
+@keyframes showReport{
+    0%{
+        opacity: .3;
+        transform: scale(0.2);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 /*
     End Animation
 */
