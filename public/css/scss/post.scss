@@ -163,22 +163,22 @@ $fontSizeTitle: 28px;
                 &.text--comment span::before{
                     top : 0;
                     left: 0;
-                    animation: boxWidth 1.5s ease forwards;
+                    animation: boxWidth 1.5s ease infinite;
                 }
                 &.text--comment span::after{
                     top : 0;
                     right: 0;
-                    animation: boxHeight 1.5s ease forwards;
+                    animation: boxHeight 1.5s ease infinite;
                 }
                 &.text--comment#text::after{
                     bottom : 0;
                     right: 0;
-                    animation: boxWidth 1.5s ease forwards;
+                    animation: boxWidth 1.5s ease infinite;
                 }
                 &.text--comment#text::before{
                     bottom : 0;
                     left: 0;
-                    animation: boxHeight 1.5s ease forwards;
+                    animation: boxHeight 1.5s ease infinite;
                 }
 
             }
