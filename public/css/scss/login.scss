@@ -1,0 +1,341 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: rgba(0, 0, 0, .6);
+    --colorTitle: rgba(255, 255, 255, .2);
+    --colorText: rgba(255, 255, 255, .8);
+}
+
+@font-face {
+    font-family: myTitle;
+    src: url('/assets/fonts/GloriaHallelujah.ttf');
+}
+
+main {
+    width: 100%;
+    height: 120%;
+    position: relative;
+    .background {
+        background-image: url('/assets/images/me/backgroundSignup-mobile2.jpg');
+        background-position: center;
+        background-repeat: repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: var(--background-color);
+            z-index: 1;
+        }
+    }
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        &__header {
+            h1 {
+                text-align: center;
+                font-size: 9rem;
+                color: var(--colorTitle);
+                font-family: myTitle;
+                transition: .5s;
+                animation: myTitle 2s ease infinite;
+            }
+        }
+        .form-control {
+            display: block;
+            background-color: #ffffff00;
+            border: none;
+            height: 50px;
+            width: 50%;
+            padding: 0 10px;
+            font-size: 1.5rem;
+            color: var(--colorText);
+            transition: .7s;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px auto;
+            border: 1px solid gray;
+            outline: none;
+            overflow: hidden;
+            &:focus {
+                width: 100%;
+                box-shadow: 0 0 5px 5px aqua;
+                font-size: 2rem;
+            }
+        }
+        &__login {
+            width: 100%;
+            max-width: 310px;
+            margin: 50px auto;
+            &__btn {
+                text-align: center;
+                margin: 15px 25px 25px 25px;
+            }
+            &__email {
+                &.failEmailLogin::before {
+                    content: 'Email không tồn tại!';
+                    color: red;
+                    font-size: 1.3rem;
+                    margin: 0 auto;
+                    position: relative;
+                    left: 25%;
+                    transform: translateX(-50%);
+                }
+            }
+            &__password {
+                &.failPasswordLogin::before {
+                    content: 'Mật khẩu không đúng!';
+                    color: red;
+                    font-size: 1.3rem;
+                    margin: 0 auto;
+                    position: relative;
+                    left: 25%;
+                    transform: translateX(-50%);
+                }
+            }
+            &__textToSignup {
+                margin: 0 auto;
+                text-align: center;
+                a {
+                    text-align: center;
+                    color: var(--colorText);
+                    font-size: 1.5rem;
+                    span {
+                        text-decoration: underline;
+                        &:hover {
+                            color: aqua;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        &__signup {
+            width: 100%;
+            max-width: 310px;
+            margin: 50px auto;
+            &__btn {
+                text-align: center;
+                margin: 15px 25px 25px 25px;
+            }
+            &__email {
+                &.failEmailSignup::before {
+                    content: attr(messWarning);
+                    color: red;
+                    font-size: 1.3rem;
+                    margin: 0 auto;
+                    position: relative;
+                    left: 25%;
+                    transform: translateX(-50%);
+                }
+            }
+            &__password {
+                &.warningPassword::before {
+                    content: attr(messWarning);
+                    color: red;
+                    font-size: 1.3rem;
+                    margin: 0 auto;
+                    position: relative;
+                    left: 25%;
+                    transform: translateX(-50%);
+                }
+            }
+            &__rePassword {
+                &.failPasswordSignup::before {
+                    content: 'Mật khẩu nhập lại không khớp!';
+                    color: red;
+                    font-size: 1.3rem;
+                    margin: 0 auto;
+                    position: relative;
+                    left: 25%;
+                    transform: translateX(-50%);
+                }
+            }
+            &__avatar {
+                text-align: center;
+                margin-bottom: 10px;
+                #value-avatar {
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    display: inline-block;
+                    padding: 6px 12px;
+                    cursor: pointer;
+                    color: var(--colorText);
+                    font-size: 1.5rem;
+                    &:hover {
+                        box-shadow: 0 0 5px 5px aqua;
+                        color: aqua;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &__textToLogin {
+                margin: 0 auto;
+                text-align: center;
+                a {
+                    text-align: center;
+                    color: var(--colorText);
+                    font-size: 1.5rem;
+                    span {
+                        text-decoration: underline;
+                        &:hover {
+                            color: aqua;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 760px) {
+    main {
+        height: 100%;
+        .background {
+            background-image: url('/assets/images/me/backgroundLogin.jpg');
+        }
+        .container {
+            &__header {
+                margin-top: 100px;
+            }
+        }
+    }
+}
+
+// Animation
+@keyframes myTitle {
+    0% {
+        color: var(--colorTitle);
+        text-shadow: 0 0 0 var(--colorTitle);
+    }
+    50% {
+        color: aqua;
+        text-shadow: 0 0 25px aqua;
+    }
+    100% {
+        color: var(--colorTitle);
+        text-shadow: 0 0 0 var(--colorTitle);
+    }
+}
+
+@keyframes loading {
+    0% {
+        box-shadow: 0 0 1px 1px white;
+    }
+    20% {
+        box-shadow: 0 0 7px 7px aqua;
+    }
+    100% {
+        box-shadow: 0 0 1px 1px white;
+    }
+}
+
+// END ANIMATION
+/// css
+.btn {
+    padding: 10px 15px;
+    color: var(--colorText);
+    font-size: 1.6rem;
+    transition: .6s;
+    border-radius: 5px;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    &:hover {
+        border: 1px solid gray;
+        box-shadow: 0 0 2px 2px aqua;
+        color: var(--colorText);
+        text-decoration: underline;
+    }
+    &::before{
+        content : '';
+        width:0px;
+        height: 100%;
+        position: absolute;
+        background-color: aqua;
+        opacity: .1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: .4s;
+    }
+    &:hover::before{
+        width: 100%;
+    }
+}
+
+.loading {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    span {
+        text-indent: -99999px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--colorText);
+        border-radius: 9999px;
+        margin: 0 5px;
+        animation: loading .5s ease infinite;
+        &:nth-child(1) {
+            animation-delay: .1s;
+            background-color: green;
+            box-shadow: 0 0 1px 1px green;
+        }
+        &:nth-child(2) {
+            animation-delay: .2s;
+            background-color: red;
+            box-shadow: 0 0 1px 1px red;
+        }
+        &:nth-child(3) {
+            animation-delay: .3s;
+            background-color: yellow;
+            box-shadow: 0 0 1px 1px yellow;
+        }
+        &:nth-child(4) {
+            animation-delay: .4s;
+            background-color: aqua;
+            box-shadow: 0 0 1px 1px aqua;
+        }
+        &:nth-child(5) {
+            animation-delay: .5s;
+            background-color: blue;
+            box-shadow: 0 0 1px 1px blue;
+        }
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.notDisplay {
+    display: none !important;
+}
+
+.display {
+    display: block !important;
+}
+
+// END CSS

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="login" ng-controller="LoginController">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/me/login.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <main>
+        <article class="background">
+        </article>
+
+
+        <section class="container">
+            <header class="container__header">
+                <h1 id="container__header__text">{{title}}</h1>
+            </header>
+            <article class="container__login ">
+                <form action="/home" method="post">
+                    <div class="container__login__email">
+                        <input ng-blur="clickBtnLogin()" type="email" name="email" required="" id="email-login-text" class="form-control"
+                            placeholder="Địa chỉ email">
+                    </div>
+                    <div class="container__login__password">
+                        <input ng-blur="clickBtnLogin()" type="password" required="" id="password-login-text" class="form-control"
+                            placeholder="Mật khẩu">
+                    </div>
+                    <!-- <div class="loading notDisplay" id="_loading-login">
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                    </div> -->
+                    <div class="container__login__btn">
+                        <button ng-show="isLogin" ng-click="clickBtnLogin()" title="Bấm vào đây để đăng nhập!" class="btn" type="submit"
+                            id="btn-login">Đăng
+                            nhập</button>
+                        <input style="text-align: center;" ng-show="!isLogin" title="Bấm vào đây để đăng nhập!" class="btn" type="button" value="Đăng nhập"
+                            />
+                    </div>
+
+                    <div class="container__login__textToSignup">
+                        <a title="Đăng ký ngay!" id="text-to-signup">Bạn chưa có tài khoản? <span
+                                ng-click="toSignup()">Đăng
+                                ký!</span></a>
+                    </div>
+
+                </form>
+            </article>
+
+
+            <article class="container__signup notDisplay">
+                <form action="/signup/createUser" method="post" enctype="multipart/form-data">
+                    <div class="container__signup__fullname">
+                        <input type="text" name="fullname" required="" id="fullname-signup-text" class="form-control"
+                            placeholder="Tên đầy đủ">
+                    </div>
+
+                    <div messWarning="Email đã tồn tại!" class="container__signup__email">
+                        <input ng-blur="checkInfoSignup()" type="email" name="email" required="" id="email-signup-text"
+                            class="form-control" placeholder="Địa chỉ email">
+                    </div>
+                    <div messWarning="Mật khẩu quá ngắn! (Độ dài > 6)" class="container__signup__password">
+                        <input ng-blur="checkInfoSignup()" type="password" name="password" required=""
+                            id="password-signup-text" class="form-control" placeholder="Mật khẩu">
+                    </div>
+
+                    <div class="container__signup__rePassword">
+                        <input ng-blur="checkInfoSignup()" type="password" name="rePassword" required=""
+                            id="rePassword-signup-text" class="form-control" placeholder="Nhập lại mật khẩu">
+                    </div>
+
+                    <div class="container__signup__avatar">
+                        <label title="Chọn ảnh đại diện dành cho bạn!" for="signup-avartar" id="value-avatar">
+                            Ảnh đại diện
+                        </label>
+                        <input id="signup-avartar" type="file" name="file">
+                    </div>
+
+                    <!-- <div class="loading notDisplay" id="_loading-signup">
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                        <span>*</span>
+                    </div> -->
+                    <div class="container__signup__btn">
+                        <button ng-show="isSignup" ng-click="clickBtnSignup()" type="submit"
+                            title='Bấm vào đây để đăng ký!' class="btn" id="btn-signup">Đăng ký</button>
+                        <input ng-click="failSignup()" style="text-align: center;" ng-show="!isSignup"
+                            ng-click="clickBtnSignup()" value="Đăng ký" title='Bấm vào đây để đăng ký!' class="btn">
+                    </div>
+
+                    <div class="container__signup__textToLogin">
+                        <a title="Quay lại đăng nhập!" id="text-to-login">Bạn đã có tài khoản? <span
+                                ng-click="toLogin()">Đăng
+                                nhập!</span></a>
+                    </div>
+                </form>
+            </article>
+
+
+
+
+
+
+        </section>
+    </main>
+</body>
+
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/loginAngular.js"></script>
+<script src="/assets/server/services/loginServices.js"></script>
+
+</html>

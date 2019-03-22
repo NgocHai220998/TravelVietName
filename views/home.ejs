@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="home" ng-controller="homeController">
 
 <head>
     <meta charset="UTF-8">
@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/me/home.css">
-    <title>Trang chủ</title>
+    <title>{{userMain.fullName}}</title>
 </head>
 
 <body>
 
     <main class="container">
-
-
         <!-- SHOW IMAGE -->
         <div class="container__show">
             <section style="display: none" class="container__show__backgroundImage">
@@ -38,7 +36,6 @@
 
 
         <header class="container__header topDownHeader">
-
             <!-- <div class="container__header__logo">
                 <img width="180" height="25" src="/assets/images/me/logo.png" alt="Logo Travel Viet Nam">
             </div> -->
@@ -61,32 +58,26 @@
 
             <div class="container__header__center">
                 <article>
-                    <aside>
+                    <aside class="top-not-login">
                         <a class="a" href="javascript:void(0);">Trải nghiệm mới</a>
-                        <a class="b" href="javascript:void(0);">Đăng nhập</a>
+                        <a href="/login" class="b" href="javascript:void(0);">Đăng nhập</a>
                         <a class="b" href="javascript:void(0);">Giới thiệu</a>
                     </aside>
                 </article>
 
                 <div>
-                    <a href="javascript:void(0);">Đăng ký</a>
+                    <a href="/login">Đăng ký</a>
                 </div>
             </div>
-
-
             <div class="container__header__icon">
                 <i class="fas fa-align-justify"></i>
                 <aside class="hidenMenu">
-
                     <a href="javascript:void(0);">Trải nghiệm mới</a>
                     <a href="javascript:void(0);">Đăng nhập</a>
                     <a href="javascript:void(0);">Đăng ký</a>
                     <a href="javascript:void(0);">Giới thiệu</a>
-                    <a href="javascript:void(0);">Đăng xuất</a>
-
                 </aside>
             </div>
-
         </header>
 
         <section class="container__about">
@@ -668,5 +659,7 @@
 
     <script src="/assets/scripts/me/home.js"></script>
 </body>
-
+    <script src="/assets/scripts/common/angular.min.js"></script>
+    <script src="/assets/server/angular/homeAngular.js"></script>
+    <script src="/assets/server/services/homeServices.js"></script>
 </html>
