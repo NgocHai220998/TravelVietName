@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="host" ng-controller="hostController">
 
 <head>
     <meta charset="UTF-8">
@@ -89,18 +89,17 @@
                 <i class="fas fa-align-justify"></i>
                 <div class="container__top__icon__item">
                     <a href="javascript:void(0);">Host an Experience</a>
-                    <a href="javascript:void(0);">Login</a>
-                    <a href="javascript:void(0);">Sign up</a>
-                    <a href="javascript:void(0);">Contact</a>
+                    <a href="javascript:void(0);">Thành phố</a>
+                    <a href="javascript:void(0);">Host</a>
+                    <a href="/login">Login</a>
+                    
                 </div>
             </div>
 
             <div class="container__top__menu">
                 <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
-                <a class="container__top__menu__login" href="javascript:void(0);">Login</a>
-                <a class="container__top__menu__signup" href="javascript:void(0);">Sign up</a>
-                <a style="display: none" class="container__top__menu__logout" href="javascript:void(0);">Logout</a>
-                <a style="display: none" class="container__top__menu__help" href="javascript:void(0);">Help</a>
+                <a class="container__top__menu__login" href="javascript:void(0);">Thành phố</a>
+                <a class="container__top__menu__signup" href="/login">Sign up</a>
             </div>
         </article>
         <!-- END_CONTAINER_TOP -->
@@ -188,5 +187,7 @@
 </body>
 
 <script src="/assets/scripts/me/host.js"></script>
-
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/hostAngular.js"></script>
+<script src="/assets/server/services/hostServices.js"></script>
 </html>

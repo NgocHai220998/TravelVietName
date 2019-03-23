@@ -14,7 +14,9 @@ home.controller('homeController',['$scope','homeSecvices',function($scope,homeSe
                 document.querySelectorAll('.container__header__center div a')[0].innerHTML = "Đăng xuất";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[1].innerHTML = "Thành phố";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[2].innerHTML = "Host";
+
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[3].innerHTML = "Đăng xuất";
+                document.querySelectorAll('.container__header__icon .hidenMenu a')[3].setAttribute('href','javascript:void(0)');
             }
         });
     });

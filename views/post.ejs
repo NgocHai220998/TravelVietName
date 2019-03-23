@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="post" ng-controller="postController">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="/assets/css/me/post.css"> -->
-    <title>Bài viết chi tiết</title>
+    <title>{{name}}</title>
 </head>
 
 <body>
@@ -139,18 +139,17 @@
                 <i class="fas fa-align-justify"></i>
                 <div class="container__top__icon__item">
                     <a href="javascript:void(0);">Host an Experience</a>
-                    <a href="javascript:void(0);">Login</a>
-                    <a href="javascript:void(0);">Sign up</a>
-                    <a href="javascript:void(0);">Contact</a>
+                    <a href="javascript:void(0);">Thành phố</a>
+                    <a href="javascript:void(0);">Host</a>
+                    <a href="/login">Login</a>
+                    
                 </div>
             </div>
 
             <div class="container__top__menu">
                 <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
-                <a class="container__top__menu__login" href="javascript:void(0);">Login</a>
-                <a class="container__top__menu__signup" href="javascript:void(0);">Sign up</a>
-                <a style="display: none" class="container__top__menu__logout" href="javascript:void(0);">Logout</a>
-                <a style="display: none" class="container__top__menu__help" href="javascript:void(0);">Help</a>
+                <a class="container__top__menu__login" href="javascript:void(0);">Thành phố</a>
+                <a class="container__top__menu__signup" href="/login">Sign up</a>
             </div>
         </article>
         <!-- END_CONTAINER_TOP -->
@@ -711,5 +710,7 @@
     <script src="/assets/scripts/me/post.js"></script>
 
 </body>
-
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/postAngular.js"></script>
+<script src="/assets/server/services/postServices.js"></script>
 </html>

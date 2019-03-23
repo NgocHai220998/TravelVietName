@@ -1,0 +1,239 @@
+* {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body,
+html {
+  width: 100%;
+  height: 100%; }
+
+main,
+section,
+aside,
+footer,
+article,
+header {
+  display: block; }
+
+/*Css Main*/
+.container__top {
+  display: flex;
+  padding: 15px;
+  height: 80px;
+  line-height: 80px;
+  position: relative; }
+  .container__top__search {
+    height: 100%;
+    flex-grow: 2;
+    line-height: 50px;
+    width: 100%;
+    max-width: 190px;
+    margin-left: 20px; }
+    .container__top__search__input {
+      width: 100%;
+      height: 100%;
+      border: 2px solid #39d1e6;
+      border-radius: 9999px;
+      padding-left: 50px;
+      font-size: 18px;
+      outline: none; }
+      .container__top__search__input:focus {
+        box-shadow: 0 4px 8px 0 #39d1e6, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .container__top__search .fa-search {
+      position: absolute;
+      top: 27px;
+      left: 94px;
+      font-size: 25px;
+      color: gray;
+      cursor: pointer; }
+      .container__top__search .fa-search:active {
+        color: white; }
+      .container__top__search .fa-search:hover {
+        color: #39d1e6; }
+  .container__top__logo {
+    line-height: 70px;
+    cursor: pointer; }
+  .container__top__icon__item {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    right: 20px;
+    top: 68px; }
+    .container__top__icon__item a {
+      display: block;
+      width: 100%;
+      background-color: #39d1e6;
+      text-decoration: none;
+      padding: 15px 20px;
+      color: white;
+      line-height: 20px;
+      font-weight: 600;
+      transition: 0.2s; }
+      .container__top__icon__item a:hover {
+        text-decoration: underline;
+        color: #39d1e6;
+        background-color: white;
+        border: 1px solid #39d1e6; }
+      .container__top__icon__item a:active {
+        color: white;
+        background-color: #39d1e6; }
+  .container__top__icon__item::after {
+    position: absolute;
+    content: "";
+    border: 10px solid #ffffff00;
+    border-bottom: 10px solid #39d1e6;
+    top: -20px;
+    right: 0px; }
+  .container__top__icon .fa-align-justify {
+    position: absolute;
+    right: 20px;
+    top: 27px;
+    font-size: 25px;
+    color: #39d1e6; }
+    .container__top__icon .fa-align-justify:hover {
+      color: gray;
+      cursor: pointer; }
+    .container__top__icon .fa-align-justify:active {
+      color: white;
+      cursor: pointer; }
+  .container__top__menu {
+    display: none; }
+.container__footer {
+  width: 100%;
+  height: 500px;
+  position: relative; }
+  .container__footer__backgroundImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1; }
+  .container__footer__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    max-width: 700px; }
+    .container__footer__content__left {
+      padding: 20px; }
+      .container__footer__content__left p {
+        margin: 90px 0 10px 0;
+        color: white;
+        font-size: 20px; }
+      .container__footer__content__left image {
+        margin: 50px 0 20px 20px; }
+    .container__footer__content__right {
+      padding: 20px; }
+      .container__footer__content__right h1 {
+        color: white;
+        font-size: 28px; }
+      .container__footer__content__right a {
+        display: block;
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        margin-top: 5px; }
+        .container__footer__content__right a:hover {
+          color: #2fb2d3;
+          text-decoration: underline; }
+        .container__footer__content__right a:active {
+          color: gray; }
+  .container__footer__background {
+    width: 100%;
+    height: 100%;
+    background-color: #2fb2d3;
+    z-index: 2;
+    opacity: .4;
+    position: absolute; }
+
+@media (min-width: 930px) {
+  .container__top__search {
+    max-width: 30%; }
+  .container__top__icon {
+    display: none; }
+  .container__top__menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    height: 50px;
+    line-height: 50px;
+    z-index: 100; }
+    .container__top__menu a {
+      text-decoration: none; }
+    .container__top__menu__host {
+      font-weight: 700;
+      color: #2fb2d3;
+      margin-right: 20px;
+      font-size: 20px; }
+      .container__top__menu__host:hover {
+        border-bottom: 1px solid #2fb2d3; }
+      .container__top__menu__host:active {
+        border-bottom: none; }
+    .container__top__menu__login {
+      text-align: center;
+      width: 150px;
+      text-decoration: none;
+      display: inline-block;
+      color: #2fb2d3;
+      font-weight: 700;
+      border: 2px solid #2fb2d3;
+      border-radius: 9999px;
+      margin-left: 10px; }
+      .container__top__menu__login:hover {
+        background-color: #2fb2d3;
+        color: white;
+        text-decoration: underline; }
+      .container__top__menu__login:active {
+        background-color: white;
+        color: #2fb2d3; }
+    .container__top__menu__signup {
+      text-align: center;
+      width: 180px;
+      text-decoration: none;
+      display: inline-block;
+      color: white;
+      font-weight: 700;
+      border: 2px solid #2fb2d3;
+      border-radius: 9999px;
+      margin-left: 10px;
+      padding: 0 15px;
+      background-color: #2fb2d3; }
+      .container__top__menu__signup:hover {
+        background-color: #079494;
+        color: white;
+        border: 2px solid white;
+        text-decoration: underline; }
+      .container__top__menu__signup:active {
+        background-color: #2fb2d3;
+        color: white;
+        border: 2px solid white; }
+  .container__footer {
+    height: 350px; }
+    .container__footer__content {
+      margin: 0 auto;
+      padding-top: 50px; }
+      .container__footer__content__left {
+        float: left; }
+        .container__footer__content__left p {
+          margin-top: 23px; }
+      .container__footer__content__right {
+        float: right; } }
+.displayMenu {
+  animation: showMenu .5s forwards; }
+
+@keyframes showMenu {
+  from {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 100% 100%; }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible; } }
+
+/*# sourceMappingURL=top.css.map */

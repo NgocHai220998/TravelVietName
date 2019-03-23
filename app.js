@@ -24,26 +24,23 @@ let APIUser = require('./src/api/user.js');
 APIUser(app);
 let Home = require('./src/api/home.js');
 Home(app);
-
+let Detail = require('./src/api/detail.js');
+Detail(app);
+let City = require('./src/api/city.js');
+City(app);
+let Host = require('./src/api/host.js');
+Host(app);
+let Top = require('./src/api/top.js');
+Top(app);
 // END API
 
 
 
 
-app.get('/',(req,res) => {
-    res.render('home.ejs');
-});
 
-app.get('/chitiet', (req,res) => {
-    res.render('post.ejs');
-});
 
-app.get('/cities',(req,res) => {
-    res.render('cities.ejs');
-});
-app.get('/host',(req,res) => {
-    res.render('host.ejs');
-});
+
+
 
 
 
