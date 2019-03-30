@@ -6,7 +6,6 @@ module.exports = function(app){
     // GET PAGE LOGIN
     app.get('/login',(req,res)=>{
         res.clearCookie('email');
-        console.log(req.cookies);
         res.render('login.ejs');
     });
 
@@ -20,3 +19,5 @@ module.exports = function(app){
 
 
 }
+
+
