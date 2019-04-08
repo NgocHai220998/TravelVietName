@@ -62,9 +62,11 @@ login.controller('LoginController',['$scope','loginServices','$window',function(
                             if(parseInt(result.data)){
                                 document.getElementsByClassName('container__login__password')[0].classList.remove('failPasswordLogin');
                                 $scope.isLogin = true;
+                                document.getElementById('btn-login').setAttribute('type','submit');
                             }else{
                                 document.getElementsByClassName('container__login__password')[0].classList.add('failPasswordLogin');
                                 $scope.isLogin = false;
+                                document.getElementById('btn-login').setAttribute('type','button');
                             }
                             i = lengthUsers + 1998;
                         });
