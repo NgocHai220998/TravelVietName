@@ -2,6 +2,7 @@
 
 let userModel = require('../models/userModel.js');
 let multer = require('multer');
+let bcrypt = require('bcrypt-nodejs');
 
 module.exports = function(app){
 
@@ -22,10 +23,12 @@ module.exports = function(app){
       if(req.file){
         avatar = '/assets/images/uploads/' + req.file.filename;
       }
+
+      let hashPassword = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8), null);
       let newUser = {
         fullName : req.body.fullname,
         email : req.body.email,
-        password : req.body.password,
+        password : hashPassword,
         avatar : avatar
       }  
       let isSignup = true;

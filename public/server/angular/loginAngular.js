@@ -53,13 +53,21 @@ login.controller('LoginController',['$scope','loginServices','$window',function(
             for(let i = 0 ; i < lengthUsers ; ++i){
                 if($scope.emailLogin.value === $scope.listUsers[i].email){
                     document.getElementsByClassName('container__login__email')[0].classList.remove('failEmailLogin');
-                    if($scope.passLogin.value === $scope.listUsers[i].password){
-                        document.getElementsByClassName('container__login__password')[0].classList.remove('failPasswordLogin');
-                        $scope.isLogin = true;
-                    }else{
-                        document.getElementsByClassName('container__login__password')[0].classList.add('failPasswordLogin');
+                    let info = {
+                        email : $scope.emailLogin.value,
+                        password : $scope.passLogin.value
                     }
-                    break;
+                    loginServices.checkLogin(info).then((result) => {
+                        console.log(result.data);
+                        if(result.data){
+                            document.getElementsByClassName('container__login__password')[0].classList.remove('failPasswordLogin');
+                            $scope.isLogin = true;
+                        }else{
+                            document.getElementsByClassName('container__login__password')[0].classList.add('failPasswordLogin');
+                        }
+                        i = lengthUsers + 1998;
+                    });
+                    
                 }else{
                     document.getElementsByClassName('container__login__email')[0].classList.add('failEmailLogin');
                 }
