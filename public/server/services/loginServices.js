@@ -6,7 +6,7 @@ login.factory('loginServices', ['$http', function ($http) {
             return $http.get('/api/getUsers');
         },
         checkLogin: (info) => {
-            return $http.get('/login/checkInfo',info);
+            return $http.post('/login/checkInfo',info);
         }
     }
 }]);

@@ -53,21 +53,22 @@ login.controller('LoginController',['$scope','loginServices','$window',function(
             for(let i = 0 ; i < lengthUsers ; ++i){
                 if($scope.emailLogin.value === $scope.listUsers[i].email){
                     document.getElementsByClassName('container__login__email')[0].classList.remove('failEmailLogin');
-                    let info = {
-                        email : $scope.emailLogin.value,
-                        password : $scope.passLogin.value
-                    }
-                    loginServices.checkLogin(info).then((result) => {
-                        console.log(result.data);
-                        if(result.data){
-                            document.getElementsByClassName('container__login__password')[0].classList.remove('failPasswordLogin');
-                            $scope.isLogin = true;
-                        }else{
-                            document.getElementsByClassName('container__login__password')[0].classList.add('failPasswordLogin');
+                    if($scope.passLogin.value !== ""){
+                        let info = {
+                            email : $scope.emailLogin.value,
+                            password : $scope.passLogin.value
                         }
-                        i = lengthUsers + 1998;
-                    });
-                    
+                        loginServices.checkLogin(info).then((result) => {
+                            if(parseInt(result.data)){
+                                document.getElementsByClassName('container__login__password')[0].classList.remove('failPasswordLogin');
+                                $scope.isLogin = true;
+                            }else{
+                                document.getElementsByClassName('container__login__password')[0].classList.add('failPasswordLogin');
+                                $scope.isLogin = false;
+                            }
+                            i = lengthUsers + 1998;
+                        });
+                    }
                 }else{
                     document.getElementsByClassName('container__login__email')[0].classList.add('failEmailLogin');
                 }
