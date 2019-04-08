@@ -126,8 +126,10 @@ login.controller('LoginController',['$scope','loginServices','$window',function(
 
             if(isPassword && isEmail){
                 $scope.isSignup = true;
+                document.getElementById('btn-signup').setAttribute('type','submit');
             }else{
                 $scope.isSignup = false;
+                document.getElementById('btn-signup').setAttribute('type','button');
             }
         });
     }
