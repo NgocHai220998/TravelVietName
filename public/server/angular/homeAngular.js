@@ -10,6 +10,7 @@ home.controller('homeController',['$scope','homeSecvices',function($scope,homeSe
             $scope.userMain = user.data;
             if($scope.userMain){
                 document.querySelectorAll('.container__header__center article aside a')[1].innerHTML = "Thành phố";
+                document.querySelectorAll('.container__header__center article aside a')[1].setAttribute('href','javascript:void(0)');
                 document.querySelectorAll('.container__header__center article aside a')[2].innerHTML = "Host";
                 document.querySelectorAll('.container__header__center div a')[0].innerHTML = "Đăng xuất";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[1].innerHTML = "Thành phố";
