@@ -72,7 +72,9 @@ login.controller('LoginController', ['$scope', 'loginServices', '$window', funct
                         });
                     }
                 } else {
-                    document.getElementsByClassName('container__login__email')[0].classList.add('failEmailLogin');
+                    if($scope.emailLogin.value.length > 0){
+                        document.getElementsByClassName('container__login__email')[0].classList.add('failEmailLogin');
+                    }
                 }
             }
 
