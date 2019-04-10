@@ -52,6 +52,7 @@ login.controller('LoginController', ['$scope', 'loginServices', '$window', funct
 
             for (let i = 0; i < lengthUsers; ++i) {
                 if ($scope.emailLogin.value === $scope.listUsers[i].email) {
+                    i = lengthUsers + 1998;
                     document.getElementsByClassName('container__login__email')[0].classList.remove('failEmailLogin');
                     if ($scope.passLogin.value !== "") {
                         let info = {
@@ -68,7 +69,6 @@ login.controller('LoginController', ['$scope', 'loginServices', '$window', funct
                                 $scope.isLogin = false;
                                 document.getElementById('btn-login').setAttribute('type', 'button');
                             }
-                            i = lengthUsers + 1998;
                         });
                     }
                 } else {
