@@ -2,3 +2,38 @@
 *{
     width: 100%;
 }
+
+
+
+
+
+main{
+    head{
+
+    }
+    section{
+        text-align: center;
+    }
+}
+
+
+
+.form-input{
+    max-width: 500px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 1px solid gray;
+    &:focus{
+        box-shadow: 2px 2px 5px aqua;
+    }
+
+}
+
+.form-textarea{
+    padding: 20px;
+    border: 1px solid gray;
+    &:focus{
+        box-shadow: 2px 2px 5px aqua;
+    }
+}
