@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,CAAC;EACG,KAAK,EAAE,IAAI",
+"sources": ["addDetail.scss"],
+"names": [],
+"file": "addDetail.css"
+}

@@ -32,6 +32,9 @@ let Host = require('./src/api/host.js');
 Host(app);
 let Top = require('./src/api/top.js');
 Top(app);
+let AddDetail = require('./src/api/addDetail.js')
+AddDetail(app);
+
 // END API
 
 
