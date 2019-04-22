@@ -216,6 +216,7 @@
         <!-- CONTAINER BODY -->
         <section class="container__body">
             <div class="container__body__content">
+                
                 <!-- Top rated -->
 
                 <div class="container__body__content__topReated">
@@ -228,39 +229,34 @@
                     <!--Conten_TOP_REATED-->
                     <div class="container__body__content__topReated__container">
                         <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
+                        <div ng-repeat="post in topPosts" class="container__body__content__topReated__container__content">
                             <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/top2.jpeg"
-                                    style="background-image: url('/assets/images/me/top2.jpeg');"
+                                <div link={{post.post.images[0].src}}
+                                    style="background-image: url('{{post.post.images[0].src}}');"
                                     class="container__body__content__topReated__container__content__item__image clickImage">
 
                                 </div>
                                 <div class="container__body__content__topReated__container__content__item__info">
                                     <div
                                         class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
+                                        <a _id={{post._id}} href="/detail/{{post._id}}">{{post.dola}}</a>
                                     </div>
                                     <div
                                         class="container__body__content__topReated__container__content__item__info__right">
                                         <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Ho Chi Minh City</a>
+                                        <a _city={{post.post.where.city}} href="/city">{{post.post.where.city}} City</a>
                                     </div>
                                 </div>
 
                                 <div class="container__body__content__topReated__container__content__item__description">
                                     <span>
-                                        Discover Vietnamese culture of silver engraving and make your own jewelry in the
-                                        heart
-                                        of Saigon
+                                        {{post.post.title}}
                                     </span>
                                 </div>
                                 <div class="container__body__content__topReated__container__content__item__star">
+                                    {{post.star}}
                                     <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>32 reviews</span>
+                                    <a href="/detail/{{post._id}}"><span>{{post.post.comments.length}} reviews</span></a>
                                 </div>
 
 
@@ -268,206 +264,7 @@
                         </div>
                         <!--END_Conten_TOP_REATED-->
 
-                        <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
-                            <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/top1.jpeg"
-                                    style="background-image: url('/assets/images/me/top1.jpeg');"
-                                    class="container__body__content__topReated__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__info">
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
-                                    </div>
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__right">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Ha Noi</a>
-                                    </div>
-                                </div>
-
-                                <div class="container__body__content__topReated__container__content__item__description">
-                                    <span>
-                                        We are a group of young-minded modern travelers who believe that the best way to
-                                        explore the World
-                                    </span>
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>12 reviews</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!--END_Conten_TOP_REATED-->
-
-
-                        <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
-                            <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/whyus4.jpeg"
-                                    style="background-image: url('/assets/images/me/whyus4.jpeg');"
-                                    class="container__body__content__topReated__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__info">
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
-                                    </div>
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__right">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Ho Chi Minh City</a>
-                                    </div>
-                                </div>
-
-                                <div class="container__body__content__topReated__container__content__item__description">
-                                    <span>
-                                        focusing on quality, originality, and supporting local communities.
-                                    </span>
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>32 reviews</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!--END_Conten_TOP_REATED-->
-
-
-                        <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
-                            <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/whyus3.jpg"
-                                    style="background-image: url('/assets/images/me/whyus3.jpg');"
-                                    class="container__body__content__topReated__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__info">
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
-                                    </div>
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__right">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Ho Chi Minh City</a>
-                                    </div>
-                                </div>
-
-                                <div class="container__body__content__topReated__container__content__item__description">
-                                    <span>
-                                        Smaller and remote towns. You will expect to find more authentic and cultural
-                                        experiences with local hosts
-                                    </span>
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>32 reviews</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!--END_Conten_TOP_REATED-->
-
-                        <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
-                            <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/whyus2.jpg"
-                                    style="background-image: url('/assets/images/me/whyus2.jpg');"
-                                    class="container__body__content__topReated__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__info">
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
-                                    </div>
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__right">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Ho Chi Minh City</a>
-                                    </div>
-                                </div>
-
-                                <div class="container__body__content__topReated__container__content__item__description">
-                                    <span>
-                                        Smaller and remote towns.!!
-                                    </span>
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>32 reviews</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!--END_Conten_TOP_REATED-->
-
-
-                        <!--Conten_TOP_REATED-->
-                        <div class="container__body__content__topReated__container__content">
-                            <div class="container__body__content__topReated__container__content__item">
-                                <div link="/assets/images/me/whyus1.png"
-                                    style="background-image: url('/assets/images/me/whyus1.png');"
-                                    class="container__body__content__topReated__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__info">
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__left">
-                                        <a href="/detail">$25 USD for 3 hours</a>
-                                    </div>
-                                    <div
-                                        class="container__body__content__topReated__container__content__item__info__right">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <a href="/city">Da Nang City</a>
-                                    </div>
-                                </div>
-
-                                <div class="container__body__content__topReated__container__content__item__description">
-                                    <span>
-                                        You will expect to find more authentic and cultural
-                                        experiences with local hosts
-                                    </span>
-                                </div>
-                                <div class="container__body__content__topReated__container__content__item__star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>32 reviews</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!--END_Conten_TOP_REATED-->
+                        
 
                     </div>
                     <!--END_Container_TOP_REATED-->
@@ -506,8 +303,6 @@
                                 <div link="/assets/images/me/hue.jpeg"
                                     style="background-image: url('/assets/images/me/hue.jpeg');"
                                     class="container__body__content__bigCities__container__content__item__image clickImage">
-
-
                                 </div>
                                 <div class="container__body__content__bigCities__container__content__item__info">
                                     <a href="/city">HUE</a>
@@ -657,9 +452,10 @@
 
     <!-- LOAD FILE JAVASCRIPT -->
 
-    <script src="/assets/scripts/me/home.js"></script>
+    
 </body>
     <script src="/assets/scripts/common/angular.min.js"></script>
     <script src="/assets/server/angular/homeAngular.js"></script>
     <script src="/assets/server/services/homeServices.js"></script>
+    <script src="/assets/scripts/me/home.js"></script>
 </html>

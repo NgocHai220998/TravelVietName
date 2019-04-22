@@ -9,6 +9,9 @@ home.factory('homeSecvices', ['$http', function ($http) {
         },
         getUserMain : (email)=>{
             return $http.get('/home/getUserMain/' + email);
+        },
+        getPosts : () => {
+            return $http.get('/api/getPosts');
         }
     }
 }]);

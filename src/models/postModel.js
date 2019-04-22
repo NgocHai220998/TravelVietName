@@ -2,8 +2,10 @@
 let mongoose = require('../../config/mongodb/db.js');
 
 
-let postSchema = Schema({
+let postSchema = mongoose.Schema({
     host : String,
+    dola : String,
+    star : Number,
     post : {
         title : String,
         about : String,
