@@ -1,6 +1,8 @@
 
-*{
+*,*::after,*::before{
     width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -8,6 +10,7 @@
 
 
 main{
+    padding: 20px;
     head{
 
     }
@@ -24,6 +27,7 @@ main{
     line-height: 30px;
     padding: 0 10px;
     border: 1px solid gray;
+    margin: 5px;
     &:focus{
         box-shadow: 2px 2px 5px aqua;
     }
@@ -33,7 +37,34 @@ main{
 .form-textarea{
     padding: 20px;
     border: 1px solid gray;
+
+    
     &:focus{
         box-shadow: 2px 2px 5px aqua;
+    }
+}
+
+.block{
+    display: block!important;
+}
+
+.center{
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.button{
+    width: auto;
+    padding: 10px;
+    padding: 20px;
+    border: 1px solid gray;
+    background-color: gray;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 1px 1px 5px aqua;
+        background-color: aqua;
+        
     }
 }

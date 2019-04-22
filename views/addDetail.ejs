@@ -13,7 +13,31 @@
 
         </head>
         <section>
-            Host: <input class="form-input" type="text">
+            <form action="/api/adddetail" method="post" enctype="multipart/form-data">
+                
+                <input name="host" id="host-name" class="form-input block center" type="text" placeholder="Địa chỉ email của host">
+
+                <input type="text" name="title" class="form-input block center" placeholder="title của bài viết">
+
+                <input type="text" name="about" class="form-input block center" placeholder="about của bài viết">
+
+                <input type="text" name="toDo" class="form-input block center" placeholder="toDo của bài viết">
+
+                <input type="text" name="provide" class="form-input block center" placeholder="provide của bài viết">
+
+                <input type="text" name="who" class="form-input block center" placeholder="who của bài viết">
+
+                <input type="text" name="why" class="form-input block center" placeholder="why của bài viết">
+
+                <input type="text" name="where" class="form-input block center" placeholder="where của bài viết">
+
+                <input type="text" name="city" class="form-input block center" placeholder="city của bài viết">
+
+                <input type="text" name="image" class="form-input block center" placeholder="image của bài viết">
+                
+                <button class="button" type="submit">Submit</button>
+            </form>
+            
         </section>
     </main>
 </body>
