@@ -23,8 +23,9 @@ module.exports = function(app){
     res.render('addDetail');
   });
 
-  app.post('/api/adddetail',upload.single("file"),(req,res)=>{
+  app.post('/api/adddetail',upload.array('file',20),(req,res)=>{
     console.log(req.body);
+    console.log(req.files[0]);
     res.send(req.body);
   });
 
