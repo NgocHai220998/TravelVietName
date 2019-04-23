@@ -87,19 +87,19 @@
             </section>
             <div class="container__show__content">
                 <div class="container__show__content__image">
-                    <img index='0' class="_img" width="100%" src="/assets/images/me/top2.jpeg" alt="img hihi">
+                    <img index='0' class="_img" width="100%" ng-src={{post.post.images[0].src}} alt="img hihi">
                     <i class="fas fa-angle-left"></i>
                     <i class="fas fa-angle-right"></i>
                 </div>
                 <div class="list-image">
-                    <img index='0' class="_img" width="100%" src="/assets/images/me/top2.jpeg" alt="img hihi">
-                    <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
+                    <img ng-repeat="image in post.post.images" index='0' class="_img" width="100%" ng-src={{image.src}} alt="img hihi">
+                    <!-- <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
                     <img index='2' class="_img" width="100%" src="/assets/images/me/sapa.jpeg" alt="img hihi">
                     <img index='3' class="_img" width="100%" src="/assets/images/me/dalat.jpeg" alt="img hihi">
                     <img index='4' class="_img" width="100%" src="/assets/images/me/hoian.jpeg" alt="img hihi">
                     <img index='5' class="_img" width="100%" src="/assets/images/me/hue.jpeg" alt="img hihi">
                     <img index='6' class="_img" width="100%" src="/assets/images/me/whyus4.jpeg" alt="img hihi">
-                    <img index='7' class="_img" width="100%" src="/assets/images/me/whyus1.png" alt="img hihi">
+                    <img index='7' class="_img" width="100%" src="/assets/images/me/whyus1.png" alt="img hihi"> -->
                 </div>
             </div>
         </article>
@@ -166,12 +166,12 @@
             <article class="container__center__slide">
                 <section class="container__center__slide__content">
 
-                    <div style="background-image: url(/assets/images/me/whyus1.png)"
+                    <div ng-repeat="image in post.post.images" style="background-image: url('{{image.src}}')"
                         class="container__center__slide__content__image">
 
                     </div>
 
-                    <div style="background-image: url(/assets/images/me/whyus2.jpg)"
+                    <!-- <div style="background-image: url(/assets/images/me/whyus2.jpg)"
                         class="container__center__slide__content__image">
 
                     </div>
@@ -213,7 +213,7 @@
                     <div style="background-image: url(/assets/images/me/sapa.jpeg)"
                         class="container__center__slide__content__image">
 
-                    </div>
+                    </div> -->
                 </section>
             </article>
             <!-- END SLIDE -->
@@ -221,12 +221,10 @@
             <!-- INFO HOST -->
             <article class="container__center__host">
                 <header>
-                    <h1>Discover Vietnamese culture of silver engraving and make your own jewelry in the heart of Saigon
+                    <h1>{{post.post.title}}
                     </h1>
-                    <p>Get to know about the history of silver-work in Vietnam, experience a fun time while making your
-                        own silver jewellery <span>+ More</span></p>
+                    <p>{{post.post.about}}</p>
                 </header>
-
                 <section>
                     <div class="container__center__host__avatar">
                         <img style="border-radius: 9999px;" width="100" height="100" src="/assets/images/me/top2.jpeg"
@@ -337,7 +335,7 @@
                             </header>
 
                             <section>
-                                <p>
+                                <p id="post-text-what">
                                     - Step 1: Introducing basically about analog photography including kind of cameras,
                                     kind of films, lens, natural light effect, etc. in the easiest way to understand.
                                     <br />
@@ -364,7 +362,7 @@
                             </header>
 
                             <section>
-                                <p>
+                                <p id="post-text-provide">
                                     - Analog photography course.
                                     <br />
                                     - Film roll and camera.
@@ -387,7 +385,7 @@
                             </header>
 
                             <section>
-                                <p>
+                                <p id="post-text-who">
                                     Individual nomad or a group of backpackers.
                                     We only host 3 people/trip.
                                 </p>
@@ -403,7 +401,7 @@
                             </header>
 
                             <section>
-                                <p>
+                                <p id="post-text-why">
                                     A unique way for you to explore deeply about this city, which no other travel
                                     agencies can provide.
                                 </p>
@@ -419,14 +417,14 @@
                         <article class="image__post">
                             <h1>Pictures</h1>
                             <div class="image__post__top">
-                                <img index='0' class="image__post__img" width="100%" src="/assets/images/me/top2.jpeg" alt="di choi">
+                                <img index='0' class="image__post__img" width="100%" ng-src={{post.post.images[0].src}} alt="di choi">
                                 <div class="image__post__top__more">
                                     <a id="btn-more-img" href="javascript:void(0);">More +4</a>
                                 </div>
                             </div>
                             <div class="image__post__bot">
-                                <img index='1' class="image__post__img" width="50%" height="50%" src="/assets/images/me/top1.jpeg" alt="ahihi ">
-                                <img index='2' class="image__post__img" width="50%" height="50%" src="/assets/images/me/sapa.jpeg" alt="do ngoc ne">
+                                <img index='1' class="image__post__img" width="50%" height="50%" ng-src={{post.post.images[1].src}} alt="ahihi ">
+                                <img index='2' class="image__post__img" width="50%" height="50%" ng-src={{post.post.images[2].src}} alt="do ngoc ne">
                             </div>
 
                         </article>
@@ -657,7 +655,7 @@
 
         <!-- FOOTER -->
         <footer class="container__footer">
-            <div style="background-image: url('assets/images/me/imageFooter.jpg');"
+            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
                 class="container__footer__backgroundImage">
 
             </div>

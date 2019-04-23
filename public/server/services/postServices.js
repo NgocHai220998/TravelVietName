@@ -7,8 +7,11 @@ post.factory('postSecvices', ['$http', function ($http) {
         getCookie: () => {
             return $http.get('/home/getCookie');
         },
-        getUserMain : (email)=>{
+        getUserMain: (email) => {
             return $http.get('/home/getUserMain/' + email);
+        },
+        getPostById: (_id) => {
+            return $http.get('/api/getDetailById/' + _id);
         }
     }
 }]);

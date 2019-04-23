@@ -79,16 +79,7 @@ module.exports = function(app){
   });
 
 
-  app.get('/api/getPostById/:id',(req,res)=>{
-    postModel.findOne({_id: req.params.id},(err,post)=>{
-      if(err){
-        console.log(err + '');
-        throw err;
-      }else{
-        res.json(post);
-      }
-    });
-  });
+
   
   app.get('/api/getPosts',(req,res)=>{
     postModel.find((err,posts)=>{
