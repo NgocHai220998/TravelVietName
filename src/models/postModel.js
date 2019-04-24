@@ -6,7 +6,7 @@ let postSchema = mongoose.Schema({
     host : String,
     dola : {
         value : String,
-        time : StringY
+        time : String
     },
     star : Number,
     post : {
