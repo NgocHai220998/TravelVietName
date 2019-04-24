@@ -28,6 +28,20 @@ home.controller('homeController', ['$scope', 'homeSecvices', async function ($sc
 
 
 
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Home.js
         setTimeout(() => {
             // HEADER HOME

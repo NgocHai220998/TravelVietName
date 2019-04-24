@@ -4,7 +4,10 @@ let mongoose = require('../../config/mongodb/db.js');
 
 let postSchema = mongoose.Schema({
     host : String,
-    dola : String,
+    dola : {
+        value : String,
+        time : StringY
+    },
     star : Number,
     post : {
         title : String,

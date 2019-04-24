@@ -24,6 +24,13 @@ post.controller('postController', ['$scope', 'postSecvices', function ($scope, p
 
 
 
+        document.getElementById('post-text-what').innerHTML = $scope.post.post.toDo;
+        document.getElementById('post-text-provide').innerHTML = $scope.post.post.provide;
+        document.getElementById('post-text-who').innerHTML = $scope.post.post.who;
+        document.getElementById('post-text-why').innerHTML = $scope.post.post.why;
+
+
+
 
 
 

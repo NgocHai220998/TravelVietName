@@ -270,7 +270,7 @@
                     <!-- BOOK -->
                     <div class="book">
                         <header class="book__header">
-                            <p>$35 USD <span>3 HOURS</span></p>
+                            <p>{{post.dola.value}} <span>{{post.dola.time}}</span></p>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -336,19 +336,7 @@
 
                             <section>
                                 <p id="post-text-what">
-                                    - Step 1: Introducing basically about analog photography including kind of cameras,
-                                    kind of films, lens, natural light effect, etc. in the easiest way to understand.
-                                    <br />
-                                    - Step 2: Together going to some places in the city spotted by locals only.
-                                    <br />
-                                    - Step 3: Letting you borrow one cameras and giving you a free film roll, guiding
-                                    you the right way to set them up.
-                                    <br />
-                                    - Step 4: Fun time starts :)
-                                    <br />
-                                    - Step 5: Giving you back the photos file thru your email, and the negatives, and
-                                    the plastic film roll handmade into a keychain as a souvenir, a certificate, 4 hours
-                                    after the trip ends.
+    
                                 </p>
                             </section>
 
@@ -363,15 +351,7 @@
 
                             <section>
                                 <p id="post-text-provide">
-                                    - Analog photography course.
-                                    <br />
-                                    - Film roll and camera.
-                                    <br />
-                                    - Developing and scanning service fee.
-                                    <br />
-                                    - Souvenir and certificate.
-                                    <br />
-                                    - Street food and drink.
+      
                                 </p>
                             </section>
 
@@ -386,8 +366,7 @@
 
                             <section>
                                 <p id="post-text-who">
-                                    Individual nomad or a group of backpackers.
-                                    We only host 3 people/trip.
+                         
                                 </p>
                             </section>
 
@@ -402,8 +381,7 @@
 
                             <section>
                                 <p id="post-text-why">
-                                    A unique way for you to explore deeply about this city, which no other travel
-                                    agencies can provide.
+                           
                                 </p>
                             </section>
 
@@ -419,7 +397,7 @@
                             <div class="image__post__top">
                                 <img index='0' class="image__post__img" width="100%" ng-src={{post.post.images[0].src}} alt="di choi">
                                 <div class="image__post__top__more">
-                                    <a id="btn-more-img" href="javascript:void(0);">More +4</a>
+                                    <a id="btn-more-img" href="javascript:void(0);">More +{{post.post.images.length}}</a>
                                 </div>
                             </div>
                             <div class="image__post__bot">
@@ -434,9 +412,9 @@
                         <article class="address__post">
                             <h1>Where we will do this</h1>
                             <p>
-                                Ha Noi City
+                                {{post.post.where.city}} City
                             </p>
-                            <i> Ha Noi, Vietnam</i>
+                            <i> {{post.post.where.city}}, Vietnam</i>
                             <img width="100%" src="/assets/images/me/map1.PNG" alt="Map">
                         </article>
 

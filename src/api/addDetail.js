@@ -25,7 +25,7 @@ module.exports = function(app){
     res.render('addDetail');
   });
 
-  app.post('/api/adddetail',upload.array('file',20),(req,res)=>{
+  app.post('/api/adddetail',upload.array('file',30),(req,res)=>{
     // console.log(req.body);
     // console.log(req.files);
     let imageTemp = [{}];
@@ -43,7 +43,10 @@ module.exports = function(app){
     
     let newPost = {
       host : req.body.host,
-      dola : req.body.dola,
+      dola : {
+        value : req.body.value,
+        time : req.body.time
+      },
       star : req.body.star,
       post : {
         title : req.body.title,
