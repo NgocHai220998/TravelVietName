@@ -178,12 +178,16 @@ header {
         padding: 40px 0px 0px 0px; }
         .container__center__content__cities__container__content__item {
           width: 100%; }
+          .container__center__content__cities__container__content__item p {
+            color: #fff;
+            font-size: 2.5em;
+            font-weight: bold; }
           .container__center__content__cities__container__content__item__image {
             width: 100%;
-            height: 0px;
+            height: auto;
             background-size: cover;
-            background-position: contain;
-            padding-bottom: 65%;
+            background-position: center;
+            padding: 5em 0;
             cursor: pointer; }
             .container__center__content__cities__container__content__item__image:hover {
               box-shadow: 0 2px 4px 0 #2fb2d3, 0 3px 10px 0 #2fb2d3; }

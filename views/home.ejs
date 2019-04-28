@@ -298,105 +298,25 @@
 
 
                         <!--Conten_The big cities-->
-                        <div class="container__body__content__bigCities__container__content">
+                        <div ng-repeat = "cityInfo in citiesInfo" class="container__body__content__bigCities__container__content">
                             <div class="container__body__content__bigCities__container__content__item">
-                                <div link="/assets/images/me/hue.jpeg"
-                                    style="background-image: url('/assets/images/me/hue.jpeg');"
+                                <div link={{cityInfo.images[0].src}}
+                                    style="background-image: url('{{cityInfo.images[0].src}}');"
                                     class="container__body__content__bigCities__container__content__item__image clickImage">
                                 </div>
                                 <div class="container__body__content__bigCities__container__content__item__info">
-                                    <a href="/city">HUE</a>
+                                    <a href="/city">{{cityInfo.name}}</a>
                                 </div>
 
                                 <div class="container__body__content__bigCities__container__content__item__description">
                                     <span>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis at omnis
-                                        similique
-                                        sint adipisci, in officia mollitia pariatur enim ad est ratione.
+                                        {{cityInfo.title}}
                                     </span>
                                 </div>
 
                             </div>
                         </div>
                         <!--END_The big cities-->
-
-
-
-                        <!--Conten_The big cities-->
-                        <div class="container__body__content__bigCities__container__content">
-                            <div class="container__body__content__bigCities__container__content__item">
-                                <div link="/assets/images/me/hoian.jpeg"
-                                    style="background-image: url('/assets/images/me/hoian.jpeg');"
-                                    class="container__body__content__bigCities__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__bigCities__container__content__item__info">
-                                    <a href="/city">HOI AN</a>
-                                </div>
-
-                                <div class="container__body__content__bigCities__container__content__item__description">
-                                    <span>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis at omnis
-                                        similique
-                                        sint adipisci.
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--END_The big cities-->
-
-
-                        <!--Conten_The big cities-->
-                        <div class="container__body__content__bigCities__container__content">
-                            <div class="container__body__content__bigCities__container__content__item">
-                                <div link="/assets/images/me/dalat.jpeg"
-                                    style="background-image: url('/assets/images/me/dalat.jpeg');"
-                                    class="container__body__content__bigCities__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__bigCities__container__content__item__info">
-                                    <a href="/city">DA LAT</a>
-                                </div>
-
-                                <div class="container__body__content__bigCities__container__content__item__description">
-                                    <span>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis at omnis
-                                        similique
-                                        sint adipisci. I love you s2!!
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--END_The big cities-->
-
-
-                        <!--Conten_The big cities-->
-                        <div class="container__body__content__bigCities__container__content">
-                            <div class="container__body__content__bigCities__container__content__item">
-                                <div link="/assets/images/me/sapa.jpeg"
-                                    style="background-image: url('/assets/images/me/sapa.jpeg');"
-                                    class="container__body__content__bigCities__container__content__item__image clickImage">
-
-                                </div>
-                                <div class="container__body__content__bigCities__container__content__item__info">
-                                    <a href="/city">SA PA</a>
-                                </div>
-
-                                <div class="container__body__content__bigCities__container__content__item__description">
-                                    <span>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis at omnis
-                                        similique
-                                        sint adipisci. I love you sapa s2!!
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--END_The big cities-->
-
-
 
                     </div>
 
