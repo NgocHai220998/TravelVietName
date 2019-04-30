@@ -1,177 +1,219 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="post" ng-controller="postController">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/images/me/logo-mobile.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
     <!-- <link rel="stylesheet" href="/assets/css/me/post.css"> -->
-    <title>{{name}}</title>
-</head>
+    <title>{{ name }}</title>
+  </head>
 
-<body>
-
+  <body>
     <article class="report">
-        <div class="backReport">
-            <i class="fas fa-window-close"></i>
-        </div>
-        <section class="report__content">
-            <header>
-                <ul>
-                    <li>R</li>
-                    <li>E</li>
-                    <li>P</li>
-                    <li>O</li>
-                    <li>R</li>
-                    <li>T</li>
-                </ul>
-            </header>
-            <section>
-                <div class="report__content__rating">
-                    <input class="countStarReport" type="radio" name="star" id="star1"><label countStar="5" for="star1">
-                            <i class="fas fa-star before"></i>
-                            <i class="fas fa-star affter"></i>
-                    </label>
-                    <input class="countStarReport" type="radio" name="star" id="star2"><label countStar="4" for="star2">
-                            <i class="fas fa-star before"></i>
-                            <i class="fas fa-star affter"></i>
-                    </label>
-                    <input class="countStarReport" type="radio" name="star" id="star3"><label countStar="3" for="star3">
-                            <i class="fas fa-star before"></i>
-                            <i class="fas fa-star affter"></i>
-                    </label>
-                    <input class="countStarReport" type="radio" name="star" id="star4"><label countStar="2" for="star4">
-                            <i class="fas fa-star before"></i>
-                            <i class="fas fa-star affter"></i>
-                    </label>
-                    <input class="countStarReport" type="radio" name="star" id="star5"><label countStar="1" for="star5">
-                            <i class="fas fa-star before"></i>
-                            <i class="fas fa-star affter"></i>
-                    </label>
-                </div>
+      <div class="backReport">
+        <i class="fas fa-window-close"></i>
+      </div>
+      <section class="report__content">
+        <header>
+          <ul>
+            <li>R</li>
+            <li>E</li>
+            <li>P</li>
+            <li>O</li>
+            <li>R</li>
+            <li>T</li>
+          </ul>
+        </header>
+        <section>
+          <div class="report__content__rating">
+            <input
+              class="countStarReport"
+              type="radio"
+              countStar="5"
+              name="star"
+              id="star1"
+            /><label countStar="5" for="star1">
+              <i class="fas fa-star before"></i>
+              <i class="fas fa-star affter"></i>
+            </label>
+            <input
+              class="countStarReport"
+              type="radio"
+              countStar="4"
+              name="star"
+              id="star2"
+            /><label countStar="4" for="star2">
+              <i class="fas fa-star before"></i>
+              <i class="fas fa-star affter"></i>
+            </label>
+            <input
+              class="countStarReport"
+              type="radio"
+              countStar="3"
+              name="star"
+              id="star3"
+            /><label countStar="3" for="star3">
+              <i class="fas fa-star before"></i>
+              <i class="fas fa-star affter"></i>
+            </label>
+            <input
+              class="countStarReport"
+              type="radio"
+              countStar="2"
+              name="star"
+              id="star4"
+            /><label countStar="2" for="star4">
+              <i class="fas fa-star before"></i>
+              <i class="fas fa-star affter"></i>
+            </label>
+            <input
+              class="countStarReport"
+              type="radio"
+              countStar="1"
+              name="star"
+              id="star5"
+            /><label countStar="1" for="star5">
+              <i class="fas fa-star before"></i>
+              <i class="fas fa-star affter"></i>
+            </label>
+          </div>
 
-                <div id="text" class="report__content__comment">  
-                    <textarea placeholder="Review in here" name="comment" id="comment" cols="35" rows="7"></textarea>
-                    <span>
-                        
-                    </span>
-                </div>
-            </section>
-            <footer>
-                <div class="report__content__like">
-                    <div class="report__content__like__button" id="likeReport">
-                        <i like='false' class="fab fa-gratipay"><span></span></i>
-                    </div>
-                </div>
-                <div class="report__content__success">
-                    <a disabled="disabled" id="successReport" href="javascript:void(0);" class="report__content__success__button"><span></span>DONE</a>
-                </div>
-            </footer>
+          <div id="text" class="report__content__comment">
+            <textarea
+              placeholder="Review in here"
+              name="comment"
+              id="comment"
+              cols="35"
+              rows="7"
+            ></textarea>
+            <span> </span>
+          </div>
         </section>
+        <footer>
+          <div class="report__content__like">
+            <div class="report__content__like__button" id="likeReport">
+              <i like="false" class="fab fa-gratipay"><span></span></i>
+            </div>
+          </div>
+          <div class="report__content__success">
+            <a
+              disabled="disabled"
+              id="successReport"
+              href="javascript:void(0);"
+              class="report__content__success__button"
+              ng-click="clickSuccessReport()"
+              ><span></span>DONE</a
+            >
+          </div>
+        </footer>
+      </section>
     </article>
 
     <main class="container">
-
-
-
-
-    
-
-        <!-- SHOW IMAGE -->
-        <article class="container__show">
-            <section class="container__show__background">
-            </section>
-            <div class="container__show__content">
-                <div class="container__show__content__image">
-                    <img index='0' class="_img" width="100%" ng-src={{post.post.images[0].src}} alt="img hihi">
-                    <i class="fas fa-angle-left"></i>
-                    <i class="fas fa-angle-right"></i>
-                </div>
-                <div class="list-image">
-                    <img ng-repeat="image in post.post.images" index='0' class="_img" width="100%" ng-src={{image.src}} alt="img hihi">
-                    <!-- <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
+      <!-- SHOW IMAGE -->
+      <article class="container__show">
+        <section class="container__show__background"></section>
+        <div class="container__show__content">
+          <div class="container__show__content__image">
+            <img
+              index="0"
+              class="_img"
+              width="100%"
+              ng-src="{{ post.post.images[0].src }}"
+              alt="img hihi"
+            />
+            <i class="fas fa-angle-left"></i>
+            <i class="fas fa-angle-right"></i>
+          </div>
+          <div class="list-image">
+            <img
+              ng-repeat="image in post.post.images"
+              index="0"
+              class="_img"
+              width="100%"
+              ng-src="{{ image.src }}"
+              alt="img hihi"
+            />
+            <!-- <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
                     <img index='2' class="_img" width="100%" src="/assets/images/me/sapa.jpeg" alt="img hihi">
                     <img index='3' class="_img" width="100%" src="/assets/images/me/dalat.jpeg" alt="img hihi">
                     <img index='4' class="_img" width="100%" src="/assets/images/me/hoian.jpeg" alt="img hihi">
                     <img index='5' class="_img" width="100%" src="/assets/images/me/hue.jpeg" alt="img hihi">
                     <img index='6' class="_img" width="100%" src="/assets/images/me/whyus4.jpeg" alt="img hihi">
                     <img index='7' class="_img" width="100%" src="/assets/images/me/whyus1.png" alt="img hihi"> -->
-                </div>
-            </div>
-        </article>
+          </div>
+        </div>
+      </article>
 
+      <!-- END SHOW IMAGE -->
 
+      <!-- CONTAINER_TOP -->
+      <article class="container__top">
+        <div class="container__top__logo">
+          <a href="/"
+            ><img
+              width="43"
+              height="30"
+              src="/assets/images/me/logo-mobile.png"
+              alt="Logo"
+          /></a>
+        </div>
 
-        <!-- END SHOW IMAGE -->
+        <div class="container__top__search">
+          <input
+            type="text"
+            placeholder="City in here..."
+            class="container__top__search__input"
+          />
+          <i class="fas fa-search"></i>
+        </div>
 
+        <div class="container__top__icon">
+          <i class="fas fa-align-justify"></i>
+          <div class="container__top__icon__item">
+            <a href="javascript:void(0);">Host an Experience</a>
+            <a href="javascript:void(0);">Thành phố</a>
+            <a href="javascript:void(0);">Host</a>
+            <a href="/login">Login</a>
+          </div>
+        </div>
 
+        <div class="container__top__menu">
+          <a class="container__top__menu__host" href="javascript:void(0);"
+            >Host an Experience</a
+          >
+          <a class="container__top__menu__login" href="javascript:void(0);"
+            >Thành phố</a
+          >
+          <a class="container__top__menu__signup" href="/login">Sign up</a>
+        </div>
+      </article>
+      <!-- END_CONTAINER_TOP -->
 
+      <!-- Content  -->
+      <section class="container__center">
+        <!-- SLIDE -->
+        <article class="container__center__slide">
+          <section class="container__center__slide__content">
+            <div
+              ng-repeat="image in post.post.images"
+              style="background-image: url('{{ image.src }}')"
+              class="container__center__slide__content__image"
+            ></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- CONTAINER_TOP -->
-        <article class="container__top">
-            <div class="container__top__logo">
-                <a href="/"><img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo"></a>
-            </div>
-
-            <div class="container__top__search">
-                <input type="text" placeholder="City in here..." class="container__top__search__input">
-                <i class="fas fa-search"></i>
-            </div>
-
-            <div class="container__top__icon">
-                <i class="fas fa-align-justify"></i>
-                <div class="container__top__icon__item">
-                    <a href="javascript:void(0);">Host an Experience</a>
-                    <a href="javascript:void(0);">Thành phố</a>
-                    <a href="javascript:void(0);">Host</a>
-                    <a href="/login">Login</a>
-                    
-                </div>
-            </div>
-
-            <div class="container__top__menu">
-                <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
-                <a class="container__top__menu__login" href="javascript:void(0);">Thành phố</a>
-                <a class="container__top__menu__signup" href="/login">Sign up</a>
-            </div>
-        </article>
-        <!-- END_CONTAINER_TOP -->
-
-
-
-
-
-        <!-- Content  -->
-        <section class="container__center">
-
-
-            <!-- SLIDE -->
-            <article class="container__center__slide">
-                <section class="container__center__slide__content">
-
-                    <div ng-repeat="image in post.post.images" style="background-image: url('{{image.src}}')"
-                        class="container__center__slide__content__image">
-
-                    </div>
-
-                    <!-- <div style="background-image: url(/assets/images/me/whyus2.jpg)"
+            <!-- <div style="background-image: url(/assets/images/me/whyus2.jpg)"
                         class="container__center__slide__content__image">
 
                     </div>
@@ -214,473 +256,479 @@
                         class="container__center__slide__content__image">
 
                     </div> -->
-                </section>
-            </article>
-            <!-- END SLIDE -->
+          </section>
+        </article>
+        <!-- END SLIDE -->
 
-            <!-- INFO HOST -->
-            <article class="container__center__host">
+        <!-- INFO HOST -->
+        <article class="container__center__host">
+          <header>
+            <h1>{{ post.post.title }}</h1>
+            <p>{{ post.post.about }}</p>
+          </header>
+          <section>
+            <div class="container__center__host__avatar">
+              <img
+                style="border-radius: 9999px;"
+                width="100"
+                height="100"
+                ng-src="{{ hostPost.avatar }}"
+                alt="Avatar host"
+              />
+            </div>
+            <div class="container__center__host__info">
+              <p>
+                Hosted by <span>{{ hostPost.fullName }}</span> in
+                {{ post.post.where.city }} City
+              </p>
+            </div>
+          </section>
+
+          <footer class="container__center__host__footer">
+            <div class="container__center__host__footer__follow">
+              <i class="fas fa-file-signature"></i>
+              <span>Contact</span>
+              <p>1</p>
+            </div>
+            <div class="container__center__host__footer__review">
+              <i class="fas fa-comments"></i>
+              <span>Review</span>
+              <p>2</p>
+            </div>
+            <div class="container__center__host__footer__like">
+              <i class="fab fa-gratipay"></i>
+              <span>Like</span>
+              <p>3</p>
+            </div>
+            <div class="container__center__host__footer__star">
+              <i class="fas fa-star-half-alt"></i>
+              <span>Star</span>
+              <p>4</p>
+            </div>
+          </footer>
+        </article>
+        <!-- END INFO HOST -->
+
+        <section class="container__center__content">
+          <header class="container__center__content__header">
+            <!-- BOOK -->
+            <div class="book">
+              <header class="book__header">
+                <p>
+                  {{ post.dola.value }} <span>{{ post.dola.time }}</span>
+                </p>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </header>
+              <div class="book__btn">
+                <i class="far fa-user"></i>
+                <a href="javascript:void(0);">Login To Book</a>
+              </div>
+              <footer class="book__footer">
+                <div>
+                  <i class="fas fa-tag"></i>
+                  <span>Challenge</span>
+                </div>
+                <div>
+                  <i class="fas fa-tag"></i>
+                  <span>Lesson</span>
+                </div>
+                <div>
+                  <i class="fas fa-tag"></i>
+                  <span>Sweat A Bit</span>
+                </div>
+              </footer>
+            </div>
+            <!-- END BOOK -->
+
+            <!-- YOUR HOST -->
+            <div class="about__yourHost">
+              <header>
+                <h1>About your host, {{ hostPost.fullName }}</h1>
+              </header>
+              <section>
+                <p>{{ post.aboutHost }}</p>
+              </section>
+              <footer></footer>
+            </div>
+
+            <!-- END YOUR HOST -->
+          </header>
+
+          <article class="container__center__content__center">
+            <!-- About -->
+            <div class="container__center__content__center__about">
+              <!-- will do -->
+              <article class="container__center__content__center__about__text">
                 <header>
-                    <h1>{{post.post.title}}
-                    </h1>
-                    <p>{{post.post.about}}</p>
+                  <h1>What we will do</h1>
                 </header>
+
                 <section>
-                    <div class="container__center__host__avatar">
-                        <img style="border-radius: 9999px;" width="100" height="100" ng-src={{hostPost.avatar}}
-                            alt="Avatar host">
-                    </div>
-                    <div class="container__center__host__info">
-                        <p>Hosted by <span>{{hostPost.fullName}}</span> in {{post.post.where.city}} City</p>
-                    </div>
+                  <p id="post-text-what"></p>
                 </section>
 
-                <footer class="container__center__host__footer">
-                    <div class="container__center__host__footer__follow">
-                            <i class="fas fa-file-signature"></i>
-                        <span>Contact</span>
-                        <p>1</p>
-                    </div>
-                    <div class="container__center__host__footer__review">
-                        <i class="fas fa-comments"></i>
-                        <span>Review</span>
-                        <p>2</p>
-                    </div>
-                    <div class="container__center__host__footer__like">
-                        <i class="fab fa-gratipay"></i>
-                        <span>Like</span>
-                        <p>3</p>
-                    </div>
-                    <div class="container__center__host__footer__star">
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>Star</span>
-                        <p>4</p>
-                    </div>
-                </footer>
-
-            </article>
-            <!-- END INFO HOST -->
-
-
-
-
-            <section class="container__center__content">
-                <header class="container__center__content__header">
-
-                    <!-- BOOK -->
-                    <div class="book">
-                        <header class="book__header">
-                            <p>{{post.dola.value}} <span>{{post.dola.time}}</span></p>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </header>
-                        <div class="book__btn">
-                            <i class="far fa-user"></i>
-                            <a href="javascript:void(0);">Login To Book</a>
-                        </div>
-                        <footer class="book__footer">
-                            <div>
-                                <i class="fas fa-tag"></i>
-                                <span>Challenge</span>
-                            </div>
-                            <div>
-                                <i class="fas fa-tag"></i>
-                                <span>Lesson</span>
-                            </div>
-                            <div>
-                                <i class="fas fa-tag"></i>
-                                <span>Sweat A Bit</span>
-                            </div>
-                        </footer>
-                    </div>
-                    <!-- END BOOK -->
-
-
-                    <!-- YOUR HOST -->
-                    <div class="about__yourHost">
-                        <header>
-                            <h1>About your host, {{hostPost.fullName}}</h1>
-                        </header>
-                        <section>
-                            <p>{{post.aboutHost}}</p>
-                        </section>
-                        <footer>
-
-                        </footer>
-                    </div>
-
-                    <!-- END YOUR HOST -->
-
-
+                <footer></footer>
+              </article>
+              <!-- END will do -->
+              <!-- will do -->
+              <article class="container__center__content__center__about__text">
+                <header>
+                  <h1>What we will provide</h1>
                 </header>
 
-                <article class="container__center__content__center">
+                <section>
+                  <p id="post-text-provide"></p>
+                </section>
 
+                <footer></footer>
+              </article>
+              <!-- END will do -->
+              <!-- will do -->
+              <article class="container__center__content__center__about__text">
+                <header>
+                  <h1>Who can do this</h1>
+                </header>
 
-                    <!-- About -->
-                    <div class="container__center__content__center__about">
-                        <!-- will do -->
-                        <article class="container__center__content__center__about__text">
-                            <header>
-                                <h1>What we will do</h1>
-                            </header>
+                <section>
+                  <p id="post-text-who"></p>
+                </section>
 
-                            <section>
-                                <p id="post-text-what">
-    
-                                </p>
-                            </section>
+                <footer></footer>
+              </article>
+              <!-- END will do -->
+              <!-- will do -->
+              <article class="container__center__content__center__about__text">
+                <header>
+                  <h1>Why you should do this</h1>
+                </header>
 
-                            <footer></footer>
-                        </article>
-                        <!-- END will do -->
-                        <!-- will do -->
-                        <article class="container__center__content__center__about__text">
-                            <header>
-                                <h1>What we will provide</h1>
-                            </header>
+                <section>
+                  <p id="post-text-why"></p>
+                </section>
 
-                            <section>
-                                <p id="post-text-provide">
-      
-                                </p>
-                            </section>
+                <footer></footer>
+              </article>
+              <!-- END will do -->
 
-                            <footer></footer>
-                        </article>
-                        <!-- END will do -->
-                        <!-- will do -->
-                        <article class="container__center__content__center__about__text">
-                            <header>
-                                <h1>Who can do this</h1>
-                            </header>
+              <article class="image__post">
+                <h1>Pictures</h1>
+                <div class="image__post__top">
+                  <img
+                    index="0"
+                    class="image__post__img"
+                    width="100%"
+                    ng-src="{{ post.post.images[0].src }}"
+                    alt="di choi"
+                  />
+                  <div class="image__post__top__more">
+                    <a id="btn-more-img" href="javascript:void(0);"
+                      >More +{{ post.post.images.length }}</a
+                    >
+                  </div>
+                </div>
+                <div class="image__post__bot">
+                  <img
+                    index="1"
+                    class="image__post__img"
+                    width="50%"
+                    height="50%"
+                    ng-src="{{ post.post.images[1].src }}"
+                    alt="ahihi "
+                  />
+                  <img
+                    index="2"
+                    class="image__post__img"
+                    width="50%"
+                    height="50%"
+                    ng-src="{{ post.post.images[2].src }}"
+                    alt="do ngoc ne"
+                  />
+                </div>
+              </article>
 
-                            <section>
-                                <p id="post-text-who">
-                         
-                                </p>
-                            </section>
+              <article class="address__post">
+                <h1>Where we will do this</h1>
+                <p>{{ post.post.where.city }} City</p>
+                <i> {{ post.post.where.city }}, Vietnam</i>
+                <img width="100%" src="/assets/images/me/map1.PNG" alt="Map" />
+              </article>
+            </div>
 
-                            <footer></footer>
-                        </article>
-                        <!-- END will do -->
-                        <!-- will do -->
-                        <article class="container__center__content__center__about__text">
-                            <header>
-                                <h1>Why you should do this</h1>
-                            </header>
+            <!-- END About -->
 
-                            <section>
-                                <p id="post-text-why">
-                           
-                                </p>
-                            </section>
+            <!-- REVIEWS -->
+            <div class="container__center__content__center__reviews">
+              <header>
+                <h1>Reviews</h1>
+              </header>
 
-                            <footer></footer>
-                        </article>
-                        <!-- END will do -->
-
-
-
-
-                        <article class="image__post">
-                            <h1>Pictures</h1>
-                            <div class="image__post__top">
-                                <img index='0' class="image__post__img" width="100%" ng-src={{post.post.images[0].src}} alt="di choi">
-                                <div class="image__post__top__more">
-                                    <a id="btn-more-img" href="javascript:void(0);">More +{{post.post.images.length}}</a>
-                                </div>
-                            </div>
-                            <div class="image__post__bot">
-                                <img index='1' class="image__post__img" width="50%" height="50%" ng-src={{post.post.images[1].src}} alt="ahihi ">
-                                <img index='2' class="image__post__img" width="50%" height="50%" ng-src={{post.post.images[2].src}} alt="do ngoc ne">
-                            </div>
-
-                        </article>
-
-
-
-                        <article class="address__post">
-                            <h1>Where we will do this</h1>
-                            <p>
-                                {{post.post.where.city}} City
-                            </p>
-                            <i> {{post.post.where.city}}, Vietnam</i>
-                            <img width="100%" src="/assets/images/me/map1.PNG" alt="Map">
-                        </article>
-
-
-
-                    </div>
-
-                    <!-- END About -->
-
-
-                    <!-- REVIEWS -->
-                    <div class="container__center__content__center__reviews">
-                        <header>
-                            <h1>Reviews</h1>
-                        </header>
-
-                        <section>
-
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Marc</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Lovely crew of people who showed me many hidden gems of HCMC. Would recommend
-                                        this activity to anyone interested in photography or if you.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Eve Dalene Biggs</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Wow! I'm so glad I was apart of Sunday Shooting! We went places I've never been
-                                        in Siagon and same so many interesting people.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Steve Busch</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>I had so much fun shooting photos with this group. I got some amazing shots and
-                                        they were very nice and knew all kinds of great places.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Cynthia Siegman</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>I did have lots of fun with Shoot Film on Sundays group. Omg i love them so much,
-                                        they’re all the bunch of cutie, took me to some.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Céline</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Hi Shoot Film On Sundays. You're all nice and cute when showed me how to use film
-                                        camera. Thanks for giving me a lot of fun and taking me to.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Marc</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Lovely crew of people who showed me many hidden gems of HCMC. Would recommend
-                                        this activity to anyone interested in photography or if you.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Cynthia Siegman</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>I did have lots of fun with Shoot Film on Sundays group. Omg i love them so much,
-                                        they’re all the bunch of cutie, took me to some.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Eve Dalene Biggs</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Wow! I'm so glad I was apart of Sunday Shooting! We went places I've never been
-                                        in Siagon and same so many interesting people.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Céline</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>Hi Shoot Film On Sundays. You're all nice and cute when showed me how to use film
-                                        camera. Thanks for giving me a lot of fun and taking me to.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-                            <!-- REVIEW -->
-                            <article class="container__center__content__center__reviews__review">
-                                <div class="header">
-                                    <span>Cynthia Siegman</span>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="content">
-                                    <p>I did have lots of fun with Shoot Film on Sundays group. Omg i love them so much,
-                                        they’re all the bunch of cutie, took me to some.</p>
-                                </div>
-                            </article>
-                            <!-- END REVIEW -->
-
-                        </section>
-                        <footer>
-
-                        </footer>
-                    </div>
-                    <!-- END REVIEWS -->
-
-
+              <section>
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Marc</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Lovely crew of people who showed me many hidden gems of
+                      HCMC. Would recommend this activity to anyone interested
+                      in photography or if you.
+                    </p>
+                  </div>
                 </article>
+                <!-- END REVIEW -->
 
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Eve Dalene Biggs</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Wow! I'm so glad I was apart of Sunday Shooting! We went
+                      places I've never been in Siagon and same so many
+                      interesting people.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Steve Busch</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      I had so much fun shooting photos with this group. I got
+                      some amazing shots and they were very nice and knew all
+                      kinds of great places.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
 
-                <footer>
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Cynthia Siegman</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      I did have lots of fun with Shoot Film on Sundays group.
+                      Omg i love them so much, they’re all the bunch of cutie,
+                      took me to some.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
 
-                </footer>
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Céline</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Hi Shoot Film On Sundays. You're all nice and cute when
+                      showed me how to use film camera. Thanks for giving me a
+                      lot of fun and taking me to.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
 
-            </section>
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Marc</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Lovely crew of people who showed me many hidden gems of
+                      HCMC. Would recommend this activity to anyone interested
+                      in photography or if you.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Cynthia Siegman</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      I did have lots of fun with Shoot Film on Sundays group.
+                      Omg i love them so much, they’re all the bunch of cutie,
+                      took me to some.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Eve Dalene Biggs</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Wow! I'm so glad I was apart of Sunday Shooting! We went
+                      places I've never been in Siagon and same so many
+                      interesting people.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Céline</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Hi Shoot Film On Sundays. You're all nice and cute when
+                      showed me how to use film camera. Thanks for giving me a
+                      lot of fun and taking me to.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+                <!-- REVIEW -->
+                <article
+                  class="container__center__content__center__reviews__review"
+                >
+                  <div class="header">
+                    <span>Cynthia Siegman</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="content">
+                    <p>
+                      I did have lots of fun with Shoot Film on Sundays group.
+                      Omg i love them so much, they’re all the bunch of cutie,
+                      took me to some.
+                    </p>
+                  </div>
+                </article>
+                <!-- END REVIEW -->
+              </section>
+              <footer></footer>
+            </div>
+            <!-- END REVIEWS -->
+          </article>
 
-
-
-
-
-
-
+          <footer></footer>
         </section>
+      </section>
 
-        <!-- END CONTENT -->
+      <!-- END CONTENT -->
 
+      <!-- FOOTER -->
+      <footer class="container__footer">
+        <div
+          style="background-image: url('/assets/images/me/imageFooter.jpg');"
+          class="container__footer__backgroundImage"
+        ></div>
 
+        <div class="container__footer__content">
+          <div class="container__footer__content__left">
+            <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
+            <img
+              widht="200"
+              height="28"
+              src="/assets/images/me/logoFooter.svg"
+              alt="Logo Footer"
+            />
+          </div>
 
-
-
-
-
-        <!-- FOOTER -->
-        <footer class="container__footer">
-            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
-                class="container__footer__backgroundImage">
-
-            </div>
-
-            <div class="container__footer__content">
-                <div class="container__footer__content__left">
-                    <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
-                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer">
-                </div>
-
-                <div class="container__footer__content__right">
-                    <h1>Navigation</h1>
-                    <a href="javascript:void(0);">Trang chủ</a>
-                    <a href="javascript:void(0);">Giới thiệu</a>
-                    <a href="javascript:void(0);">Liên hệ</a>
-                    <a href="javascript:void(0);">Chính sách bảo mật</a>
-
-                </div>
-            </div>
-            <div class="container__footer__background">
-
-            </div>
-        </footer>
-        <!-- END FOOTER -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <div class="container__footer__content__right">
+            <h1>Navigation</h1>
+            <a href="javascript:void(0);">Trang chủ</a>
+            <a href="javascript:void(0);">Giới thiệu</a>
+            <a href="javascript:void(0);">Liên hệ</a>
+            <a href="javascript:void(0);">Chính sách bảo mật</a>
+          </div>
+        </div>
+        <div class="container__footer__background"></div>
+      </footer>
+      <!-- END FOOTER -->
     </main>
 
-
-
-
-
-
     <!-- FILE JAVASCRIPT -->
-    <link rel="stylesheet" href="/assets/css/me/post.css">
+    <link rel="stylesheet" href="/assets/css/me/post.css" />
     <script src="/assets/scripts/me/post.js"></script>
-
-</body>
-<script src="/assets/scripts/common/angular.min.js"></script>
-<script src="/assets/server/angular/postAngular.js"></script>
-<script src="/assets/server/services/postServices.js"></script>
+  </body>
+  <script src="/assets/scripts/common/angular.min.js"></script>
+  <script src="/assets/server/angular/postAngular.js"></script>
+  <script src="/assets/server/services/postServices.js"></script>
 </html>

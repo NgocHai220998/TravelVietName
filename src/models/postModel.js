@@ -1,43 +1,39 @@
-
-let mongoose = require('../../config/mongodb/db.js');
-
+let mongoose = require("../../config/mongodb/db.js");
 
 let postSchema = mongoose.Schema({
-    host : String,
-    aboutHost : String,
-    dola : {
-        value : String,
-        time : String
+  host: String,
+  aboutHost: String,
+  dola: {
+    value: String,
+    time: String
+  },
+  star: Number,
+  post: {
+    title: String,
+    about: String,
+    images: [
+      {
+        src: String
+      }
+    ],
+    toDo: String,
+    provide: String,
+    who: String,
+    why: String,
+    where: {
+      city: String,
+      image: String
     },
-    star : Number,
-    post : {
-        title : String,
-        about : String,
-        images : [
-            {
-                src : String
-            }
-        ],
-        toDo : String,
-        provide : String,
-        who : String,
-        why : String,
-        where : {
-            city : String,
-            image : String
-        },
-        comments : [
-            {
-                name : String,
-                star : Number,
-                content : String
-            }
-        ]
-    }
+    comments: [
+      {
+        name: String,
+        star: Number,
+        content: String
+      }
+    ]
+  }
 });
 
-
-const Post = mongoose.model('post',postSchema);
-
+const Post = mongoose.model("post", postSchema);
 
 module.exports = Post;
