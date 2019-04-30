@@ -23,6 +23,25 @@ module.exports = function (app) {
 
 
 
+    app.put('/api/addComment/:id',async (req,res)=>{
+        try {
+            let post = await postModel.findById(req.params.id);
+            const newComment = {
+                name : req.body.name,
+                star : parseInt(req.body.star),
+                content: req.body.content
+            }
+            post.post.comments.push(newComment);
+            let newPost = await post.save();
+            res.json(newPost);
+
+        } catch (error) {
+            res.send(error + '');
+        }
+    })
+
+
+
 
 
 

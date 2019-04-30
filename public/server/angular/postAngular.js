@@ -20,7 +20,14 @@ post.controller('postController', ['$scope', 'postSecvices', function ($scope, p
 
     postSecvices.getPostById(pathArray[2]).then((post) => {
         $scope.post = post.data;
+        
+        console.log($scope.post.host)
+        postSecvices.getHostPost($scope.post.host).then((host)=>{
+            $scope.hostPost = host.data;
+        });
 
+        
+        
 
 
 
@@ -245,6 +252,9 @@ post.controller('postController', ['$scope', 'postSecvices', function ($scope, p
 
 
 
+
+
+    
 
 
 

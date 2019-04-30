@@ -12,6 +12,9 @@ post.factory('postSecvices', ['$http', function ($http) {
         },
         getPostById: (_id) => {
             return $http.get('/api/getDetailById/' + _id);
+        },
+        getHostPost: (email) => {
+            return $http.get('/api/getUser/' + email);
         }
     }
 }]);

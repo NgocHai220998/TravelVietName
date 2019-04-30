@@ -4,6 +4,7 @@ let mongoose = require('../../config/mongodb/db.js');
 
 let postSchema = mongoose.Schema({
     host : String,
+    aboutHost : String,
     dola : {
         value : String,
         time : String

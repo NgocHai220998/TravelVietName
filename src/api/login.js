@@ -28,10 +28,7 @@ module.exports = function(app){
                     res.send("0");
                 }
             }
-        })
-
-
-        
+        });
     });
     
 

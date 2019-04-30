@@ -17,4 +17,19 @@ module.exports = function(app){
             }
         });
     });
+
+
+    /**
+     *  Get user by email 
+     *
+     */
+    app.get('/api/getUser/:email',async (req,res)=>{
+        try {
+            let user = await userModel.findOne({email : req.params.email});
+            res.json(user);
+
+        } catch (error) {
+            console.log(error + '')
+        }
+    })
 }

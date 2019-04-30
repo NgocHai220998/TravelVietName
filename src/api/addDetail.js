@@ -43,6 +43,7 @@ module.exports = function(app){
     
     let newPost = {
       host : req.body.host,
+      aboutHost : req.body.aboutHost,
       dola : {
         value : req.body.value,
         time : req.body.time

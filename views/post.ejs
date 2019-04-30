@@ -32,23 +32,23 @@
             </header>
             <section>
                 <div class="report__content__rating">
-                    <input type="radio" name="star" id="star1"><label countStar="5" for="star1">
+                    <input class="countStarReport" type="radio" name="star" id="star1"><label countStar="5" for="star1">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star2"><label countStar="4" for="star2">
+                    <input class="countStarReport" type="radio" name="star" id="star2"><label countStar="4" for="star2">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star3"><label countStar="3" for="star3">
+                    <input class="countStarReport" type="radio" name="star" id="star3"><label countStar="3" for="star3">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star4"><label countStar="2" for="star4">
+                    <input class="countStarReport" type="radio" name="star" id="star4"><label countStar="2" for="star4">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
-                    <input type="radio" name="star" id="star5"><label countStar="1" for="star5">
+                    <input class="countStarReport" type="radio" name="star" id="star5"><label countStar="1" for="star5">
                             <i class="fas fa-star before"></i>
                             <i class="fas fa-star affter"></i>
                     </label>
@@ -227,11 +227,11 @@
                 </header>
                 <section>
                     <div class="container__center__host__avatar">
-                        <img style="border-radius: 9999px;" width="100" height="100" src="/assets/images/me/top2.jpeg"
+                        <img style="border-radius: 9999px;" width="100" height="100" ng-src={{hostPost.avatar}}
                             alt="Avatar host">
                     </div>
                     <div class="container__center__host__info">
-                        <p>Hosted by <span>Nguyễn Ngọc Hải</span> in Ha Noi City</p>
+                        <p>Hosted by <span>{{hostPost.fullName}}</span> in {{post.post.where.city}} City</p>
                     </div>
                 </section>
 
@@ -302,16 +302,10 @@
                     <!-- YOUR HOST -->
                     <div class="about__yourHost">
                         <header>
-                            <h1>About your host, Nguyen Ngoc Hai</h1>
+                            <h1>About your host, {{hostPost.fullName}}</h1>
                         </header>
                         <section>
-                            <p>I am Ngoc Hai, a passionate girl working at one of the most famous silverwork workshops
-                                in
-                                Vietnam. This is a very first place where you can experience everything about
-                                silver-work, from history, culture and have a chance to become a real silversmith and
-                                make your very own jewelry.This is a very first place where you can experience
-                                everything about
-                                silver-work.I love You so much. Welcome to Ha Noi Cities</p>
+                            <p>{{post.aboutHost}}</p>
                         </section>
                         <footer>
 
