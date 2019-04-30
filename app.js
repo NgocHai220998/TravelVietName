@@ -28,12 +28,16 @@ let Detail = require('./src/api/detail.js');
 Detail(app);
 let City = require('./src/api/city.js');
 City(app);
+let Cities = require('./src/api/cities.js');
+Cities(app);
 let Host = require('./src/api/host.js');
 Host(app);
 let Top = require('./src/api/top.js');
 Top(app);
 let AddDetail = require('./src/api/addDetail.js')
 AddDetail(app);
+let AddCityInfo = require('./src/api/addCityInfo.js')
+AddCityInfo(app);
 
 // END API
 

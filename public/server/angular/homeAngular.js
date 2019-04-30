@@ -134,12 +134,11 @@ home.controller('homeController', ['$scope', 'homeSecvices', async function ($sc
         //console.log($scope.posts);
     });
 
+    homeSecvices.getCitiesInfo().then((citiesInfo) => {
+        $scope.citiesInfo = citiesInfo.data;
+        
+    })
 
-
-
-
-
-
-
+    
 
 }]);

@@ -12,6 +12,9 @@ home.factory('homeSecvices', ['$http', function ($http) {
         },
         getPosts : () => {
             return $http.get('/api/getPosts');
+        },
+        getCitiesInfo: () => {
+            return $http.get('/api/getCitiesInfo');
         }
     }
 }]);

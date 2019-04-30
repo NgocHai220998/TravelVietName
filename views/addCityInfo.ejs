@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/scss/addDetail.css">
+    <title>Add City Info</title>
+</head>
+<body>
+    <main>
+        <head>
+        </head>
+        <section>
+            <form action="/api/addCityInfo" method="post" enctype="multipart/form-data">
+
+                <input name="city" id="city-name" class="form-input block center" type="text" placeholder="Name Of city">
+
+                <input type="text" name="title" class="form-input block center" placeholder="title của bài viết">
+                
+                <input type="file" name="file" multiple>
+
+                <button class="button" type="submit">Submit</button>
+            </form>
+            
+        </section>
+    </main>
+</body>
+</html>
