@@ -51,7 +51,19 @@ post.controller("postController", [
         $scope.clickSuccessReport = function() {
           const textReport = document.getElementById("comment").value;
           if (countStar !== 0 && textReport !== "") {
-            // do something
+            const userComment = {
+              star: countStar,
+              name: $scope.userMain.fullName,
+              content: textReport
+            };
+            postSecvices.sendReport($scope.post._id, userComment).then(post => {
+              console.log(post);
+              document
+                .getElementsByClassName("report")[0]
+                .classList.remove("displayReport");
+
+              document.querySelector("main.container").style.display = "block";
+            });
           }
         };
       }
@@ -281,3 +293,15 @@ post.controller("postController", [
     });
   }
 ]);
+
+post.filter("range", function() {
+  return function(input, total) {
+    total = parseInt(total);
+
+    for (var i = 0; i < total; i++) {
+      input.push(i);
+    }
+
+    return input;
+  };
+});
