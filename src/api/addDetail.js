@@ -40,9 +40,8 @@ module.exports = function(app){
         imageTemp[i++] = src;
       }
     }
-    
     let newPost = {
-      host : req.body.host,
+      host : req.cookies.email,
       aboutHost : req.body.aboutHost,
       dola : {
         value : req.body.value,

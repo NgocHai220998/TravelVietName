@@ -7,12 +7,13 @@ cities.controller('citiesController', ['$scope', 'citiesSecvices', async functio
         
     })
     $scope.showDetail = function (ID) {
+        //window.location.href = "/city/" + ID;
         cityID = {
             cityID: ID
         }
         citiesSecvices.sendCityID(cityID).then((res) => {
             console.log(res);
         })
-        location.reload();
+        
     }
 }])
