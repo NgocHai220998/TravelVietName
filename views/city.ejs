@@ -49,16 +49,15 @@
 
         <!-- CONTAINER CENTER -->
         <section class="container__center">
-            <header style="background-image: url('/assets/images/me/hochiminh1.jpeg')"
+            <header style="background-image: url('<%= cityInfo.images[0].src %>')"
                 class="container__center__header">
-                <h1>HO CHI MINH CITY</h1>
+                <h1><%= cityInfo.name %> CITY</h1>
                 <h3>All unique experiences and local activities</h3>
-                <p>A city that never sleeps, Saigon is known for its endless vibrant nightlife and abundant choices of
-                    fun-filled activities.</p>
+                <p><%= cityInfo.title %></p>
             </header>
             <section class="container__center__content">
                 <header>
-                    <h1>Experiences and local activities in Ho Chi Minh City</h1>
+                    <h1>Experiences and local activities in <%= cityInfo.name %> City</h1>
                 </header>
 
                 <section>

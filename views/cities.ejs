@@ -33,7 +33,7 @@
                     <a href="javascript:void(0);">Thành phố</a>
                     <a href="javascript:void(0);">Host</a>
                     <a href="/login">Login</a>
-                    
+
                 </div>
             </div>
 
@@ -49,12 +49,11 @@
 
         <!-- CONTAINER CENTER -->
         <section class="container__center">
-            <header style="background-image: url('/assets/images/me/hochiminh1.jpeg')"
+            <header style="background-image: url('/assets/images/me/citiesImage/viet-wallpaper.jpg')"
                 class="container__center__header">
-                <h1>HO CHI MINH CITY</h1>
+                <h1>VIET NAM</h1>
                 <h3>All unique experiences and local activities</h3>
-                <p>A city that never sleeps, Saigon is known for its endless vibrant nightlife and abundant choices of
-                    fun-filled activities.</p>
+                <p>Write something here</p>
             </header>
             <section class="container__center__content">
                 <header>
@@ -67,13 +66,14 @@
                         <!--Conten_TOP_REATED-->
                         <div class="container__center__content__cities__container">
                             <!--Conten_TOP_REATED-->
-                            <div ng-repeat = "cityInfo in citiesInfo" class="container__center__content__cities__container__content">
+                            <div ng-repeat="cityInfo in citiesInfo"
+                                class="container__center__content__cities__container__content">
                                 <div class="container__center__content__cities__container__content__item">
-                                    <div link= {{cityInfo.images[0].src}}
+                                    <a href = "/city" ng-click="showDetail(cityInfo._id)" link={{cityInfo.images[0].src}}
                                         style="background-image: url('{{cityInfo.images[0].src}}');"
                                         class="container__center__content__cities__container__content__item__image clickImage">
                                         <p>{{cityInfo.name}}</p>
-                                    </div>
+                                    </a>
                                     <!-- <div class="container__center__content__cities__container__content__item__info">
                                         <div
                                             class="container__center__content__cities__container__content__item__info__left">
@@ -164,4 +164,5 @@
 <script src="/assets/scripts/common/angular.min.js"></script>
 <script src="/assets/server/angular/citiesAngular.js"></script>
 <script src="/assets/server/services/citiesServices.js"></script>
+
 </html>
