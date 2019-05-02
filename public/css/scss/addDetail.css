@@ -135,7 +135,7 @@ header {
   .container__center__header h3 {
     font-size: 28px;
     color: white;
-    padding: 80px 10px;
+    padding: 5em 10px;
     max-width: 400px;
     margin: 0 auto;
     z-index: 1;
@@ -149,18 +149,33 @@ header {
     max-width: 400px;
     z-index: 1; }
 .container__center form {
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .container__center form .form-input {
+    max-width: 20em;
+    width: 18em;
+    height: 2.5em;
+    font-size: 1.1em;
+    padding: 0 1em;
+    border: 1px solid gray;
+    margin: 5px; }
+    .container__center form .form-input.checkbox {
+      width: 1em;
+      height: 1em;
+      margin-left: 1em; }
+    .container__center form .form-input:focus {
+      box-shadow: 2px 2px 5px aqua; }
 .container__center__title {
   padding: 1em 1em; }
-.container__center__part {
+.container__center__block__part {
   margin: 1em 0;
   padding: 0 1em;
   display: flex;
   flex-direction: column;
   align-items: flex-start; }
-  .container__center__part__option {
+  .container__center__block__part__option {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
@@ -214,6 +229,24 @@ header {
     opacity: 0.4;
     position: absolute; }
 
+@media (min-width: 560px) and (max-width: 959px) {
+  .container__center form .form-input {
+    width: 30em;
+    max-width: 30em; } }
+@media (min-width: 1291px) {
+  .container__center form .form-input {
+    max-width: 25em;
+    width: 25em; }
+  .container__center__title {
+    max-width: 75%;
+    margin: 0 auto; }
+  .container__center__block {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: solid 0.1px darkgray;
+    padding: 1em 0; } }
 @media (min-width: 930px) {
   .container__top__search {
     max-width: 30%; }
@@ -304,17 +337,6 @@ header {
     background-position: left 2000x top 0px; }
   100% {
     background-position: left 0px top 20000px; } }
-.form-input {
-  max-width: 20em;
-  width: 18em;
-  height: 2.5em;
-  font-size: 1.1em;
-  padding: 0 1em;
-  border: 1px solid gray;
-  margin: 5px; }
-  .form-input:focus {
-    box-shadow: 2px 2px 5px aqua; }
-
 .form-textarea {
   padding: 20px;
   border: 1px solid gray; }

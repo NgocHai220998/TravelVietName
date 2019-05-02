@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="addDetail" ng-controller="addDetailController">
 
 <head>
     <meta charset="UTF-8">
@@ -59,94 +59,116 @@
 
             <form action="/api/adddetail" method="post" enctype="multipart/form-data">
 
-                <div class="container__center__part">
-                    <div class="font font--big font--bold">Step 1: Something about you</div>
-                    <input type="text" name="aboutHost" class="form-input block" placeholder="I am a tour guide...">
+                <div class="container__center__block">
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 1: Something about you</div>
+                        <input type="text" name="aboutHost" class="form-input block" placeholder="I am a tour guide...">
+                    </div>
+    
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 2: About your post</div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Write a title for your activity</p>
+                            <input type="text" name="title" class="form-input block" placeholder="title của bài viết">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Write a title for your activity</p>
+                            <input type="text" name="about" class="form-input block" placeholder="about của bài viết">
+                        </div>
+    
+    
+                    </div>
                 </div>
+                
 
-                <div class="container__center__part">
-                    <div class="font font--big font--bold">Step 2: About your post</div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Write a title for your activity</p>
-                        <input type="text" name="title" class="form-input block" placeholder="title của bài viết">
+                <div class="container__center__block">
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 3: About activity content</div>
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">What we wiil do</p>
+                            <input type="text" name="toDo" class="form-input block" placeholder="toDo của bài viết">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">What we will provide</p>
+                            <input type="text" name="provide" class="form-input block" placeholder="provide của bài viết">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Who can do this</p>
+                            <input type="text" name="who" class="form-input block" placeholder="who của bài viết">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Why you should do this</p>
+                            <input type="text" name="why" class="form-input block" placeholder="why của bài viết">
+                        </div>
+    
+    
+                        <!-- <input type="text" name="where" class="form-input block" placeholder="where của bài viết"> -->
+    
                     </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Write a title for your activity</p>
-                        <input type="text" name="about" class="form-input block" placeholder="about của bài viết">
+    
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 4: About place</div>
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">City:</p>
+                            
+                            <select ng-hide = "otherCity" name="city" class="form-input block" id="">
+                                <option ng-repeat = "cityInfo in citiesInfo" value="">{{cityInfo.name}}</option>
+                            </select>
+                            <input ng-show = "otherCity" type="text" name="city" class="form-input block" placeholder="City">
+                            <span style="display: flex; align-items: center;">
+                                <input ng-model = "otherCity" type="checkbox" name="" id="" class="form-input checkbox">
+                                <span class="font">Other City</span>
+                            </span>
+                            
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Image</p>
+                            <input type="text" name="image" class="form-input block" placeholder="Image">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Choose your image of activities</p>
+                            <input type="file" name="file" multiple>
+                        </div>
+    
+    
+    
                     </div>
-
-
                 </div>
+                
 
-                <div class="container__center__part">
-                    <div class="font font--big font--bold">Step 3: About activity content</div>
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">What we wiil do</p>
-                        <input type="text" name="toDo" class="form-input block" placeholder="toDo của bài viết">
+                <div class="container__center__block" style="border: none">
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 5: About price</div>
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">Price</p>
+                            <input type="text" name="value" class="form-input block" placeholder="5$">
+                        </div>
+    
+                        <div class="container__center__block__part__option">
+                            <p class="font font--bold font--italic font--space">...for</p>
+                            <input type="text" name="time" class="form-input block" placeholder="2 hours">
+                        </div>
+    
+    
                     </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">What we will provide</p>
-                        <input type="text" name="provide" class="form-input block" placeholder="provide của bài viết">
+    
+                    <div class="container__center__block__part">
+                        <div class="font font--big font--bold">Step 6: Star</div>
+                        <div class="container__center__block__part__option">
+                            <!-- <p class="font font--bold font--italic font--space">Price</p> -->
+                            <input type="text" name="star" class="form-input block" placeholder="star của bài viết">
+                        </div>
+    
                     </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Who can do this</p>
-                        <input type="text" name="who" class="form-input block" placeholder="who của bài viết">
-                    </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Why you should do this</p>
-                        <input type="text" name="why" class="form-input block" placeholder="why của bài viết">
-                    </div>
-
-
-                    <!-- <input type="text" name="where" class="form-input block" placeholder="where của bài viết"> -->
-
                 </div>
-
-                <div class="container__center__part">
-                    <div class="font font--big font--bold">Step 4: About place</div>
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">City:</p>
-                        <input type="text" name="city" class="form-input block" placeholder="City">
-                    </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Image</p>
-                        <input type="text" name="image" class="form-input block" placeholder="Image">
-                    </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Choose your image of activities</p>
-                        <input type="file" name="file" multiple>
-                    </div>
-
-
-
-                </div>
-
-                <div class="container__center__part">
-                    <div class="font font--big font--bold">Step 5: About price</div>
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">Price</p>
-                        <input type="text" name="value" class="form-input block" placeholder="5$">
-                    </div>
-
-                    <div class="container__center__part_option">
-                        <p class="font font--bold font--italic font--space">...for</p>
-                        <input type="text" name="time" class="form-input block" placeholder="2 hours">
-                    </div>
-
-
-                </div>
-
-                <input type="text" name="star" class="form-input block" placeholder="star của bài viết">
-
-
-
+                
                 <button class="button" type="submit">Submit</button>
             </form>
 
@@ -185,5 +207,7 @@
 
 <script src="/assets/scripts/me/addDetail.js"></script>
 <script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/addDetailAngular.js"></script>
+<script src="/assets/server/services/addDetailServices.js"></script>
 
 </html>

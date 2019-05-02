@@ -170,7 +170,7 @@ $fontSizeTitle: 28px;
       h3 {
         font-size: $fontSizeTitle;
         color: white;
-        padding: 80px 10px;
+        padding: 5em 10px;
         max-width: 400px;
         margin: 0 auto;
         z-index: 1;
@@ -187,23 +187,44 @@ $fontSizeTitle: 28px;
       }
     }
     form {
+      padding: 1em 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      & .form-input {
+        max-width: 20em;
+        width: 18em;
+        height: 2.5em;
+        font-size: 1.1em;
+        //line-height: 3em;
+        padding: 0 1em;
+        border: 1px solid gray;
+        margin: 5px;
+        &.checkbox{
+          width: 1em;
+          height: 1em;
+          margin-left: 1em;
+        }
+        &:focus {
+          box-shadow: 2px 2px 5px aqua;
+        }
+      }
     }
     &__title {
       padding: 1em 1em;
     }
-    &__part {
-      margin: 1em 0;
-      padding: 0 1em;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      &__option {
+    &__block {
+      &__part {
+        margin: 1em 0;
+        padding: 0 1em;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        &__option {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     }
   }
@@ -275,10 +296,48 @@ $fontSizeTitle: 28px;
 
 //Media
 @media (min-width: 560px) and (max-width: 959px) {
+  .container{
+    &__center{
+      form {
+        & .form-input{
+          width: 30em;
+          max-width: 30em;
+        }
+      }
+    }
+  }
 }
 @media (min-width: 960px) and (max-width: 1290px) {
 }
 @media (min-width: 1291px) {
+  .container {
+    &__center {
+      form{
+        & .form-input{
+          max-width: 25em;
+          width: 25em;
+        }
+      }
+      &__title {
+        max-width: 75%;
+        margin: 0 auto;
+      }
+      &__block {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-bottom: solid 0.1px darkgray;
+        padding: 1em 0;
+        // &__part{
+        //   &__option{
+        //     display: flex;
+
+        //   }
+        // }
+      }
+    }
+  }
 }
 
 @media (min-width: 930px) {
@@ -410,20 +469,6 @@ $fontSizeTitle: 28px;
 }
 
 //END ANIMATION
-
-.form-input {
-  max-width: 20em;
-  width: 18em;
-  height: 2.5em;
-  font-size: 1.1em;
-  //line-height: 3em;
-  padding: 0 1em;
-  border: 1px solid gray;
-  margin: 5px;
-  &:focus {
-    box-shadow: 2px 2px 5px aqua;
-  }
-}
 
 .form-textarea {
   padding: 20px;
