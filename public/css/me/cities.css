@@ -178,6 +178,9 @@ header {
         padding: 40px 0px 0px 0px; }
         .container__center__content__cities__container__content__item {
           width: 100%; }
+          .container__center__content__cities__container__content__item a {
+            display: block;
+            text-decoration: none; }
           .container__center__content__cities__container__content__item p {
             color: #fff;
             font-size: 2.5em;

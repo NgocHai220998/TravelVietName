@@ -224,6 +224,10 @@ $fontSizeTitle: 28px;
                         padding: 40px 0px 0px 0px;
                         &__item {
                             width: 100%;
+                            & a {
+                                display: block;
+                                text-decoration: none;
+                            }
                             & p{
                                 color: #fff;
                                 font-size: 2.5em;

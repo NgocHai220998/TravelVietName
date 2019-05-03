@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="refresh" content="2"/> -->
     <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/me/city.css">
-    <title>Các thành phố</title>
+    <title><%= cityInfo.name %></title>
+    <script>
+        (function () {
+            if (window.localStorage) {
+                if (!localStorage.getItem('firstLoad')) {
+                    localStorage['firstLoad'] = true;
+                    window.location.reload();
+                }
+                else
+                    localStorage.removeItem('firstLoad');
+            }
+        })();
+        // window.location.pathname = "/cities";
+    </script>
 </head>
 
 <body>
@@ -33,7 +47,7 @@
                     <a href="javascript:void(0);">Thành phố</a>
                     <a href="javascript:void(0);">Host</a>
                     <a href="/login">Login</a>
-                    
+
                 </div>
             </div>
 
@@ -49,16 +63,14 @@
 
         <!-- CONTAINER CENTER -->
         <section class="container__center">
-            <header style="background-image: url('/assets/images/me/hochiminh1.jpeg')"
-                class="container__center__header">
-                <h1>HO CHI MINH CITY</h1>
+            <header style="background-image: url('<%= cityInfo.images[0].src %>')" class="container__center__header">
+                <h1><%= cityInfo.name %> CITY</h1>
                 <h3>All unique experiences and local activities</h3>
-                <p>A city that never sleeps, Saigon is known for its endless vibrant nightlife and abundant choices of
-                    fun-filled activities.</p>
+                <p><%= cityInfo.title %></p>
             </header>
             <section class="container__center__content">
                 <header>
-                    <h1>Experiences and local activities in Ho Chi Minh City</h1>
+                    <h1>Experiences and local activities in <%= cityInfo.name %> City</h1>
                 </header>
 
                 <section>
@@ -371,8 +383,10 @@
     </main>
 </body>
 
+
 <script src="/assets/scripts/me/cities.js"></script>
 <script src="/assets/scripts/common/angular.min.js"></script>
 <script src="/assets/server/angular/cityAngular.js"></script>
 <script src="/assets/server/services/cityServices.js"></script>
+
 </html>
