@@ -21,7 +21,7 @@ let upload = multer({storage: storage});
 module.exports = function(app){
 
 
-  app.get('/api/ngochai220998/adddetail',(req,res)=>{
+  app.get('/admin/adddetail',(req,res)=>{
     res.render('addDetail');
   });
 

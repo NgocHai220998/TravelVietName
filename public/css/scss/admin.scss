@@ -20,11 +20,6 @@ header {
   display: block;
 }
 
-@font-face {
-  font-family: myTitle;
-  src: url("/assets/fonts/GloriaHallelujah.ttf");
-}
-
 //box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 $colorHeader: rgb(47, 178, 211);
 $colorListMenu: rgb(57, 209, 230);
@@ -78,12 +73,15 @@ $fontSizeTitle: 28px;
       cursor: pointer;
     }
     &__icon {
+      display: flex;
+
       &__item {
         position: absolute;
         opacity: 0;
         visibility: hidden;
         right: 20px;
         top: 68px;
+        z-index: 3;
         a {
           display: block;
           width: 100%;
@@ -106,7 +104,7 @@ $fontSizeTitle: 28px;
           }
         }
       }
-      &__item::after {
+      #container__top__icon__item__option::after {
         position: absolute;
         content: "";
         border: 10px solid #ffffff00;
@@ -114,9 +112,32 @@ $fontSizeTitle: 28px;
         top: -20px;
         right: 0px;
       }
+      #container__top__icon__item__notification::after {
+        position: absolute;
+        content: "";
+        border: 10px solid #ffffff00;
+        border-bottom: 10px solid $colorListMenu;
+        top: -20px;
+        right: 36px;
+      }
       .fa-align-justify {
         position: absolute;
         right: 20px;
+        top: 27px;
+        font-size: 25px;
+        color: $colorListMenu;
+        &:hover {
+          color: gray;
+          cursor: pointer;
+        }
+        &:active {
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .fa-globe-americas {
+        position: absolute;
+        right: 55px;
         top: 27px;
         font-size: 25px;
         color: $colorListMenu;
@@ -135,77 +156,109 @@ $fontSizeTitle: 28px;
     }
   } // END TOP
   // CONTENT
+  //CENTER
 
   &__center {
-    margin: 1.5em 0;
-    &__left {
-      &__title {
-        padding: 2em 1em;
-
-        h1 {
-          font-size: 1.8em;
-        }
-        p {
-          font-size: 1.2em;
-          font-weight: 600;
-        }
-        .strike {
-          width: 40%;
-          height: 5px;
-          background-color: rgb(47, 178, 211);
-          margin: 1em 0;
-        }
+    background-color: #fff;
+    &__header {
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-image: linear-gradient(to right bottom, rgb(34, 34, 34), rgb(25, 22, 84));
+        opacity: 0.45;
+        z-index: 0;
       }
-      &__booking {
+      h1 {
+        display: block;
+        font-size: 100px;
+        background-image: url("/assets/images/me/rain.png");
+        color: rgba(white, 0.9);
+        background-clip: text;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        text-transform: uppercase;
+        animation: backgroundImgae 100s linear infinite;
+        padding: 80px 10px 10px 10px;
+        z-index: 1;
+        position: relative;
+      }
+      h3 {
+        font-size: $fontSizeTitle;
+        color: white;
+        padding: 3em 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        z-index: 1;
+        position: relative;
+      }
+      p {
+        position: relative;
+        margin: 0 auto;
+        font-size: 18px;
+        color: white;
+        padding: 15px 15px 50px 15px;
+        max-width: 400px;
+        z-index: 1;
+      }
+    }
+    &__title {
+      padding: 1em 1em;
+    }
+    &__block {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      align-items: center;
+      &__part {
+        margin: 1em 0;
         padding: 0 1em;
-        p {
-          font-size: 20px;
-          font-family: myTitle;
-        }
-        &__block {
-          padding: 0.5em 0;
-          input {
-            width: 100%;
-            height: 100%;
-            border: 2px solid $colorListMenu;
-            //border-radius: 9999px;
-            padding: 0.5em 1em;
-            font-size: 1.5em;
-            outline: none;
-            &:focus {
-              box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
+        max-width: 7em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__option {
+          font-size: 3em;
+          color: $colorListMenu;
+          border: solid 2px #39d1e6;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2em;
+          height: 2em;
+          border-radius: 50%;
+          &:hover {
+            box-shadow: 5px 5px 0.2em #39d1e6;
+            cursor: pointer;
+          }
+          &:active {
+            color: white;
+            cursor: pointer;
+          }
+          &:hover{
+            box-shadow: 5px 5px 0.2em #39d1e6;
           }
         }
-      }
-    } //END-CENTER-LEFT
-    &__right {
-        display: flex;
-        justify-content: center;
-      &__content {
-        width: 90%;
-        height: auto;
-        box-shadow: 0 0 0.5em darkgray;
-        padding: 1em;
-        &__block{
-            display: flex;
-            flex-direction: column;
-            border-bottom: solid 2px darkgray;
-            padding: 0.5em;
-            &__image{
-                width: 5em;
-                height: 5em;
-                border-radius: 9999em;
-                border: solid 2px lightgray;
-            }
-            &__part{
-                padding: 0.2em;
-            }
-        }
+        
       }
     }
   }
+  //END_CENTER
 
+  //FOOTER
   &__footer {
     width: 100%;
     height: 500px;
@@ -270,6 +323,46 @@ $fontSizeTitle: 28px;
 }
 
 //Media
+@media (min-width: 560px) and (max-width: 959px) {
+  .container {
+    &__center {
+      form {
+        & .form-input {
+          width: 30em;
+          max-width: 30em;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width: 1290px) {
+}
+@media (min-width: 1291px) {
+  .container {
+    &__center {
+      
+      &__title {
+        max-width: 75%;
+        margin: 0 auto;
+      }
+      &__block {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1em 0;
+        // &__part{
+        //   &__option{
+        //     display: flex;
+
+        //   }
+        // }
+      }
+    }
+  }
+}
+
 @media (min-width: 930px) {
   .container {
     // Top
@@ -348,19 +441,22 @@ $fontSizeTitle: 28px;
           }
         }
       }
+    } 
+    
+    &__center{
+      &__header{
+        h3 {
+          font-size: $fontSizeTitle;
+          color: white;
+          padding: 6em 10px;
+          max-width: 400px;
+          margin: 0 auto;
+          z-index: 1;
+          position: relative;
+        }
+      }
     }
 
-    &__center{
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        &__left{
-            max-width: 50%;
-        }
-        &__right{
-            min-width: 30%;
-        }
-    }
     // FOOTER
     &__footer {
       height: 350px;
@@ -382,14 +478,12 @@ $fontSizeTitle: 28px;
 }
 
 //END MEDIA
-
 //CSS CHung
 .displayMenu {
   animation: showMenu 0.5s forwards;
 }
 
 //END CSS CHUNG
-
 //Animation
 @keyframes showMenu {
   from {
@@ -404,11 +498,35 @@ $fontSizeTitle: 28px;
   }
 }
 
+@keyframes backgroundImgae {
+  0% {
+    background-position: left 2000x top 0px;
+  }
+  100% {
+    background-position: left 0px top 20000px;
+  }
+}
+
 //END ANIMATION
 
+.form-textarea {
+  padding: 20px;
+  border: 1px solid gray;
+
+  &:focus {
+    box-shadow: 2px 2px 5px aqua;
+  }
+}
+
+.center {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
 .button {
-  max-width: 12em;
-  overflow: hidden;
+  width: auto;
   background-color: $colorListMenu;
   padding: 0.5em 1.5em;
   color: white;
@@ -428,34 +546,35 @@ $fontSizeTitle: 28px;
     background-color: $colorListMenu;
   }
 }
+
 .font {
-    font-size: 1em;
-    font-weight: normal;
-    color: #000000;
-  }
-  .font--normal {
-    font-size: 1.2em;
-  }
-  .font--big {
-    font-size: 1.4em;
-    padding: 0.5em 0;
-  }
-  .font--sobig {
-    font-size: 1.8em;
-    padding: 0.5em 0em;
-  }
-  .font--bold {
-    font-weight: bold;
-  }
-  .font--space {
-    margin: 0.3em 0;
-  }
-  .font--italic {
-    font-style: italic;
-  }
-  .font--blue{
-    color: #39d1e6;
-  }
-  .font--center{
-    text-align: center;
-  }
+  font-size: 1em;
+  font-weight: normal;
+  color: #000000;
+}
+.font--normal {
+  font-size: 1.2em;
+}
+.font--big {
+  font-size: 1.4em;
+  padding: 0.5em 0;
+}
+.font--sobig {
+  font-size: 1.8em;
+  padding: 0.5em 0em;
+}
+.font--bold {
+  font-weight: bold;
+}
+.font--space {
+  margin: 0.3em 0;
+}
+.font--italic {
+  font-style: italic;
+}
+.font--blue{
+  color: #39d1e6;
+}
+.font--center{
+  text-align: center;
+}

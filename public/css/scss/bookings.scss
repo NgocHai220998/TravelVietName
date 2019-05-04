@@ -137,70 +137,119 @@ $fontSizeTitle: 28px;
   // CONTENT
 
   &__center {
-    margin: 1.5em 0;
-    &__left {
-      &__title {
-        padding: 2em 1em;
-
-        h1 {
-          font-size: 1.8em;
-        }
-        p {
-          font-size: 1.2em;
-          font-weight: 600;
-        }
-        .strike {
-          width: 40%;
-          height: 5px;
-          background-color: rgb(47, 178, 211);
-          margin: 1em 0;
-        }
+    &__header {
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-image: linear-gradient(to right bottom, rgb(34, 34, 34), rgb(25, 22, 84));
+        opacity: 0.45;
+        z-index: 0;
       }
-      &__booking {
-        padding: 0 1em;
-        p {
-          font-size: 20px;
-          font-family: myTitle;
+      h1 {
+        display: block;
+        font-size: 3em;
+        background-image: url("/assets/images/me/rain.png");
+        color: rgba(white, 0.9);
+        background-clip: text;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        //text-transform: uppercase;
+        animation: backgroundImgae 100s linear infinite;
+        padding: 80px 10px 80px 10px;
+        z-index: 1;
+        position: relative;
+      }
+      h3 {
+        font-size: $fontSizeTitle;
+        color: white;
+        padding: 3em 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        z-index: 1;
+        position: relative;
+      }
+      p {
+        position: relative;
+        margin: 0 auto;
+        font-size: 18px;
+        color: white;
+        padding: 15px 15px 50px 15px;
+        max-width: 400px;
+        z-index: 1;
+      }
+    }
+    &__option {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+      &__choose {
+        width: 50%;
+        border: solid 4px #39d1e6;
+        padding: 2em 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          box-shadow: 0 0 1em #39d1e6;
+          cursor: pointer;
         }
-        &__block {
-          padding: 0.5em 0;
-          input {
-            width: 100%;
-            height: 100%;
-            border: 2px solid $colorListMenu;
-            //border-radius: 9999px;
-            padding: 0.5em 1em;
-            font-size: 1.5em;
-            outline: none;
-            &:focus {
-              box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
+        .fa-flag-checkered {
+          font-size: 2.5em;
+          color: $colorListMenu;
+          margin: 0 0.5em;
+          &:hover {
+            cursor: pointer;
+          }
+          &:active {
+            color: #fff;
+            background-color: #39d1e6;
+            cursor: pointer;
           }
         }
       }
-    } //END-CENTER-LEFT
-    &__right {
-        display: flex;
-        justify-content: center;
-      &__content {
-        width: 90%;
-        height: auto;
-        box-shadow: 0 0 0.5em darkgray;
-        padding: 1em;
-        &__block{
-            display: flex;
-            flex-direction: column;
-            border-bottom: solid 2px darkgray;
-            padding: 0.5em;
-            &__image{
-                width: 5em;
-                height: 5em;
-                border-radius: 9999em;
-                border: solid 2px lightgray;
-            }
-            &__part{
-                padding: 0.2em;
-            }
+    }
+    &__post {
+      &__item {
+        margin: 1em;
+        border: solid 2px #39d1e6;
+        &__image {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 4em 0;
+        }
+        &__detail {
+          padding: 0 1.5em;
+        }
+      }
+    }
+    &__booking {
+      &__item {
+        margin: 1em;
+        border: solid 2px #39d1e6;
+        &__image {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 4em 0;
+        }
+        &__detail {
+          padding: 0 1.5em;
         }
       }
     }
@@ -350,16 +399,32 @@ $fontSizeTitle: 28px;
       }
     }
 
-    &__center{
+    &__center {
+      &__option {
+        &__choose{
+            width: 25%;
+        }
+      }
+      &__post {
         display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        &__left{
-            max-width: 50%;
+        flex-wrap: wrap;
+        &__item {
+          padding: 1em;
+          margin: 0;
+          border: none;
+          max-width: 25%;
         }
-        &__right{
-            min-width: 30%;
+      }
+      &__booking {
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+          padding: 1em;
+          margin: 0;
+          border: none;
+          max-width: 25%;
         }
+      }
     }
     // FOOTER
     &__footer {
@@ -429,33 +494,45 @@ $fontSizeTitle: 28px;
   }
 }
 .font {
-    font-size: 1em;
-    font-weight: normal;
-    color: #000000;
-  }
-  .font--normal {
-    font-size: 1.2em;
-  }
-  .font--big {
-    font-size: 1.4em;
-    padding: 0.5em 0;
-  }
-  .font--sobig {
-    font-size: 1.8em;
-    padding: 0.5em 0em;
-  }
-  .font--bold {
-    font-weight: bold;
-  }
-  .font--space {
-    margin: 0.3em 0;
-  }
-  .font--italic {
-    font-style: italic;
-  }
-  .font--blue{
-    color: #39d1e6;
-  }
-  .font--center{
-    text-align: center;
-  }
+  font-size: 1em;
+  font-weight: normal;
+  color: #000000;
+}
+.font--normal {
+  font-size: 1.2em;
+}
+.font--big {
+  font-size: 1.4em;
+  padding: 0.5em 0;
+}
+.font--sobig {
+  font-size: 2.3em;
+  padding: 0.5em 0em;
+}
+.font--bold {
+  font-weight: bold;
+}
+.font--space {
+  margin: 0.3em 0;
+}
+.font--italic {
+  font-style: italic;
+}
+.font--blue {
+  color: #39d1e6;
+}
+.font--white {
+  color: #fff;
+}
+.font--red {
+  color: red;
+}
+.font--green {
+  color: green;
+}
+.font--GloriaHallelujah {
+  font-family: myTitle;
+}
+.font--center {
+  text-align: center;
+}

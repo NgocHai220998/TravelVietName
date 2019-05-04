@@ -17,9 +17,6 @@ article,
 header {
   display: block; }
 
-@font-face {
-  font-family: myTitle;
-  src: url("/assets/fonts/GloriaHallelujah.ttf"); }
 /*Css Main*/
 .container__top {
   display: flex;
@@ -63,7 +60,8 @@ header {
     opacity: 0;
     visibility: hidden;
     right: 20px;
-    top: 68px; }
+    top: 68px;
+    z-index: 3; }
     .container__top__icon__item a {
       display: block;
       width: 100%;
@@ -104,55 +102,30 @@ header {
   .container__top__menu {
     display: none; }
 .container__center {
-  margin: 1.5em 0; }
-  .container__center__left__title {
-    padding: 2em 1em; }
-    .container__center__left__title h1 {
-      font-size: 1.8em; }
-    .container__center__left__title p {
-      font-size: 1.2em;
-      font-weight: 600; }
-    .container__center__left__title .strike {
-      width: 40%;
-      height: 5px;
-      background-color: #2fb2d3;
-      margin: 1em 0; }
-  .container__center__left__booking {
-    padding: 0 1em; }
-    .container__center__left__booking p {
-      font-size: 20px;
-      font-family: myTitle; }
-    .container__center__left__booking__block {
-      padding: 0.5em 0; }
-      .container__center__left__booking__block input {
-        width: 100%;
-        height: 100%;
-        border: 2px solid #39d1e6;
-        padding: 0.5em 1em;
-        font-size: 1.5em;
-        outline: none; }
-        .container__center__left__booking__block input:focus {
-          box-shadow: 0 4px 8px 0 #39d1e6, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .container__center__right {
+  padding: 1em;
+  display: flex;
+  justify-content: center; }
+  .container__center form {
     display: flex;
-    justify-content: center; }
-    .container__center__right__content {
-      width: 90%;
-      height: auto;
-      box-shadow: 0 0 0.5em darkgray;
-      padding: 1em; }
-      .container__center__right__content__block {
-        display: flex;
-        flex-direction: column;
-        border-bottom: solid 2px darkgray;
-        padding: 0.5em; }
-        .container__center__right__content__block__image {
-          width: 5em;
-          height: 5em;
-          border-radius: 9999em;
-          border: solid 2px lightgray; }
-        .container__center__right__content__block__part {
-          padding: 0.2em; }
+    flex-direction: column;
+    align-items: center;
+    max-width: 30em; }
+    .container__center form .form-input {
+      max-width: 20em;
+      width: 15em;
+      height: 2.5em;
+      font-size: 1.1em;
+      padding: 0 1em;
+      margin: 0.3em 0;
+      border: solid 1px darkgray; }
+      .container__center form .form-input:focus {
+        box-shadow: 0 4px 8px 0 #39d1e6, 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .container__center__block__part {
+    margin: 0.5em 0;
+    max-width: 16em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; }
 .container__footer {
   width: 100%;
   height: 500px;
@@ -203,6 +176,20 @@ header {
     opacity: 0.4;
     position: absolute; }
 
+@media (min-width: 560px) and (max-width: 959px) {
+  .container__center form .form-input {
+    width: 30em;
+    max-width: 30em; } }
+@media (min-width: 1291px) {
+  .container__center form .form-input {
+    max-width: 25em;
+    width: 25em; }
+  .container__center__title {
+    max-width: 75%;
+    margin: 0 auto; }
+  .container__center__block__part {
+    max-width: 30em;
+    width: 28em; } }
 @media (min-width: 930px) {
   .container__top__search {
     max-width: 30%; }
@@ -265,14 +252,6 @@ header {
         background-color: #2fb2d3;
         color: white;
         border: 2px solid white; }
-  .container__center {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center; }
-    .container__center__left {
-      max-width: 50%; }
-    .container__center__right {
-      min-width: 30%; }
   .container__footer {
     height: 350px; }
     .container__footer__content {
@@ -296,9 +275,25 @@ header {
     opacity: 1;
     transform: scale(1);
     visibility: visible; } }
+@keyframes backgroundImgae {
+  0% {
+    background-position: left 2000x top 0px; }
+  100% {
+    background-position: left 0px top 20000px; } }
+.form-textarea {
+  padding: 20px;
+  border: 1px solid gray; }
+  .form-textarea:focus {
+    box-shadow: 2px 2px 5px aqua; }
+
+.center {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; }
+
 .button {
-  max-width: 12em;
-  overflow: hidden;
+  width: auto;
   background-color: #39d1e6;
   padding: 0.5em 1.5em;
   color: white;
@@ -341,10 +336,4 @@ header {
 .font--italic {
   font-style: italic; }
 
-.font--blue {
-  color: #39d1e6; }
-
-.font--center {
-  text-align: center; }
-
-/*# sourceMappingURL=book.css.map */
+/*# sourceMappingURL=addCityInfo.css.map */

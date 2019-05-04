@@ -20,11 +20,6 @@ header {
   display: block;
 }
 
-@font-face {
-  font-family: myTitle;
-  src: url("/assets/fonts/GloriaHallelujah.ttf");
-}
-
 //box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 $colorHeader: rgb(47, 178, 211);
 $colorListMenu: rgb(57, 209, 230);
@@ -84,6 +79,7 @@ $fontSizeTitle: 28px;
         visibility: hidden;
         right: 20px;
         top: 68px;
+        z-index: 3;
         a {
           display: block;
           width: 100%;
@@ -135,77 +131,42 @@ $fontSizeTitle: 28px;
     }
   } // END TOP
   // CONTENT
+  //CENTER
 
   &__center {
-    margin: 1.5em 0;
-    &__left {
-      &__title {
-        padding: 2em 1em;
-
-        h1 {
-          font-size: 1.8em;
-        }
-        p {
-          font-size: 1.2em;
-          font-weight: 600;
-        }
-        .strike {
-          width: 40%;
-          height: 5px;
-          background-color: rgb(47, 178, 211);
-          margin: 1em 0;
-        }
-      }
-      &__booking {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 30em;
+      & .form-input {
+        max-width: 20em;
+        width: 15em;
+        height: 2.5em;
+        font-size: 1.1em;
         padding: 0 1em;
-        p {
-          font-size: 20px;
-          font-family: myTitle;
-        }
-        &__block {
-          padding: 0.5em 0;
-          input {
-            width: 100%;
-            height: 100%;
-            border: 2px solid $colorListMenu;
-            //border-radius: 9999px;
-            padding: 0.5em 1em;
-            font-size: 1.5em;
-            outline: none;
-            &:focus {
-              box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-          }
+        margin: 0.3em 0;
+        border: solid 1px darkgray;
+        &:focus {
+          box-shadow: 0 4px 8px 0 $colorListMenu, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
       }
-    } //END-CENTER-LEFT
-    &__right {
+    }
+    &__block {
+      &__part {
+        margin: 0.5em 0;
+        max-width: 16em;
         display: flex;
-        justify-content: center;
-      &__content {
-        width: 90%;
-        height: auto;
-        box-shadow: 0 0 0.5em darkgray;
-        padding: 1em;
-        &__block{
-            display: flex;
-            flex-direction: column;
-            border-bottom: solid 2px darkgray;
-            padding: 0.5em;
-            &__image{
-                width: 5em;
-                height: 5em;
-                border-radius: 9999em;
-                border: solid 2px lightgray;
-            }
-            &__part{
-                padding: 0.2em;
-            }
-        }
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   }
 
+  //FOOTER
   &__footer {
     width: 100%;
     height: 500px;
@@ -270,6 +231,43 @@ $fontSizeTitle: 28px;
 }
 
 //Media
+@media (min-width: 560px) and (max-width: 959px) {
+  .container {
+    &__center {
+      form {
+        & .form-input {
+          width: 30em;
+          max-width: 30em;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width: 1290px) {
+}
+@media (min-width: 1291px) {
+  .container {
+    &__center {
+      form {
+        & .form-input {
+          max-width: 25em;
+          width: 25em;
+        }
+      }
+      &__title {
+        max-width: 75%;
+        margin: 0 auto;
+      }
+      &__block {
+        &__part{
+          max-width: 30em;
+          width: 28em;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 930px) {
   .container {
     // Top
@@ -348,20 +346,7 @@ $fontSizeTitle: 28px;
           }
         }
       }
-    }
-
-    &__center{
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        &__left{
-            max-width: 50%;
-        }
-        &__right{
-            min-width: 30%;
-        }
-    }
-    // FOOTER
+    } // FOOTER
     &__footer {
       height: 350px;
       &__content {
@@ -382,14 +367,12 @@ $fontSizeTitle: 28px;
 }
 
 //END MEDIA
-
 //CSS CHung
 .displayMenu {
   animation: showMenu 0.5s forwards;
 }
 
 //END CSS CHUNG
-
 //Animation
 @keyframes showMenu {
   from {
@@ -404,11 +387,35 @@ $fontSizeTitle: 28px;
   }
 }
 
+@keyframes backgroundImgae {
+  0% {
+    background-position: left 2000x top 0px;
+  }
+  100% {
+    background-position: left 0px top 20000px;
+  }
+}
+
 //END ANIMATION
 
+.form-textarea {
+  padding: 20px;
+  border: 1px solid gray;
+
+  &:focus {
+    box-shadow: 2px 2px 5px aqua;
+  }
+}
+
+.center {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
 .button {
-  max-width: 12em;
-  overflow: hidden;
+  width: auto;
   background-color: $colorListMenu;
   padding: 0.5em 1.5em;
   color: white;
@@ -428,34 +435,29 @@ $fontSizeTitle: 28px;
     background-color: $colorListMenu;
   }
 }
+
 .font {
-    font-size: 1em;
-    font-weight: normal;
-    color: #000000;
-  }
-  .font--normal {
-    font-size: 1.2em;
-  }
-  .font--big {
-    font-size: 1.4em;
-    padding: 0.5em 0;
-  }
-  .font--sobig {
-    font-size: 1.8em;
-    padding: 0.5em 0em;
-  }
-  .font--bold {
-    font-weight: bold;
-  }
-  .font--space {
-    margin: 0.3em 0;
-  }
-  .font--italic {
-    font-style: italic;
-  }
-  .font--blue{
-    color: #39d1e6;
-  }
-  .font--center{
-    text-align: center;
-  }
+  font-size: 1em;
+  font-weight: normal;
+  color: #000000;
+}
+.font--normal {
+  font-size: 1.2em;
+}
+.font--big {
+  font-size: 1.4em;
+  padding: 0.5em 0;
+}
+.font--sobig {
+  font-size: 1.8em;
+  padding: 0.5em 0em;
+}
+.font--bold {
+  font-weight: bold;
+}
+.font--space {
+  margin: 0.3em 0;
+}
+.font--italic {
+  font-style: italic;
+}

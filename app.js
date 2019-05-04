@@ -15,7 +15,16 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 
+app.get("/book", (req, res)=>{
+    res.render("book.ejs")
+})
+app.get("/bookings", (req, res)=>{
+    res.render("bookings.ejs")
+})
+
 // API
+let Admin = require('./src/api/admin.js');
+Admin(app);
 let APILogin = require('./src/api/login.js');
 APILogin(app);
 let APISignup = require('./src/api/signup.js');

@@ -8,8 +8,8 @@
     <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/me/addCityInfo.css">
-    <title>Add City Info</title>
+    <link rel="stylesheet" href="/assets/css/me/admin.css">
+    <title>Admin</title>
 </head>
 
 <body>
@@ -28,8 +28,15 @@
             </div>
 
             <div class="container__top__icon">
+                <i class="fas fa-globe-americas"></i>
+                <div class="container__top__icon__item" id="container__top__icon__item__notification">
+                    <a href="javascript:void(0);">Post Approval</a>
+                    <a href="javascript:void(0);">City Approval</a>
+                    <a href="javascript:void(0);">Thống kê</a>
+                    <a href="javascript:void(0);">Quản lý thành viên</a>
+                </div>
                 <i class="fas fa-align-justify"></i>
-                <div class="container__top__icon__item">
+                <div class="container__top__icon__item" id="container__top__icon__item__option">
                     <a href="javascript:void(0);">Host an Experience</a>
                     <a href="javascript:void(0);">Thành phố</a>
                     <a href="javascript:void(0);">Host</a>
@@ -46,39 +53,36 @@
         </article>
         <!-- END_CONTAINER_TOP -->
         <section class="container__center">
-            <form action="/api/addCityInfo" method="post" enctype="multipart/form-data">
-                <div class="container__center__block">
-                    <div class="container__center__block__part">
-                        <p class="font font--bold font--italic font--space">Viết in hoa, không dấu: HA NOI, HO CHI
-                            MINH,...
-                        </p>
-                        <input name="city" id="city-name" class="form-input block" type="text"
-                            placeholder="Name of city">
-                    </div>
 
+            <header style="background-image: url('/assets/images/me/background-admin.jpeg')"
+                class="container__center__header">
+                <h3>Make your website better!!</h3>
+            </header>
+            <div class="container__center__block">
+                <div class="container__center__block__part">
+                    <i class="fas fa-flag-checkered container__center__block__part__option"></i>
+                    <div class="font font--bold font--blue font--space font--center">Post Approval</div>
+                </div>
+                <div class="container__center__block__part">
+                    <i class="fas fa-city container__center__block__part__option"></i>
+                    <div class="font font--bold font--blue font--space font--center">City Approval</div>
                 </div>
 
-                <div class="container__center__block">
-                    <div class="container__center__block__part">
-                        <p class="font font--bold font--italic font--space">Giới thiệu ngắn gọn về thành phố</p>
-                        <input type="text" name="title" class="form-input block" placeholder="Info about city">
-                    </div>
-
+            </div>
+            <div class="container__center__block">
+                <div class="container__center__block__part">
+                    <i class="fas far fa-chart-bar container__center__block__part__option"></i>
+                    <div class="font font--bold font--blue font--space font--center">Thống kê</div>
                 </div>
-
-                <div class="container__center__block">
-                    <div class="container__center__block__part">
-                            <p class="font font--bold font--italic font--space">Một số ảnh về thành phố</p>
-                            <input type="file" name="file" multiple>
-                    </div>
-                    
+                <div class="container__center__block__part">
+                    <i class="fas fas fa-users container__center__block__part__option"></i>
+                    <div class="font font--bold font--blue font--space font--center">Users Management</div>
                 </div>
-
-                <div class="container__center__block">
-                    <button class="button" type="submit">Submit</button>
+                <div class="container__center__block__part">
+                    <i class="fab fab fa-facebook-messenger container__center__block__part__option"></i>
+                    <div class="font font--bold font--blue font--space font--center">Message</div>
                 </div>
-
-            </form>
+            </div>
 
         </section>
         <!-- FOOTER -->
@@ -109,6 +113,7 @@
         </footer>
         <!-- END FOOTER -->
     </main>
+    <script src="/assets/scripts/me/admin.js"></script>
 </body>
 
 </html>
