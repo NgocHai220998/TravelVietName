@@ -69,7 +69,7 @@
                             <div ng-repeat="cityInfo in citiesInfo"
                                 class="container__center__content__cities__container__content">
                                 <div class="container__center__content__cities__container__content__item">
-                                    <a href = "/city" ng-click="showDetail(cityInfo._id)" link={{cityInfo.images[0].src}}
+                                    <a href="/city/{{cityInfo.nameID}}" link={{cityInfo.images[0].src}}
                                         style="background-image: url('{{cityInfo.images[0].src}}');"
                                         class="container__center__content__cities__container__content__item__image clickImage">
                                         <p>{{cityInfo.name}}</p>

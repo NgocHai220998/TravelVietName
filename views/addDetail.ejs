@@ -57,12 +57,13 @@
 
             </div>
 
-            <form action="/api/adddetail" method="post" enctype="multipart/form-data">
+            <form action="/adddetail" method="post" enctype="multipart/form-data">
 
                 <div class="container__center__block">
                     <div class="container__center__block__part">
                         <div class="font font--big font--bold">Step 1: Something about you</div>
                         <input type="text" name="aboutHost" class="form-input block" placeholder="I am a tour guide...">
+                        <input type="text" name="email" class="form-input block" placeholder="email">
                     </div>
     
                     <div class="container__center__block__part">
@@ -116,14 +117,11 @@
                         <div class="container__center__block__part__option">
                             <p class="font font--bold font--italic font--space">City:</p>
                             
-                            <select ng-hide = "otherCity" name="city" class="form-input block" id="">
-                                <option ng-repeat = "cityInfo in citiesInfo" value="">{{cityInfo.name}}</option>
+                            <select name="city" class="form-input block" id="city">
+                                <option ng-repeat = "cityInfo in citiesInfo" value="{{cityInfo.name}}">{{cityInfo.name}}</option>
+                                <option value="otherCity">Other city</option>
                             </select>
-                            <input ng-show = "otherCity" type="text" name="city" class="form-input block" placeholder="City">
-                            <span style="display: flex; align-items: center;">
-                                <input ng-model = "otherCity" type="checkbox" name="" id="" class="form-input checkbox">
-                                <span class="font">Other City</span>
-                            </span>
+                            <input id="otherCity" style="display: none" type="text" name="otherCity" class="form-input block" placeholder="City">
                             
                         </div>
     

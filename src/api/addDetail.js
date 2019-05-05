@@ -21,11 +21,11 @@ let upload = multer({storage: storage});
 module.exports = function(app){
 
 
-  app.get('/admin/adddetail',(req,res)=>{
+  app.get('/adddetail',(req,res)=>{
     res.render('addDetail');
   });
 
-  app.post('/api/adddetail',upload.array('file',30),(req,res)=>{
+  app.post('/adddetail',upload.array('file',30),(req,res)=>{
     // console.log(req.body);
     // console.log(req.files);
     let imageTemp = [{}];
@@ -40,8 +40,11 @@ module.exports = function(app){
         imageTemp[i++] = src;
       }
     }
+    let cityCustom = req.body.city.split(' ').join('');
+
     let newPost = {
-      host : req.cookies.email,
+      city : cityCustom,
+      host : req.body.email,
       aboutHost : req.body.aboutHost,
       dola : {
         value : req.body.value,
@@ -60,7 +63,8 @@ module.exports = function(app){
           city : req.body.city,
           image : req.body.image
         }
-      }
+      },
+      approval: false
     }
 
     postModel.create(newPost,(err,post)=>{

@@ -393,4 +393,7 @@ header {
 .font--italic {
   font-style: italic; }
 
+.display {
+  display: block; }
+
 /*# sourceMappingURL=addDetail.css.map */

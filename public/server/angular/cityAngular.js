@@ -15,4 +15,13 @@ city.controller('cityController',['$scope','citySecvices',function($scope,citySe
             }
         });
     });
+    
+    let nameID = window.location.pathname.split('/');
+
+    citySecvices.getCityByName(nameID[2]).then((data) => {
+        $scope.posts = data.data.posts;
+        $scope.cityInfo = data.data.cityInfo;
+        console.log(data)
+    })
+
 }]);

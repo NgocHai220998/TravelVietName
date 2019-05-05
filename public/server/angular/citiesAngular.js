@@ -6,14 +6,5 @@ cities.controller('citiesController', ['$scope', 'citiesSecvices', async functio
         $scope.citiesInfo = citiesInfo.data;
         
     })
-    $scope.showDetail = function (ID) {
-        //window.location.href = "/city/" + ID;
-        cityID = {
-            cityID: ID
-        }
-        citiesSecvices.sendCityID(cityID).then((res) => {
-            console.log(res);
-        })
-        
-    }
+
 }])

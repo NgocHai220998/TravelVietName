@@ -5,6 +5,7 @@ let citySchema = mongoose.Schema;
 
 
 let city = citySchema({
+    nameID: String,
     name: String,
     title: String,
     images : [

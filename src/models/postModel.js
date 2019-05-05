@@ -1,7 +1,9 @@
 let mongoose = require("../../config/mongodb/db.js");
 
 let postSchema = mongoose.Schema({
+  approval: Boolean,
   host: String,
+  city: String,
   aboutHost: String,
   dola: {
     value: String,

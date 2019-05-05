@@ -9,6 +9,9 @@ city.factory('citySecvices', ['$http', function ($http) {
         },
         getUserMain : (email)=>{
             return $http.get('/home/getUserMain/' + email);
+        },
+        getCityByName: (name) => {
+            return $http.get('/getCity/' + name);
         }
     }
 }]);

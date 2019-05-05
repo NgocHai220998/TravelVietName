@@ -10,20 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/me/city.css">
-    <title><%= cityInfo.name %></title>
-    <script>
-        (function () {
-            if (window.localStorage) {
-                if (!localStorage.getItem('firstLoad')) {
-                    localStorage['firstLoad'] = true;
-                    window.location.reload();
-                }
-                else
-                    localStorage.removeItem('firstLoad');
-            }
-        })();
-        // window.location.pathname = "/cities";
-    </script>
+    <title>{{cityInfo.name}}</title>
 </head>
 
 <body>
@@ -63,50 +50,47 @@
 
         <!-- CONTAINER CENTER -->
         <section class="container__center">
-            <header style="background-image: url('<%= cityInfo.images[0].src %>')" class="container__center__header">
-                <h1><%= cityInfo.name %> CITY</h1>
+            <header style="background-image: url('{{cityInfo.images[0].src}}')" class="container__center__header">
+                <h1>{{cityInfo.name}} CITY</h1>
                 <h3>All unique experiences and local activities</h3>
-                <p><%= cityInfo.title %></p>
+                <p>{{cityInfo.title}}</p>
             </header>
             <section class="container__center__content">
                 <header>
-                    <h1>Experiences and local activities in <%= cityInfo.name %> City</h1>
+                    <h1>Experiences and local activities in {{cityInfo.name}} City</h1>
                 </header>
 
                 <section>
 
                     <div class="container__center__content__cities">
                         <!--Conten_TOP_REATED-->
-                        <div class="container__center__content__cities__container">
+                        <div ng-repeat="post in posts" class="container__center__content__cities__container">
                             <!--Conten_TOP_REATED-->
                             <div class="container__center__content__cities__container__content">
                                 <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/top2.jpeg"
-                                        style="background-image: url('/assets/images/me/top2.jpeg');"
+                                    <div link="{{post.post.images[0].src}}"
+                                        style="background-image: url('{{post.post.images[0].src}}');"
                                         class="container__center__content__cities__container__content__item__image clickImage">
 
                                     </div>
                                     <div class="container__center__content__cities__container__content__item__info">
                                         <div
                                             class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$35 USD for 3 hours</span>
+                                            <span>{{post.dola.value}} for {{post.dola.time}}</span>
                                         </div>
                                         <div
                                             class="container__center__content__cities__container__content__item__info__right">
                                             <i class="fas fa-map-marker-alt"></i>
-                                            <span>Ho Chi Minh City</span>
+                                            <span>{{post.post.where.city}} City</span>
                                         </div>
                                     </div>
 
-                                    <div
+                                    <a href="/detail/{{post._id}}"
                                         class="container__center__content__cities__container__content__item__description">
                                         <span>
-                                            Discover Vietnamese culture of silver engraving and make your own jewelry in
-                                            the
-                                            heart
-                                            of Saigon
+                                            {{post.post.title}}
                                         </span>
-                                    </div>
+                                    </a>
                                     <div class="container__center__content__cities__container__content__item__star">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -121,213 +105,6 @@
                             </div>
                             <!--END_Conten_TOP_REATED-->
 
-                            <!--Conten_TOP_REATED-->
-                            <div class="container__center__content__cities__container__content">
-                                <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/top1.jpeg"
-                                        style="background-image: url('/assets/images/me/top1.jpeg');"
-                                        class="container__center__content__cities__container__content__item__image clickImage">
-
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__info">
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$25 USD for 3 hours</span>
-                                        </div>
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__right">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Ha Noi City</span>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="container__center__content__cities__container__content__item__description">
-                                        <span>
-                                            We are a group of young-minded modern travelers who believe that the best
-                                            way to
-                                            explore the World
-                                        </span>
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>12 reviews</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <!--END_Conten_TOP_REATED-->
-
-
-                            <!--Conten_TOP_REATED-->
-                            <div class="container__center__content__cities__container__content">
-                                <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/whyus4.jpeg"
-                                        style="background-image: url('/assets/images/me/whyus4.jpeg');"
-                                        class="container__center__content__cities__container__content__item__image clickImage">
-
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__info">
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$35 USD for 3 hours</span>
-                                        </div>
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__right">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Ho Chi Minh City</span>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="container__center__content__cities__container__content__item__description">
-                                        <span>
-                                            focusing on quality, originality, and supporting local communities.
-                                        </span>
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>32 reviews</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <!--END_Conten_TOP_REATED-->
-
-
-                            <!--Conten_TOP_REATED-->
-                            <div class="container__center__content__cities__container__content">
-                                <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/whyus3.jpg"
-                                        style="background-image: url('/assets/images/me/whyus3.jpg');"
-                                        class="container__center__content__cities__container__content__item__image clickImage">
-
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__info">
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$35 USD for 3 hours</span>
-                                        </div>
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__right">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Ho Chi Minh City</span>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="container__center__content__cities__container__content__item__description">
-                                        <span>
-                                            Smaller and remote towns. You will expect to find more authentic and
-                                            cultural
-                                            experiences with local hosts
-                                        </span>
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>32 reviews</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <!--END_Conten_TOP_REATED-->
-
-                            <!--Conten_TOP_REATED-->
-                            <div class="container__center__content__cities__container__content">
-                                <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/whyus2.jpg"
-                                        style="background-image: url('/assets/images/me/whyus2.jpg');"
-                                        class="container__center__content__cities__container__content__item__image clickImage">
-
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__info">
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$3 USD for 33 hours</span>
-                                        </div>
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__right">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Ho Chi Minh City</span>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="container__center__content__cities__container__content__item__description">
-                                        <span>
-                                            Smaller and remote towns.!!
-                                        </span>
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>32 reviews</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <!--END_Conten_TOP_REATED-->
-
-
-                            <!--Conten_TOP_REATED-->
-                            <div class="container__center__content__cities__container__content">
-                                <div class="container__center__content__cities__container__content__item">
-                                    <div link="/assets/images/me/whyus1.png"
-                                        style="background-image: url('/assets/images/me/whyus1.png');"
-                                        class="container__center__content__cities__container__content__item__image clickImage">
-
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__info">
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__left">
-                                            <span>$5 USD for 1 hours</span>
-                                        </div>
-                                        <div
-                                            class="container__center__content__cities__container__content__item__info__right">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Da Nang City</span>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="container__center__content__cities__container__content__item__description">
-                                        <span>
-                                            You will expect to find more authentic and cultural
-                                            experiences with local hosts
-                                        </span>
-                                    </div>
-                                    <div class="container__center__content__cities__container__content__item__star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span>32 reviews</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <!--END_Conten_TOP_REATED-->
 
                         </div>
                         <!--END_Container_TOP_REATED-->

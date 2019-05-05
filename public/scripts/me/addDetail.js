@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded",function(){
         iconMenu.onclick = function(){
             menu.classList.toggle('displayMenu');
         }
+
+        let cityOption = document.querySelector("#city");
+        let otherCity = document.querySelector("#otherCity");
+        if(cityOption.value == "otherCity"){
+            otherCity.classList.add('display');
+        }
     }
     
 

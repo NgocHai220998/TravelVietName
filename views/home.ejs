@@ -244,15 +244,15 @@
                                     <div
                                         class="container__body__content__topReated__container__content__item__info__right">
                                         <i class="fas fa-map-marker-alt"></i>
-                                        <a _city={{post.post.where.city}} href="/city">{{post.post.where.city}} City</a>
+                                        <a _city={{post.post.where.city}} href="/city/{{post.city}}">{{post.post.where.city}} City</a>
                                     </div>
                                 </div>
 
-                                <div class="container__body__content__topReated__container__content__item__description">
+                                <a  _id={{post._id}} href="/detail/{{post._id}}" class="container__body__content__topReated__container__content__item__description">
                                     <span>
                                         {{post.post.title}}
                                     </span>
-                                </div>
+                                </a>
                                 <div class="container__body__content__topReated__container__content__item__star">
                                     {{post.star}}
                                     <i class="fas fa-star"></i>
@@ -305,7 +305,7 @@
                                     class="container__body__content__bigCities__container__content__item__image clickImage">
                                 </div>
                                 <div class="container__body__content__bigCities__container__content__item__info">
-                                    <a href="javascript:void(0);">{{cityInfo.name}}</a>
+                                    <a href="/city/{{cityInfo.nameID}}">{{cityInfo.name}}</a>
                                 </div>
 
                                 <div class="container__body__content__bigCities__container__content__item__description">

@@ -32,6 +32,7 @@ module.exports = function (app) {
         }
 
         let cityInfo = {
+            nameID: req.body.city.split(' ').join(''),
             name: req.body.city,
             title: req.body.title,
             images: imageTemp

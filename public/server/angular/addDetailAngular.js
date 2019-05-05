@@ -7,4 +7,5 @@ addDetail.controller('addDetailController', ['$scope', 'addDetailSecvices', asyn
         $scope.citiesInfo = citiesInfo.data;
         
     })
+
 }])

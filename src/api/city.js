@@ -1,32 +1,35 @@
 let cityModel = require('../models/cityModel')
+let postModel = require('../models/postModel')
+
+module.exports = function (app) {
 
 
-module.exports = function(app){
-    
+    app.get('/getCity/:name', (req, res) => {
 
-    app.get('/city', (req,res) => {
-        cityModel.findOne({_id: req.cookies.cityID}, (err, cityInfo) => {
-            if(err){
-                console.log("ERROR GET /city")
+        cityModel.findOne({ nameID: req.params.name }, (err, cityInfo) => {
+            if (err) {
+                console.log("ERROR GET /city/:name")
             }
-            else{
-                res.render('city.ejs',{
-                    cityInfo: cityInfo
+            else {
+                postModel.find({ city: req.params.name }, (err, posts) => {
+                    if (err) {
+                        console.log("ERROR GET /city/:name")
+                    }
+                    else {
+                        let result = {
+                            posts : posts,
+                            cityInfo : cityInfo
+                        }
+                        res.json(result);
+                    }
                 });
-                // res.json(req.cookies.cityID);
             }
         })
-        //res.redirect('/city');
-        
-        //res.json(req.cookies.cityID);
+
     });
-    
-    app.post('/city', (req, res) => {
-        console.log(req.body.cityID);
-        res.clearCookie('cityID');
-        res.cookie('cityID', req.body.cityID);
-        
-        res.redirect('/city');
+
+    app.get('/city/:name', (req, res) => {
+        res.render('city.ejs');
     })
 
 
