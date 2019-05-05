@@ -407,8 +407,8 @@ $fontSizeTitle: 28px;
 //END ANIMATION
 
 .button {
-  max-width: 12em;
-  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
   background-color: $colorListMenu;
   padding: 0.5em 1.5em;
   color: white;
@@ -417,6 +417,7 @@ $fontSizeTitle: 28px;
   transition: 0.2s;
   border-radius: 9999em;
   border: 0.2em solid $colorListMenu;
+  box-sizing: content-box;
   &:hover {
     text-decoration: underline;
     color: $colorListMenu;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="book" ng-controller="bookController">
 
 <head>
     <meta charset="UTF-8">
@@ -53,17 +53,17 @@
                         <img src="/assets/images/uploads/user.png" alt="avatar"
                             class="container__center__right__content__block__image">
                         <div class="font font--big font--bold">Hosted by</div>
-                        <div class="font font--big font--bold">Trần Đức Minh</div>
+                        <div class="font font--big font--bold">{{host.fullName}}</div>
                     </div>
                     <div class="container__center__right__content__block" style="border: none">
                         <div class="container__center__right__content__block__part">
                             <div class="font font--big font--bold">Booking detail</div>
                         </div>
                         <div class="container__center__right__content__block__part">
-                            <div class="font font--blue font--normal font--bold">Time: </div>
+                            <div class="font font--blue font--normal font--bold">Time: {{time}} </div>
                         </div>
                         <div class="container__center__right__content__block__part">
-                            <div class="font font--blue font--normal font--bold">Guest: </div>
+                            <div class="font font--blue font--normal font--bold">Guest: {{ guest }}</div>
                         </div>
                     </div>
                     <div class="container__center__right__content__block" style="border: none">
@@ -78,7 +78,7 @@
 
             <div class="container__center__left">
                 <div class="container__center__left__title">
-                    <h1>A consultative chat with Hoc and learn more about Sartorial-Gentleman Style in Saigon</h1>
+                    <h1>{{post.post.title}}</h1>
                     <div class="strike"></div>
                     <p>Please rest assured that you're not paying until your booking request is confirmed by the host.
                     </p>
@@ -87,16 +87,18 @@
                 <div class="container__center__left__booking">
                     <div class="container__center__left__booking__block">
                         <p>Pick your preferred date and time (to be confirmed by the host):</p>
-                        <input type="datetime-local" placeholder="Time">
+                        <input ng-model="time" type="datetime" name="time" placeholder="Time">
                     </div>
 
                     <div class="container__center__left__booking__block">
                         <p>Guest:</p>
-                        <input type="number" placeholder="1" min="1" max="50" style="width: 5em">
+                        <input ng-model="guest" type="number" name="guest" placeholder="0" min="1" max="50"
+                            style="width: 5em">
                     </div>
 
                     <div class="container__center__left__booking__block">
-                        <div class="button">Book with Minh</div>
+
+                        <button ng-click = "book()" class="button">Book with {{host.fullName}}</button>
                     </div>
                 </div>
 
@@ -105,7 +107,7 @@
 
         <!-- FOOTER -->
         <footer class="container__footer">
-            <div style="background-image: url('assets/images/me/imageFooter.jpg');"
+            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
                 class="container__footer__backgroundImage">
 
             </div>
@@ -135,5 +137,8 @@
 </body>
 
 <script src="/assets/scripts/me/book.js"></script>
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/bookAngular.js"></script>
+<script src="/assets/server/services/bookServices.js"></script>
 
 </html>

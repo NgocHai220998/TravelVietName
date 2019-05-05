@@ -297,8 +297,8 @@ header {
     transform: scale(1);
     visibility: visible; } }
 .button {
-  max-width: 12em;
-  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
   background-color: #39d1e6;
   padding: 0.5em 1.5em;
   color: white;
@@ -306,7 +306,8 @@ header {
   font-size: 1em;
   transition: 0.2s;
   border-radius: 9999em;
-  border: 0.2em solid #39d1e6; }
+  border: 0.2em solid #39d1e6;
+  box-sizing: content-box; }
   .button:hover {
     text-decoration: underline;
     color: #39d1e6;
