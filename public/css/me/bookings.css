@@ -413,4 +413,7 @@ header {
 .font--center {
   text-align: center; }
 
+.display {
+  display: block; }
+
 /*# sourceMappingURL=bookings.css.map */

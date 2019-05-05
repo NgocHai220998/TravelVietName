@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="booking" ng-controller="bookingController">
 
 <head>
     <meta charset="UTF-8">
@@ -52,11 +52,11 @@
             </header>
             <div class="font font--big font--bold font--center" style="font-family: myTitle">Have a nice day!!!</div>
             <div class="container__center__option">
-                <div class="container__center__option__choose">
+                <div class="container__center__option__choose" id = "postOption">
                     <i class="fas fa-flag-checkered"></i>
                     <div class="font font--bold font--normal font--blue">Your posts</div>
                 </div>
-                <div class="container__center__option__choose">
+                <div class="container__center__option__choose" id="bookingOption">
                     <i class="fas fa-flag-checkered"></i>
                     <div class="font font--normal font--bold font--blue">Bookings</div>
                 </div>
@@ -136,6 +136,9 @@
     </main>
 </body>
 
-<script src="/assets/scripts/me/book.js"></script>
+<script src="/assets/scripts/me/booking.js"></script>
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/bookingAngular.js"></script>
+<script src="/assets/server/services/bookingServices.js"></script>
 
 </html>
