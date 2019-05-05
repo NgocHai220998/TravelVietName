@@ -623,6 +623,7 @@ $fontSizeTitle: 28px;
                 &__review {
                     line-height: 36px;
                     width: 100%;
+                
                     i {
                         color: $colorHeader;
                         font-size: 40px;
@@ -891,6 +892,7 @@ $fontSizeTitle: 28px;
                 }
 
                 &__reviews{
+                    min-width: 380px;
                     padding : 10px;
                     header{
                         margin-bottom: 15px;
