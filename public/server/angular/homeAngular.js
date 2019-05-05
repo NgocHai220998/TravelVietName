@@ -24,7 +24,7 @@ home.controller('homeController', ['$scope', 'homeSecvices', async function ($sc
     homeSecvices.getPosts().then((posts) => {
         $scope.posts = posts.data;
         $scope.topPosts = $scope.posts;
-        $scope.topPosts.length = 2;
+        $scope.topPosts.length = 9;
 
         console.log($scope.topPosts);
 
