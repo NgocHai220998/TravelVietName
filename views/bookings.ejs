@@ -2,27 +2,53 @@
 <html lang="en" ng-app="booking" ng-controller="bookingController">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/me/bookings.css">
-    <title>Bookings</title>
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="/assets/css/me/post.css"> -->
+    <title>{{ name }}</title>
 </head>
 
 <body>
+
     <main class="container">
+        <!-- SHOW IMAGE -->
+        <article class="container__show">
+            <section class="container__show__background"></section>
+            <div class="container__show__content">
+                <div class="container__show__content__image">
+                    <img index="0" class="_img" width="100%" ng-src="{{ post.post.images[0].src }}" alt="img hihi" />
+                    <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-right"></i>
+                </div>
+                <div class="list-image">
+                    <img ng-repeat="image in post.post.images" index="0" class="_img" width="100%"
+                        ng-src="{{ image.src }}" alt="img hihi" />
+                    <!-- <img index='1' class="_img" width="100%" src="/assets/images/me/top1.jpeg" alt="img hihi">
+                    <img index='2' class="_img" width="100%" src="/assets/images/me/sapa.jpeg" alt="img hihi">
+                    <img index='3' class="_img" width="100%" src="/assets/images/me/dalat.jpeg" alt="img hihi">
+                    <img index='4' class="_img" width="100%" src="/assets/images/me/hoian.jpeg" alt="img hihi">
+                    <img index='5' class="_img" width="100%" src="/assets/images/me/hue.jpeg" alt="img hihi">
+                    <img index='6' class="_img" width="100%" src="/assets/images/me/whyus4.jpeg" alt="img hihi">
+                    <img index='7' class="_img" width="100%" src="/assets/images/me/whyus1.png" alt="img hihi"> -->
+                </div>
+            </div>
+        </article>
+
+        <!-- END SHOW IMAGE -->
 
         <!-- CONTAINER_TOP -->
         <article class="container__top">
             <div class="container__top__logo">
-                <img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo">
+                <a href="/"><img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo" /></a>
             </div>
 
             <div class="container__top__search">
-                <input type="text" placeholder="City in here..." class="container__top__search__input">
+                <input type="text" placeholder="City in here..." class="container__top__search__input" />
                 <i class="fas fa-search"></i>
             </div>
 
@@ -33,7 +59,6 @@
                     <a href="javascript:void(0);">Thành phố</a>
                     <a href="javascript:void(0);">Host</a>
                     <a href="/login">Login</a>
-
                 </div>
             </div>
 
@@ -45,98 +70,260 @@
         </article>
         <!-- END_CONTAINER_TOP -->
 
-        <article class="container__center">
-            <header style="background-image: url('/assets/images/me/background-admin.jpeg')"
-                class="container__center__header">
-                <h1>Bookings</h1>
-            </header>
-            <div class="font font--big font--bold font--center" style="font-family: myTitle">Have a nice day!!!</div>
-            <div class="container__center__option">
-                <div class="container__center__option__choose" id = "postOption">
-                    <i class="fas fa-flag-checkered"></i>
-                    <div class="font font--bold font--normal font--blue">Your posts</div>
-                </div>
-                <div class="container__center__option__choose" id="bookingOption">
-                    <i class="fas fa-flag-checkered"></i>
-                    <div class="font font--normal font--bold font--blue">Bookings</div>
-                </div>
-            </div>
+        <!-- Content  -->
+        <section class="container__center">
+            <!-- SLIDE -->
+            <article class="container__center__slide">
+                <section class="container__center__slide__content">
+                    <div ng-repeat="image in post.post.images" style="background-image: url('{{ image.src }}')"
+                        class="container__center__slide__content__image"></div>
 
-            <div class="container__center__post">
-                
-                <div class="container__center__post__item">
-                    <div style="background-image: url('/assets/images/me/dalat.jpeg')" alt=""
-                        class="container__center__post__item__image">
-                        <div class="font font--sobig font--white font--bold font--center">DA LAT</div>
+                    <!-- <div style="background-image: url(/assets/images/me/whyus2.jpg)"
+                        class="container__center__slide__content__image">
+
                     </div>
-                    <div class="font font--bold font--big font--center">Discover Vietnamese culture of silver engraving
-                        and make your own jewelry in the heart of Saigon</div>
-                    <div class="container__center__post__item__detail">
 
-                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Bookings Approval:
+                    <div style="background-image: url(/assets/images/me/whyus3.jpg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+
+                    <div style="background-image: url(/assets/images/me/whyus4.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+
+                    <div style="background-image: url(/assets/images/me/top2.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+
+                    <div style="background-image: url(/assets/images/me/top1.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+                    <div style="background-image: url(/assets/images/me/dalat.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+                    <div style="background-image: url(/assets/images/me/hoian.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div>
+
+
+                    <div style="background-image: url(/assets/images/me/sapa.jpeg)"
+                        class="container__center__slide__content__image">
+
+                    </div> -->
+                </section>
+            </article>
+            <!-- END SLIDE -->
+
+            <!-- INFO HOST -->
+            <article class="container__center__host">
+                <header>
+                    <h1>{{ post.post.title }}</h1>
+                    <p>{{ post.post.about }}</p>
+                </header>
+                <section>
+                    <div class="container__center__host__avatar">
+                        <img style="border-radius: 9999px;" width="100" height="100" ng-src="{{ hostPost.avatar }}"
+                            alt="Avatar host" />
+                    </div>
+                    <div class="container__center__host__info">
+                        <p>
+                            Hosted by <span>{{ hostPost.fullName }}</span> in
+                            {{ post.post.where.city }} City
+                        </p>
+                    </div>
+                </section>
+
+
+            </article>
+            <!-- END INFO HOST -->
+
+            <section class="container__center__content">
+                <header class="container__center__content__header">
+                    <!-- BOOK -->
+
+
+                    <!-- YOUR HOST -->
+                    <div class="about__yourHost">
+                        <header>
+                            <h1>About your host, {{ hostPost.fullName }}</h1>
+                        </header>
+                        <section>
+                            <p>{{ post.aboutHost }}</p>
+                        </section>
+                        <footer></footer>
+                    </div>
+
+                    <!-- END YOUR HOST -->
+                </header>
+
+                <article class="container__center__content__center">
+                    <!-- About -->
+                    <div class="container__center__content__center__about">
+                        <!-- will do -->
+                        <article class="container__center__content__center__about__text">
+                            <header>
+                                <h1>What we will do</h1>
+                            </header>
+
+                            <section>
+                                <p id="post-text-what"></p>
+                            </section>
+
+                            <footer></footer>
+                        </article>
+                        <!-- END will do -->
+                        <!-- will do -->
+                        <article class="container__center__content__center__about__text">
+                            <header>
+                                <h1>What we will provide</h1>
+                            </header>
+
+                            <section>
+                                <p id="post-text-provide"></p>
+                            </section>
+
+                            <footer></footer>
+                        </article>
+                        <!-- END will do -->
+                        <!-- will do -->
+                        <article class="container__center__content__center__about__text">
+                            <header>
+                                <h1>Who can do this</h1>
+                            </header>
+
+                            <section>
+                                <p id="post-text-who"></p>
+                            </section>
+
+                            <footer></footer>
+                        </article>
+                        <!-- END will do -->
+                        <!-- will do -->
+                        <article class="container__center__content__center__about__text">
+                            <header>
+                                <h1>Why you should do this</h1>
+                            </header>
+
+                            <section>
+                                <p id="post-text-why"></p>
+                            </section>
+
+                            <footer></footer>
+                        </article>
+                        <!-- END will do -->
+
+                        <article class="image__post">
+                            <h1>Pictures</h1>
+                            <div class="image__post__top">
+                                <img index="0" class="image__post__img" width="100%"
+                                    ng-src="{{ post.post.images[0].src }}" alt="di choi" />
+                                <div class="image__post__top__more">
+                                    <a id="btn-more-img" href="javascript:void(0);">More
+                                        +{{ post.post.images.length }}</a>
+                                </div>
+                            </div>
+                            <div class="image__post__bot">
+                                <img index="1" class="image__post__img" width="50%" height="50%"
+                                    ng-src="{{ post.post.images[1].src }}" alt="ahihi " />
+                                <img index="2" class="image__post__img" width="50%" height="50%"
+                                    ng-src="{{ post.post.images[2].src }}" alt="do ngoc ne" />
+                            </div>
+                        </article>
+
+                        <article class="address__post">
+                            <h1>Where we will do this</h1>
+                            <p>{{ post.post.where.city }} City</p>
+                            <i> {{ post.post.where.city }}, Vietnam</i>
+                            <img width="100%" src="/assets/images/me/map1.PNG" alt="Map" />
+                        </article>
+                    </div>
+
+                    <!-- END About -->
+
+                    <div class="container__center__content__center__booking">
+                        <div class="container__center__content__center__booking__content">
+                            <div class="container__center__content__center__booking__content__block"
+                                style="align-items: center;">
+                                <img src="/assets/images/uploads/user.png" alt="avatar"
+                                    class="container__center__content__center__booking__content__block__image">
+                                <div class="font font--big font--bold">Hosted by</div>
+                                <div class="font font--big font--bold">{{hostPost.fullName}}</div>
+                            </div>
+                            <div class="container__center__content__center__booking__content__block"
+                                style="border: none">
+                                <div class="container__center__content__center__booking__content__block__part">
+                                    <div class="font font--big font--bold">Booking detail</div>
+                                </div>
+                                <div class="container__center__content__center__booking__content__block__part">
+                                    <div class="font font--blue font--normal font--bold">Time: {{booking.time}} </div>
+                                </div>
+                                <div class="container__center__content__center__booking__content__block__part">
+                                    <div class="font font--blue font--normal font--bold">Guest: {{ booking.guestNumber }}</div>
+                                </div>
+                            </div>
+                            <div class="container__center__content__center__booking__content__block"
+                                style="border: none">
+                                <div class="container__center__content__center__booking__content__block__part">
+                                    <span class="font font--big font--bold">Sub-Total:   </span>
+                                    <span class="font font--blue font--big font--bold">$2000</span>
+                                </div>
+                            </div>
+                            <div class="container__center__content__center__booking__content__block"
+                                style="border: none">
+                                <div class="container__center__content__center__booking__content__block__part">
+                                    <span class="font font--big font--bold">Approved: {{booking.approval}}</span>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Bookings: </div>
-
-                        <div class="font font--bold font--normal font--green font--GloriaHallelujah">Views: </div>
                     </div>
-                </div>
 
-            </div>
-            <div class="container__center__booking">
-                <div class="container__center__booking__item">
-                    <div style="background-image: url('/assets/images/me/dalat.jpeg')" alt=""
-                        class="container__center__booking__item__image">
-                        <div class="font font--sobig font--white font--bold font--center">DA LAT</div>
-                    </div>
-                    <div class="font font--bold font--big font--center">Discover Vietnamese culture of silver engraving
-                        and make your own jewelry in the heart of Saigon</div>
-                    <div class="container__center__post__item__detail">
+                </article>
 
-                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approve by host:
-                        </div>
+                <footer></footer>
+            </section>
+        </section>
 
-                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Guest: </div>
-
-                        <div class="font font--bold font--normal font--green font--GloriaHallelujah">Total: </div>
-                    </div>
-                </div>
-            </div>
-
-        </article>
+        <!-- END CONTENT -->
 
         <!-- FOOTER -->
         <footer class="container__footer">
-            <div style="background-image: url('assets/images/me/imageFooter.jpg');"
-                class="container__footer__backgroundImage">
-
-            </div>
+            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
+                class="container__footer__backgroundImage"></div>
 
             <div class="container__footer__content">
                 <div class="container__footer__content__left">
                     <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
-                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer">
+                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer" />
                 </div>
 
                 <div class="container__footer__content__right">
                     <h1>Navigation</h1>
-                    <a href="/">Trang chủ</a>
+                    <a href="javascript:void(0);">Trang chủ</a>
                     <a href="javascript:void(0);">Giới thiệu</a>
                     <a href="javascript:void(0);">Liên hệ</a>
                     <a href="javascript:void(0);">Chính sách bảo mật</a>
-
                 </div>
             </div>
-            <div class="container__footer__background">
-
-            </div>
+            <div class="container__footer__background"></div>
         </footer>
         <!-- END FOOTER -->
-
     </main>
-</body>
 
-<script src="/assets/scripts/me/booking.js"></script>
+    <!-- FILE JAVASCRIPT -->
+    <link rel="stylesheet" href="/assets/css/me/bookings.css" />
+    <!-- <script src="/assets/scripts/me/post.js"></script> -->
+</body>
 <script src="/assets/scripts/common/angular.min.js"></script>
 <script src="/assets/server/angular/bookingAngular.js"></script>
 <script src="/assets/server/services/bookingServices.js"></script>

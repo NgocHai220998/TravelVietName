@@ -1,7 +1,7 @@
-var booking = angular.module("booking");
+var post_booking = angular.module("post-booking");
 
 
-booking.factory('bookingSecvices', ['$http', function ($http) {
+post_booking.factory('bookingSecvices', ['$http', function ($http) {
     return {
         getCookie: () => {
             return $http.get("/home/getCookie");
@@ -15,8 +15,8 @@ booking.factory('bookingSecvices', ['$http', function ($http) {
         getHostPost: email => {
             return $http.get("/api/getUser/" + email);
         },
-        getBookingByID: bookingID => {
-            return $http.get("/getBooking/" + bookingID);
+        getBookingByUserID: () => {
+            return $http.get("/getYoursBookings");
         }
     }
 }]);

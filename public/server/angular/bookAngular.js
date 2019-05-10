@@ -30,7 +30,8 @@ book.controller('bookController', ['$scope', 'bookSecvices', async function ($sc
         $scope.book = function () {
             let bookDetail = {
                 time : $scope.time,
-                guestNumber: $scope.guest
+                guestNumber: $scope.guest,
+                hostID: $scope.host._id
             }
             bookSecvices.bookPost(url[2], bookDetail).then((data) => {
                 alert('Successful');
