@@ -6,9 +6,11 @@ module.exports = function(app){
         res.render('bookings.ejs');
     })
 
-    app.get('/getBooking/:id', (req, res) => {
-        bookingModel.findOne({_id: req.params.id}, (err, data)=> {
+    app.get('/getBookingDetail/:bookingID', (req, res) => {
+        bookingModel.findOne({_id: req.params.bookingID}, (err, data)=> {
             res.json(data);
         })
-    })    
+    }) 
+
+    
 }

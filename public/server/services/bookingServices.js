@@ -16,7 +16,7 @@ booking.factory('bookingSecvices', ['$http', function ($http) {
             return $http.get("/api/getUser/" + email);
         },
         getBookingByID: bookingID => {
-            return $http.get("/getBooking/" + bookingID);
+            return $http.get("/getBookingDetail/" + bookingID);
         }
     }
 }]);

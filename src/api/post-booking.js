@@ -18,4 +18,9 @@ module.exports = function(app){
             })
         })
     })    
+    app.get('/getBookingsOfPost/:postID', (req, res) => {
+        bookingModel.find({postID: req.params.postID}, (err, data) => {
+            res.json(data);
+        })
+    })
 }

@@ -1,7 +1,7 @@
-var post_booking = angular.module("post-booking");
+var approveBooking = angular.module("approveBooking");
 
 
-post_booking.factory('bookingSecvices', ['$http', function ($http) {
+approveBooking.factory('approveBookingSecvices', ['$http', function ($http) {
     return {
         getCookie: () => {
             return $http.get("/home/getCookie");
@@ -20,6 +20,9 @@ post_booking.factory('bookingSecvices', ['$http', function ($http) {
         },
         getBookingsOfPost: (postID) => {
             return $http.get("/getBookingsOfPost/" + postID)
+        },
+        approveBooking: (bookingID) => {
+            return $http.put('/approveBooking', bookingID)
         }
     }
 }]);

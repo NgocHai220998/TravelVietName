@@ -46,6 +46,8 @@ let AddDetail = require('./src/api/addDetail.js')
 AddDetail(app);
 let AddCityInfo = require('./src/api/addCityInfo.js')
 AddCityInfo(app);
+let ApproveBooking = require('./src/api/approveBooking.js')
+ApproveBooking(app);
 
 // END API
 

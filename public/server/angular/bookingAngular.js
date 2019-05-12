@@ -7,6 +7,8 @@ booking.controller('bookingController', ['$scope', 'bookingSecvices', async func
         $scope.booking = bookingData.data;
         bookingSecvices.getPostById(bookingData.data.postID).then((postDetail) => {
             $scope.post = postDetail.data;
+            $scope.urlMap = 'https://maps.google.com/maps?q=' + $scope.post.city + '&t=&z=13&ie=UTF8&iwloc=&output=embed'
+            console.log($scope.urlMap);
             bookingSecvices.getHostPost($scope.post.host).then((host) => {
                 $scope.hostPost = host.data;
             });

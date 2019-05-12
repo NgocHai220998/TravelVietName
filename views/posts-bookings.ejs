@@ -52,15 +52,15 @@
             </header>
             <div class="font font--big font--bold font--center" style="font-family: myTitle">Have a nice day!!!</div>
             <div class="container__center__option">
-                <div class="container__center__option__choose chosen" ng-class = "{chosen: !option}" id="postOption">
+                <div class="container__center__option__choose chosen" ng-class="{chosen: !option}" id="postOption">
                     <!-- <input type="checkbox"  id="" ng-model="postOption" > -->
                     <i class="fas fa-flag-checkered"></i>
                     <div class="font font--bold font--normal font--blue">Your posts</div>
                 </div>
                 <div class="container__center__option__checkbox">
-                    <input type="checkbox" name="" id="" ng-model = "option">
+                    <input type="checkbox" name="" id="" ng-model="option">
                 </div>
-                <div class="container__center__option__choose" ng-class = "{chosen: option}" id="bookingOption">
+                <div class="container__center__option__choose" ng-class="{chosen: option}" id="bookingOption">
                     <!-- <input type="checkbox" id="" ng-model="bookingOption" > -->
                     <i class="fas fa-flag-checkered"></i>
                     <div class="font font--normal font--bold font--blue">Your bookings</div>
@@ -70,18 +70,35 @@
             <div class="container__center__post">
 
                 <div ng-repeat="post in posts" ng-class="{display: !option}" class="container__center__post__item">
-                    <div style="background-image: url('{{post.post.images[0].src}}')" alt=""
+                    <div style="background-image: url('{{post.post.post.images[0].src}}')" alt=""
                         class="container__center__post__item__image">
                         <div class="font font--sobig font--white font--bold font--center">{{post.
-                            post.where.city}}</div>
+                            post.post.where.city}}</div>
                     </div>
-                    <a style="display: block" href="/detail/{{post._id}}" class="font font--bold font--big font--center">{{post.post.title}}</a>
+                    <a style="display: block" href="/detail/{{post.post._id}}"
+                        class="font font--bold font--big font--center">{{post.post.post.title}}</a>
                     <div class="container__center__post__item__detail">
 
-                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Bookings Approval: {{post.approval}}
+                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approved by admin:
+                            {{post.post.approval}}
                         </div>
 
-                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Bookings: </div>
+                        <div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Number of
+                                orders: {{post.numOfOrder}}</div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah"
+                                style="margin-left: 10%">Aprroved: {{post.aprroved}} </div>
+                            <div>
+                                <div class="font font--bold font--normal font--red font--GloriaHallelujah"
+                                    style="margin-left: 10%">Not approved: {{post.notAprroved}} </div>
+                                <a href="/approve-booking/{{post.post._id}}" style="font-size: 0.8em; margin-left: 54%" class="button button--red">Approve now</a>
+
+                            </div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah"
+                                style="margin-left: 10%">Deny: </div>
+
+                        </div>
+
 
                         <div class="font font--bold font--normal font--green font--GloriaHallelujah">Views: </div>
                     </div>
@@ -97,13 +114,16 @@
                         <div class="font font--sobig font--white font--bold font--center">
                             {{booking.postDetail.post.where.city}}</div>
                     </div>
-                    <a href="/booking/{{booking.booking._id}}" style = "display: block" class="font font--bold font--big font--center">{{booking.postDetail.post.title}}</a>
+                    <a href="/booking/{{booking.booking._id}}" style="display: block"
+                        class="font font--bold font--big font--center">{{booking.postDetail.post.title}}</a>
                     <div class="container__center__post__item__detail">
 
-                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approve by host:
+                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approved by host:
                             {{booking.booking.approval}}
                         </div>
 
+                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Time:
+                            {{booking.booking.time}}</div>
                         <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Guest:
                             {{booking.booking.guestNumber}}</div>
 

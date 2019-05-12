@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="approveBooking" ng-controller="approveBookingController">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/me/approveBooking.css">
+    <title>approveBooking</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <!-- CONTAINER_TOP -->
+        <article class="container__top">
+            <div class="container__top__logo">
+                <img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo">
+            </div>
+
+            <div class="container__top__search">
+                <input type="text" placeholder="City in here..." class="container__top__search__input">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="container__top__icon">
+                <i class="fas fa-align-justify"></i>
+                <div class="container__top__icon__item">
+                    <a href="javascript:void(0);">Host an Experience</a>
+                    <a href="javascript:void(0);">Thành phố</a>
+                    <a href="javascript:void(0);">Host</a>
+                    <a href="/login">Login</a>
+
+                </div>
+            </div>
+
+            <div class="container__top__menu">
+                <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
+                <a class="container__top__menu__login" href="javascript:void(0);">Thành phố</a>
+                <a class="container__top__menu__signup" href="/login">Sign up</a>
+            </div>
+        </article>
+        <!-- END_CONTAINER_TOP -->
+
+
+        <article class="container__center">
+            <header style="background-image: url('{{postDetail.post.images[0].src}}')"
+                class="container__center__header">
+                <h1>{{postDetail.post.where.city}}</h1>
+                <h3>{{postDetail.post.title}}</h3>
+                <p>{{postDetail.post.about}}</p>
+                
+            </header>
+
+
+            <div class="container__center__booking">
+                <div class="container__center__booking__content">
+                    <div class="font font--GloriaHallelujah font--bold font--big font--red">Not Approved</div>
+                    <div class="container__center__booking__content__block">
+
+                        <div ng-repeat = "notApprovedBooking in notApprovedBookings" class="container__center__booking__content__block__content border--red">
+                            <div class="container__center__booking__content__block__content__block"
+                                style="align-items: center;">
+                                <img src="{{notApprovedBooking.hostPost.avatar}}" alt="avatar"
+                                    class="container__center__booking__content__block__content__block__image">
+                                <div class="font font--big font--bold">{{notApprovedBooking.hostPost.fullName}}</div>
+                            </div>
+                            <div class="container__center__booking__content__block__content__block"
+                                style="border: none">
+                                <div class="container__center__content__center__booking__content__content__block__part">
+                                    <div class="font font--big font--bold font--GloriaHallelujah">Booking detail</div>
+                                </div>
+                                <div class="container__center__booking__content__block__content__block__part">
+                                    <div class="font font--gray font--normal font--bold">Time: {{notApprovedBooking.booking.time}} </div>
+                                </div>
+                                <div class="container__center__booking__content__block__content__block__part">
+                                    <div class="font font--gray font--normal font--bold">Guest:
+                                        {{ notApprovedBooking.booking.guestNumber }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container__center__booking__content__block__content__block"
+                                style="border: none">
+                                <div class="container__center__booking__content__block__content__block__part">
+                                    <span class="font font--big font--bold font--GloriaHallelujah">Sub-Total: </span>
+                                    <span class="font font--gray font--big font--bold">$2000</span>
+                                </div>
+                            </div>
+                            <div class="container__center__booking__content__block__content__block"
+                                style="border: none; flex-direction: row; justify-content: space-around">
+                                <button ng-click = "approveBooking(notApprovedBooking.booking._id)" class="button button--green">Approve</button>
+                                <button class="button button--red">Deny</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!-- end_notApprove -->
+
+                <div class="container__center__booking">
+                    <div class="container__center__booking__content">
+                        <div class="font font--GloriaHallelujah font--bold font--big font--green">Approved</div>
+                        <div class="container__center__booking__content__block">
+
+                            <div ng-repeat = "approvedBooking in approvedBookings" class="container__center__booking__content__block__content border--green">
+                                <div class="container__center__booking__content__block__content__block"
+                                    style="align-items: center;">
+                                    <img src="{{approvedBooking.hostPost.avatar}}" alt="avatar"
+                                        class="container__center__booking__content__block__content__block__image">
+                                    <div class="font font--big font--bold">{{approvedBooking.hostPost.fullName}}</div>
+                                </div>
+                                <div class="container__center__booking__content__block__content__block"
+                                    style="border: none">
+                                    <div
+                                        class="container__center__content__center__booking__content__content__block__part">
+                                        <div class="font font--big font--bold font--GloriaHallelujah">Booking detail
+                                        </div>
+                                    </div>
+                                    <div class="container__center__booking__content__block__content__block__part">
+                                        <div class="font font--gray font--normal font--bold">Time: {{approvedBooking.booking.time}}
+                                        </div>
+                                    </div>
+                                    <div class="container__center__booking__content__block__content__block__part">
+                                        <div class="font font--gray font--normal font--bold">Guest:
+                                            {{ approvedBooking.booking.guestNumber }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container__center__booking__content__block__content__block"
+                                    style="border: none">
+                                    <div class="container__center__booking__content__block__content__block__part">
+                                        <span class="font font--big font--bold font--GloriaHallelujah">Sub-Total:
+                                        </span>
+                                        <span class="font font--gray font--big font--bold">$2000</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- end_approve -->
+                </div>
+
+        </article>
+        <!-- END_CONTAINER_CENTER -->
+
+
+
+
+
+
+
+
+
+        <!-- FOOTER -->
+        <footer class="container__footer">
+            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
+                class="container__footer__backgroundImage">
+
+            </div>
+
+            <div class="container__footer__content">
+                <div class="container__footer__content__left">
+                    <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
+                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer">
+                </div>
+
+                <div class="container__footer__content__right">
+                    <h1>Navigation</h1>
+                    <a href="javascript:void(0);">Trang chủ</a>
+                    <a href="javascript:void(0);">Giới thiệu</a>
+                    <a href="javascript:void(0);">Liên hệ</a>
+                    <a href="javascript:void(0);">Chính sách bảo mật</a>
+
+                </div>
+            </div>
+            <div class="container__footer__background">
+
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+    </main>
+    <!-- <script src="/assets/scripts/me/top.js"></script> -->
+</body>
+
+
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/approveBookingAngular.js"></script>
+<script src="/assets/server/services/approveBookingServices.js"></script>
+
+</html>

@@ -20,8 +20,6 @@ header {
   display: block;
 }
 
-
-
 @font-face {
   font-family: myTitle;
   src: url("/assets/fonts/GloriaHallelujah.ttf");
@@ -141,15 +139,6 @@ $fontSizeTitle: 28px;
   &__center {
     &__header {
       position: relative;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: auto;
-      text-align: center;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       &::before {
         width: 100%;
         height: 100%;
@@ -161,25 +150,31 @@ $fontSizeTitle: 28px;
         opacity: 0.45;
         z-index: 0;
       }
+      text-align: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: auto;
       h1 {
         display: block;
-        font-size: 3em;
+        font-size: 5em;
         background-image: url("/assets/images/me/rain.png");
         color: rgba(white, 0.9);
         background-clip: text;
         background-repeat: repeat;
         -webkit-background-clip: text;
-        //text-transform: uppercase;
+        text-transform: uppercase;
         animation: backgroundImgae 100s linear infinite;
-        padding: 80px 10px 80px 10px;
+        padding: 80px 10px 10px 10px;
         z-index: 1;
         position: relative;
       }
       h3 {
-        font-size: $fontSizeTitle;
+        font-size: 1.7em;
         color: white;
-        padding: 3em 10px;
-        max-width: 400px;
+        padding: 10px 10px;
+        max-width: 800px;
         margin: 0 auto;
         z-index: 1;
         position: relative;
@@ -187,117 +182,40 @@ $fontSizeTitle: 28px;
       p {
         position: relative;
         margin: 0 auto;
-        font-size: 18px;
+        font-size: 1.2em;
         color: white;
         padding: 15px 15px 50px 15px;
-        max-width: 400px;
+        max-width: 31em;
         z-index: 1;
       }
     }
-    &__option {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1em;
-      #postOption{
-        border-top-left-radius: 4em;
-        border-bottom-left-radius: 4em;
-      }
-      #bookingOption{
-        border-top-right-radius: 4em;
-        border-bottom-right-radius: 4em;
-      }
-      &__choose {
-        position: relative;
-        width: 50%;
-        border: solid 4px #39d1e6;
-        padding: 2em 0.5em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .fa-flag-checkered {
-          font-size: 2.5em;
-          color: $colorListMenu;
-          margin: 0 0.5em;
-          &:hover {
-            cursor: pointer;
-          }
-          &:active {
-            color: #fff;
-            background-color: #39d1e6;
-            cursor: pointer;
-          }
-        }
-        input[type = "checkbox"]{
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          //-webkit-appearance: none;
-        }
-      }
-      &__checkbox{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 300;
-        input[type = "checkbox"]{
-          
-          width: 6em;
-          height: 2em;
-          -webkit-appearance: none;
-          background: linear-gradient(#fff, #fff);
-          outline: none;
-          border-radius: 1em;
-          box-shadow: 0 0 0 0.2em #7fe0ec, 0 0 0 0.2em #fff, inset 0 0 0.4em rgb(160, 232, 250);
-          &:before{
-            content: '';
-            position: absolute;
-            width: 4em;
-            height: 2em;
-            top: 0;
-            left: 0;
-            box-shadow: 0 0 0 0.1em #048596;
-            background: linear-gradient(#39d1e6, #048596);
-            border-radius: 1em;
-            transform: scale(0.95, 0.9); 
-            transition: .5s;
-          }
-        }
-        input:checked[type = "checkbox"]:before{
-          left: 2em;
-        }
-      }
-    }
-    &__post {
-      &__item {
-        display: none;
-        margin: 1em;
-        border: solid 2px #39d1e6;
-        &__image {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          padding: 4em 0;
-        }
-        &__detail {
-          padding: 0 1em;
-        }
-      }
-    }
+
     &__booking {
-      &__item {
-        display: none;
-        margin: 1em;
-        border: solid 2px #39d1e6;
-        &__image {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          padding: 4em 0;
-        }
-        &__detail {
-          padding: 0 1.5em;
+      &__content {
+        padding: 1em;
+        &__block {
+          &__content {
+            margin: 1em 0;
+            padding: 0 1em;
+            &__block {
+              display: flex;
+              flex-direction: column;
+              border-bottom: solid 2px darkgray;
+              padding: 0.5em;
+              &__image {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 5em;
+                height: 5em;
+                border-radius: 9999em;
+                border: solid 2px lightgray;
+              }
+              &__part {
+                padding: 0.2em;
+              }
+            }
+          }
         }
       }
     }
@@ -447,30 +365,20 @@ $fontSizeTitle: 28px;
       }
     }
 
+    //center
     &__center {
-      &__option {
-        &__choose{
-            width: 25%;
-        }
-      }
-      &__post {
-        display: flex;
-        flex-wrap: wrap;
-        &__item {
-          padding: 1em;
-          margin: 0;
-          border: none;
-          max-width: 25%;
-        }
-      }
       &__booking {
-        display: flex;
-        flex-wrap: wrap;
-        &__item {
-          padding: 1em;
-          margin: 0;
-          border: none;
-          max-width: 25%;
+        &__content {
+          &__block {
+            display: flex;
+
+            flex-wrap: wrap;
+            &__content {
+              margin: 1em 0.5em;
+              padding: 0 1em;
+              width: 23%;
+            }
+          }
         }
       }
     }
@@ -541,7 +449,7 @@ $fontSizeTitle: 28px;
     background-color: $colorListMenu;
   }
 }
-.button--red{
+.button--red {
   background-color: red;
   border: 0.2em solid red;
   &:hover {
@@ -552,6 +460,19 @@ $fontSizeTitle: 28px;
   &:active {
     color: white;
     background-color: red;
+  }
+}
+.button--green {
+  background-color: green;
+  border: 0.2em solid green;
+  &:hover {
+    color: green;
+    background-color: white;
+    border: 0.2em solid green;
+  }
+  &:active {
+    color: white;
+    background-color: green;
   }
 }
 .font {
@@ -591,15 +512,20 @@ $fontSizeTitle: 28px;
 .font--green {
   color: green;
 }
+.font--gray {
+  color: gray;
+}
 .font--GloriaHallelujah {
   font-family: myTitle;
 }
 .font--center {
   text-align: center;
 }
-.display{
-  display: block !important;
+
+.border--red {
+  border: solid 0.1em red;
 }
-.chosen{
-  background: linear-gradient(#39d1e6, #fff, #fff, #39d1e6);
+.border--green {
+  border: solid 0.1em green;
+  box-shadow: 0 0 1em green;
 }
