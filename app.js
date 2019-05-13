@@ -15,15 +15,15 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 
-app.get("/bookings", (req, res)=>{
-    res.render("bookings.ejs")
-})
-
 // API
 let Admin = require('./src/api/admin.js');
 Admin(app);
 let Book = require('./src/api/book.js');
 Book(app);
+let Post_booking = require('./src/api/post-booking.js');
+Post_booking(app);
+let Booking = require('./src/api/booking.js');
+Booking(app);
 let APILogin = require('./src/api/login.js');
 APILogin(app);
 let APISignup = require('./src/api/signup.js');
@@ -46,6 +46,8 @@ let AddDetail = require('./src/api/addDetail.js')
 AddDetail(app);
 let AddCityInfo = require('./src/api/addCityInfo.js')
 AddCityInfo(app);
+let ApproveBooking = require('./src/api/approveBooking.js')
+ApproveBooking(app);
 
 // END API
 

@@ -9,6 +9,7 @@ module.exports = function (app) {
         console.log(req.body);
         let booking = {
             postID: req.params.postID,
+            hostID: req.body.hostID,
             time: req.body.time,
             guestNumber: req.body.guestNumber,
             guestEmail: req.cookies.email,

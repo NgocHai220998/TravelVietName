@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="post-booking" ng-controller="post-bookingController">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/me/logo-mobile.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/me/posts-bookings.css">
+    <title>Bookings</title>
+</head>
+
+<body>
+    <main class="container">
+
+        <!-- CONTAINER_TOP -->
+        <article class="container__top">
+            <div class="container__top__logo">
+                <img width="43" height="30" src="/assets/images/me/logo-mobile.png" alt="Logo">
+            </div>
+
+            <div class="container__top__search">
+                <input type="text" placeholder="City in here..." class="container__top__search__input">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="container__top__icon">
+                <i class="fas fa-align-justify"></i>
+                <div class="container__top__icon__item">
+                    <a href="javascript:void(0);">Host an Experience</a>
+                    <a href="javascript:void(0);">Thành phố</a>
+                    <a href="javascript:void(0);">Host</a>
+                    <a href="/login">Login</a>
+
+                </div>
+            </div>
+
+            <div class="container__top__menu">
+                <a class="container__top__menu__host" href="javascript:void(0);">Host an Experience</a>
+                <a class="container__top__menu__login" href="javascript:void(0);">Thành phố</a>
+                <a class="container__top__menu__signup" href="/login">Sign up</a>
+            </div>
+        </article>
+        <!-- END_CONTAINER_TOP -->
+
+        <article class="container__center">
+            <header style="background-image: url('/assets/images/me/background-admin.jpeg')"
+                class="container__center__header">
+                <h1>Bookings</h1>
+            </header>
+            <div class="font font--big font--bold font--center" style="font-family: myTitle">Have a nice day!!!</div>
+            <div class="container__center__option">
+                <div class="container__center__option__choose chosen" ng-class="{chosen: !option}" id="postOption">
+                    <!-- <input type="checkbox"  id="" ng-model="postOption" > -->
+                    <i class="fas fa-flag-checkered"></i>
+                    <div class="font font--bold font--normal font--blue">Your posts</div>
+                </div>
+                <div class="container__center__option__checkbox">
+                    <input type="checkbox" name="" id="" ng-model="option">
+                </div>
+                <div class="container__center__option__choose" ng-class="{chosen: option}" id="bookingOption">
+                    <!-- <input type="checkbox" id="" ng-model="bookingOption" > -->
+                    <i class="fas fa-flag-checkered"></i>
+                    <div class="font font--normal font--bold font--blue">Your bookings</div>
+                </div>
+            </div>
+
+            <div class="container__center__post">
+
+                <div ng-repeat="post in posts" ng-class="{display: !option}" class="container__center__post__item">
+                    <div style="background-image: url('{{post.post.post.images[0].src}}')" alt=""
+                        class="container__center__post__item__image">
+                        <div class="font font--sobig font--white font--bold font--center">{{post.
+                            post.post.where.city}}</div>
+                    </div>
+                    <a style="display: block" href="/detail/{{post.post._id}}"
+                        class="font font--bold font--big font--center">{{post.post.post.title}}</a>
+                    <div class="container__center__post__item__detail">
+
+                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approved by admin:
+                            {{post.post.approval}}
+                        </div>
+
+                        <div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Number of
+                                orders: {{post.numOfOrder}}</div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah"
+                                style="margin-left: 10%">Aprroved: {{post.aprroved}} </div>
+                            <div>
+                                <div class="font font--bold font--normal font--red font--GloriaHallelujah"
+                                    style="margin-left: 10%">Not approved: {{post.notAprroved}} </div>
+                                <a href="/approve-booking/{{post.post._id}}" style="font-size: 0.8em; margin-left: 54%" class="button button--red">Approve now</a>
+
+                            </div>
+                            <div class="font font--bold font--normal font--blue font--GloriaHallelujah"
+                                style="margin-left: 10%">Deny: </div>
+
+                        </div>
+
+
+                        <div class="font font--bold font--normal font--green font--GloriaHallelujah">Views: </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="container__center__booking">
+                <div ng-repeat="booking in bookings" ng-class="{'display': option}"
+                    class="container__center__booking__item">
+                    <div style="background-image: url('{{booking.postDetail.post.images[0].src}}')" alt=""
+                        class="container__center__booking__item__image">
+                        <div class="font font--sobig font--white font--bold font--center">
+                            {{booking.postDetail.post.where.city}}</div>
+                    </div>
+                    <a href="/booking/{{booking.booking._id}}" style="display: block"
+                        class="font font--bold font--big font--center">{{booking.postDetail.post.title}}</a>
+                    <div class="container__center__post__item__detail">
+
+                        <div class="font font--bold font--normal font--red font--GloriaHallelujah">Approved by host:
+                            {{booking.booking.approval}}
+                        </div>
+
+                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Time:
+                            {{booking.booking.time}}</div>
+                        <div class="font font--bold font--normal font--blue font--GloriaHallelujah">Guest:
+                            {{booking.booking.guestNumber}}</div>
+
+                        <div class="font font--bold font--normal font--green font--GloriaHallelujah">Total: </div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <!-- FOOTER -->
+        <footer class="container__footer">
+            <div style="background-image: url('/assets/images/me/imageFooter.jpg');"
+                class="container__footer__backgroundImage">
+
+            </div>
+
+            <div class="container__footer__content">
+                <div class="container__footer__content__left">
+                    <p>Copyright LandedVibe 2019. Crafted in HaNoi.</p>
+                    <img widht="200" height="28" src="/assets/images/me/logoFooter.svg" alt="Logo Footer">
+                </div>
+
+                <div class="container__footer__content__right">
+                    <h1>Navigation</h1>
+                    <a href="/">Trang chủ</a>
+                    <a href="javascript:void(0);">Giới thiệu</a>
+                    <a href="javascript:void(0);">Liên hệ</a>
+                    <a href="javascript:void(0);">Chính sách bảo mật</a>
+
+                </div>
+            </div>
+            <div class="container__footer__background">
+
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+    </main>
+</body>
+
+<!-- <script src="/assets/scripts/me/booking.js"></script> -->
+<script src="/assets/scripts/common/angular.min.js"></script>
+<script src="/assets/server/angular/post-bookingAngular.js"></script>
+<script src="/assets/server/services/post-bookingServices.js"></script>
+
+</html>

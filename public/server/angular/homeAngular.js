@@ -26,7 +26,7 @@ home.controller('homeController', ['$scope', 'homeSecvices', async function ($sc
         $scope.topPosts = $scope.posts;
         $scope.topPosts.length = 9;
 
-        console.log($scope.topPosts);
+        //console.log($scope.topPosts);
 
         // Home.js
         setTimeout(() => {

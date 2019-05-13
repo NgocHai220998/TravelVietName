@@ -6,6 +6,7 @@ let bookingSchema = mongoose.Schema;
 
 let booking = bookingSchema({
     postID: String,
+    hostID: String,
     time: String,
     guestNumber: String,
     guestEmail: String,
