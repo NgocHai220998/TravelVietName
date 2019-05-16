@@ -10,11 +10,14 @@ home.controller('homeController', ['$scope', 'homeSecvices', async function ($sc
             $scope.userMain = user.data;
             if ($scope.userMain) {
                 document.querySelectorAll('.container__header__center article aside a')[1].innerHTML = "Thành phố";
-                document.querySelectorAll('.container__header__center article aside a')[1].setAttribute('href', 'javascript:void(0)');
+                document.querySelectorAll('.container__header__center article aside a')[1].setAttribute('href', '/cities');
                 document.querySelectorAll('.container__header__center article aside a')[2].innerHTML = "Host";
+                document.querySelectorAll('.container__header__center article aside a')[3].setAttribute('href', '/your-posts-bookings');
+                document.querySelectorAll('.container__header__center article aside a')[2].setAttribute('href', '/adddetail');
                 document.querySelectorAll('.container__header__center div a')[0].innerHTML = "Đăng xuất";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[1].innerHTML = "Thành phố";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[2].innerHTML = "Host";
+                document.querySelectorAll('.container__header__icon .hidenMenu a')[2].setAttribute('href', '/adddetail');
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[3].innerHTML = "Đăng xuất";
                 document.querySelectorAll('.container__header__icon .hidenMenu a')[3].setAttribute('href', 'javascript:void(0)');
             }
