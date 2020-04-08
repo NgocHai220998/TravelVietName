@@ -3,7 +3,7 @@ var post = angular.module("post", []);
 post.controller("postController", [
   "$scope",
   "postSecvices",
-  function($scope, postSecvices) {
+  async function($scope, postSecvices) {
     let pathArray = window.location.pathname.split("/");
     // Get info userMain
     postSecvices.getCookie().then(email => {
@@ -22,6 +22,12 @@ post.controller("postController", [
 
     postSecvices.getPostById(pathArray[2]).then(post => {
       $scope.post = post.data;
+      setTimeout(function(){
+        if($scope.userMain) {
+          document.getElementById('booking').innerHTML = "Book now";
+          document.getElementById('booking').setAttribute('href','/book/' + $scope.post._id);
+        }
+      },500);
 
       console.log($scope.post.host);
       postSecvices.getHostPost($scope.post.host).then(host => {
@@ -290,6 +296,7 @@ post.controller("postController", [
       }, 0);
 
       //end post.js
+
     });
   }
 ]);

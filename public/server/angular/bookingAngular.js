@@ -1,7 +1,24 @@
 var booking = angular.module("booking", []);
 
-booking.controller('bookingController', ['$scope', 'bookingSecvices', async function ($scope, bookingSecvices) {
-    let url = window.location.pathname.split('/');
+booking.controller('bookingController', ['$scope', 'bookingSecvices', function ($scope, bookingSecvices) {
+let url = window.location.pathname.split('/');
+
+    // Get info userMain
+    bookingSecvices.getCookie().then(email => {
+        debugger;
+        bookingSecvices.getUserMain(email.data.email).then(user => {
+            $scope.userMain = user.data;
+            debugger;
+            if ($scope.userMain) {
+            document.querySelectorAll(
+                ".container__top .container__top__icon .container__top__icon__item a"
+            )[3].innerHTML = "Đăng xuất";
+            document.querySelectorAll(
+                ".container__top .container__top__menu a"
+            )[2].innerHTML = "Đăng xuất";
+            }
+        });
+        });
 
     bookingSecvices.getBookingByID(url[2]).then((bookingData) => {
         $scope.booking = bookingData.data;

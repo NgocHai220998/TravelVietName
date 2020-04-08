@@ -30,9 +30,10 @@ main {
     height: 120%;
     position: relative;
     .background {
-        background-image: url('/assets/images/me/backgroundSignup-mobile2.jpg');
+        background-image: url('/assets/images/me/homepage-bg-desktop-3.jpg');
         background-position: center;
         background-repeat: repeat;
+        background-size: cover;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -212,7 +213,7 @@ main {
     main {
         height: 100%;
         .background {
-            background-image: url('/assets/images/me/backgroundLogin.jpg');
+            background-image: url('/assets/images/me/homepage-bg-desktop-3.jpg');
         }
         .container {
             &__header {
